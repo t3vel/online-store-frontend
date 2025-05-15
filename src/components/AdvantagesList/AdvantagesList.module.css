@@ -1,0 +1,15 @@
+.wrapper {
+  padding: 72px 0;
+}
+
+.innerAdvantages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.advantagesCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
