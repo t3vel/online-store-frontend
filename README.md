@@ -1,12 +1,46 @@
-# React + Vite
+# 🛍️ Online Store Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Це фронтенд частина проєкту **Online Store**, розроблена за допомогою **React**, **Vite** та **CSS Modules**.
 
-Currently, two official plugins are available:
+## 🔧 Технології
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ React
+- ⚡ Vite
+- 🎨 CSS Modules
 
-## Expanding the ESLint configuration
+## 👨‍💻 Команда
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Розробник 1
+Розробник 2
+
+## 🚀 Запуск локально
+
+```bash
+git clone https://github.com/t3vel/online-store-frontend.git
+cd online-store-frontend
+npm install
+npm run dev
+```
+
+## 🌐 Деплой
+
+Проєкт автоматично публікується на GitHub Pages після виконання:
+
+```bash
+npm run deploy
+```
+
+📂 Структура
+
+```
+online-store-frontend/
+├── src/
+│   ├── components/     # Компоненти інтерфейсу
+│   ├── assets/         # Статичні файли (зображення, стилі)
+│   ├── App.jsx         # Головний компонент
+│   └── main.jsx        # Точка входу
+├── public/
+├── dist/               # Продакшн збірка (після build)
+├── package.json
+└── vite.config.js
+```
