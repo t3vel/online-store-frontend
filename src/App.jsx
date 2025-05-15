@@ -1,6 +1,9 @@
-import AdvantagesList from './components/AdvantagesList/AdvantagesList';
-import Banner from './components/Banner/Banner';
-import Header from './components/Header/Header';
+import AdvantagesList from "./components/AdvantagesList/AdvantagesList";
+import Banner from "./components/Banner/Banner";
+import Header from "./components/Header/Header";
+import BestProducts from "./components/BestProduct/BestProduct";
+import StartWith from "./components/StartWith/StartWith";
+import FarmToHome from "./components/FarmToHome/FarmToHome";
 
 function App() {
   return (
@@ -8,6 +11,9 @@ function App() {
       <Header />
       <Banner />
       <AdvantagesList />
+      <BestProducts />
+      <StartWith />
+      <FarmToHome />
     </>
   );
 }

@@ -1,0 +1,50 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+  align-items: end;
+}
+
+.block {
+  background-color: #d9d9d9;
+}
+
+.btn--show {
+  padding: 12px 74px;
+  font-size: 16px;
+  background-color: #ffffff;
+  border: none;
+  width: 312px;
+  height: 48px;
+  border-radius: 4px;
+}
+
+.container {
+  display: flex;
+  padding: 20px 20px;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.content {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 48px;
+}
+
+.btn--order {
+  background-color: #d9d9d9;
+  border: none;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.head-title {
+  font-size: 50px;
+  margin-bottom: 0;
+}

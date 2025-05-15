@@ -1,0 +1,37 @@
+.block {
+  background-color: #a8a8a8;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.untitle {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.content {
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 400;
+}
+
+.checkbtn {
+  padding: 12px 74px;
+  font-size: 16px;
+  background-color: #ffffff;
+  border: none;
+  width: 312px;
+  height: 48px;
+  border-radius: 4px;
+  font-weight: 400;
+  line-height: 100%;
+  margin-top: 52px;
+}
