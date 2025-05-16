@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import BestProducts from "./components/BestProduct/BestProduct";
 import StartWith from "./components/StartWith/StartWith";
 import FarmToHome from "./components/FarmToHome/FarmToHome";
+import PostArticle from "./components/PostArticle/PostArticle";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <BestProducts />
       <StartWith />
       <FarmToHome />
+      <PostArticle />
     </>
   );
 }

@@ -1,0 +1,58 @@
+import frame from "./img/frame.png";
+import ellipse from "./img/Ellipse.png";
+import done from "./img/elipseDone.png";
+import styles from "./PostArticle.module.css";
+import { useState } from "react";
+
+export default function PostArticle() {
+  return (
+    <div className={styles.block}>
+      <h2 className={styles.title}>Latest Posts & Articles</h2>
+      <div className={styles.container}>
+        <Item
+          image={frame}
+          date={"May 14 2025"}
+          content={"What technologies are used in vertical farming?"}
+        />
+        <Item
+          image={frame}
+          date={"May 14 2025"}
+          content={"What technologies are used in vertical farming?"}
+        />
+        <Item
+          image={frame}
+          date={"May 14 2025"}
+          content={"What technologies are used in vertical farming?"}
+        />
+      </div>
+    </div>
+  );
+}
+
+function Item({ image, date, content }) {
+  const [icon, setIcon] = useState(ellipse);
+
+  const handleClick = () => {
+    setIcon((prev) => (prev === ellipse ? done : ellipse));
+  };
+
+  return (
+    <section>
+      <img src={image} alt="article" />
+      <div className={styles.flex}>
+        <div>
+          <p className={styles.data}>{date}</p>
+          <p className={styles.content}>{content}</p>
+        </div>
+        <div>
+          <img
+            src={icon}
+            alt="toggle"
+            onClick={handleClick}
+            style={{ cursor: "pointer", width: "42px", height: "42px" }}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,33 @@
+.title {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 100%;
+  margin-bottom: 62px;
+}
+
+.block {
+  padding: 20px 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.data {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.content {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
