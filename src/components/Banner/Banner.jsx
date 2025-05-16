@@ -1,22 +1,18 @@
 import { useEffect, useState } from 'react';
 import styles from './Banner.module.css';
 
-import slide1 from '../../assets/images/bannerimages/slide1.jpg';
-import slide2 from '../../assets/images/bannerimages/slide2.png';
-import slide3 from '../../assets/images/bannerimages/slide3.png';
-
-const slides = [
+const bannerTexts = [
   {
-    image: slide1,
-    alt: 'Знижка -20% на все',
+    title1: 'Taste Nature.',
+    title2: 'Choose Organic.',
+    title3: 'Feel the Difference',
+    buttonText: 'Show More',
   },
   {
-    image: slide2,
-    alt: 'Безкоштовна доставка',
-  },
-  {
-    image: slide3,
-    alt: 'Новинки вже в наявності',
+    title1: 'Discover Health.',
+    title2: 'Live Better.',
+    title3: 'With Eco Products',
+    buttonText: 'Show More',
   },
 ];
 
@@ -27,21 +23,11 @@ export default function Banner() {
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovered) {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
+        setCurrentSlide((prev) => (prev + 1) % bannerTexts.length);
       }
     }, 4000);
-
     return () => clearInterval(interval);
   }, [isHovered]);
-
-  const goToSlide = (index) => {
-    const slidesElement = document.querySelector(`.${styles.slides}`);
-    if (slidesElement) {
-      slidesElement.style.transition =
-        'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)';
-      setCurrentSlide(index);
-    }
-  };
 
   return (
     <section
@@ -49,27 +35,35 @@ export default function Banner() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={styles.slideContainer}>
-        <div
-          className={styles.slides}
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {slides.map((slide, index) => (
-            <div key={index} className={styles.slide}>
-              <img src={slide.image} alt={slide.alt} className={styles.image} />
+      <div className={styles.container}>
+        {bannerTexts.map((slide, index) => (
+          <div
+            key={index}
+            className={`${styles.slide} ${
+              currentSlide === index ? styles.slideActive : ''
+            }`}
+          >
+            <div className={styles.content}>
+              <p className={styles.title}>
+                <span>{slide.title1}</span>
+                <span>{slide.title2}</span>
+                <span>{slide.title3}</span>
+              </p>
+              <button className={styles.button}>{slide.buttonText}</button>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+
         <div className={styles.dots}>
-          {slides.map((_, index) => (
+          {bannerTexts.map((_, index) => (
             <button
               key={index}
               className={`${styles.dot} ${
                 currentSlide === index ? styles.active : ''
               }`}
-              onClick={() => goToSlide(index)}
-              aria-label={`Слайд ${index + 1}`}
-            ></button>
+              onClick={() => setCurrentSlide(index)}
+              aria-label={`Slide ${index + 1}`}
+            />
           ))}
         </div>
       </div>

@@ -1,33 +1,63 @@
 import styles from './Header.module.css';
 
+import logo from '../../assets/images/logo.png';
+import searchIcon from '../../assets/icons/search.png';
+import userIcon from '../../assets/icons/profile.png';
+import cartIcon from '../../assets/icons/cart.png';
+
 const Header = () => {
   return (
     <header className={styles.header}>
-      <nav className={styles.navLeft}>
-        <a href="#" className={styles.link}>
-          Каталог
-        </a>
-        <a href="#" className={styles.link}>
-          Калькулятор ІМТ
-        </a>
-        <a href="#" className={styles.link}>
-          Контакти
-        </a>
-      </nav>
+      <div className={styles.container}>
+        <div className={styles.headerContent}>
+          <div className={styles.brand}>
+            <a href="#">
+              <img src={logo} alt="EcoHealth Logo" className={styles.logo} />
+            </a>
 
-      <div className={styles.logo}>LOGO</div>
+            <h1 className={`${styles.brandName} ${styles.visuallyHidden}`}>
+              EcoHealth
+            </h1>
+          </div>
 
-      <nav className={styles.navRight}>
-        <a href="#" className={styles.link}>
-          Авторизація
-        </a>
-        <a href="#" className={styles.link}>
-          Кнопка пошуку
-        </a>
-        <a href="#" className={styles.link}>
-          Кошик
-        </a>
-      </nav>
+          <nav className={styles.nav}>
+            <a href="#" className={styles.link}>
+              Catalog
+            </a>
+            <a href="#" className={styles.link}>
+              BMI Calculator
+            </a>
+            <a href="#" className={styles.link}>
+              Our Mission
+            </a>
+            <a href="#" className={styles.link}>
+              Heating News
+            </a>
+          </nav>
+
+          <div className={styles.searchAndIcons}>
+            <div className={styles.searchBox}>
+              <input
+                type="search"
+                placeholder="What are you looking for?"
+                className={styles.searchInput}
+              />
+              <button className={styles.searchButton}>
+                <img src={searchIcon} alt="Search" />
+              </button>
+            </div>
+
+            <div className={styles.icons}>
+              <button className={styles.iconButton}>
+                <img src={userIcon} alt="User profile" />
+              </button>
+              <button className={styles.iconButton}>
+                <img src={cartIcon} alt="Shopping cart" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   );
 };
