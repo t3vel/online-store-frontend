@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './Banner.module.css';
+import Button from '../UI/Button/Button';
 
 const bannerTexts = [
   {
@@ -49,7 +50,7 @@ export default function Banner() {
                 <span>{slide.title2}</span>
                 <span>{slide.title3}</span>
               </p>
-              <button className={styles.button}>{slide.buttonText}</button>
+              <Button>{slide.buttonText}</Button>
             </div>
           </div>
         ))}
