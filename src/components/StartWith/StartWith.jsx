@@ -1,4 +1,5 @@
 import styles from "./StartWith.module.css";
+import rectangle from "./img/rectangle.png";
 
 import Button from "../UI/Button/Button";
 
@@ -24,6 +25,9 @@ export default function StartWith() {
             </div>
             <Button className={styles.checkbtn}>Check Now</Button>
           </div>
+        </div>
+        <div className={styles.right}>
+          <img src={rectangle} alt="BMI illustration" />
         </div>
       </div>
     </div>
