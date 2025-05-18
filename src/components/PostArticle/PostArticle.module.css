@@ -2,11 +2,7 @@
   font-size: 50px;
   font-weight: 300;
   line-height: 100%;
-  margin-bottom: 62px;
-}
-
-.block {
-  padding: 20px 20px;
+  margin-bottom: 54px;
 }
 
 .container {
@@ -30,4 +26,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 24px;
+}
+
+.block {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  max-width: 1320px;
+  margin: 0 auto;
 }

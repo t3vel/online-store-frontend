@@ -11,17 +11,17 @@ export default function PostArticle() {
       <div className={styles.container}>
         <Item
           image={frame}
-          date={"May 14 2025"}
+          date={"MAY 14 2025"}
           content={"What technologies are used in vertical farming?"}
         />
         <Item
           image={frame}
-          date={"May 14 2025"}
+          date={"MAY 14 2025"}
           content={"What technologies are used in vertical farming?"}
         />
         <Item
           image={frame}
-          date={"May 14 2025"}
+          date={"MAY 14 2025"}
           content={"What technologies are used in vertical farming?"}
         />
       </div>

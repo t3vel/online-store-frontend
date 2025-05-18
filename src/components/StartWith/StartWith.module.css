@@ -12,10 +12,11 @@
 }
 
 .title {
-  font-family: 'Urbanist', sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 50px;
   font-weight: 500;
   line-height: 100%;
+  margin-bottom: 24px;
 }
 
 .untitle {
@@ -27,6 +28,7 @@
 .inner {
   max-width: 533px;
   margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .content {
@@ -38,4 +40,32 @@
 
 .checkbtn {
   margin-top: 90px;
+  padding: 12px 74px;
+  font-size: 16px;
+  background-color: #ffffff;
+  border: none;
+  width: 312px;
+  height: 48px;
+  border-radius: 32px;
+  font-weight: 400;
+  line-height: 100%;
+  margin-top: 56px;
+}
+
+.container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  gap: 24px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.description {
+  width: 533px;
+}
+
+.left {
+  width: 648px;
 }
