@@ -1,25 +1,15 @@
-import styles from './Header.module.css';
+import styles from "./Header.module.css";
 
-import logo from '../../assets/images/logo.png';
-import searchIcon from '../../assets/icons/search.png';
-import userIcon from '../../assets/icons/profile.png';
-import cartIcon from '../../assets/icons/cart.png';
+import logo from "../../assets/images/logo.png";
+import searchIcon from "../../assets/icons/search.png";
+import userIcon from "../../assets/icons/profile.png";
+import cartIcon from "../../assets/icons/cart.png";
 
 const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.headerContent}>
-          <div className={styles.brand}>
-            <a href="#">
-              <img src={logo} alt="EcoHealth Logo" className={styles.logo} />
-            </a>
-
-            <h1 className={`${styles.brandName} ${styles.visuallyHidden}`}>
-              EcoHealth
-            </h1>
-          </div>
-
           <nav className={styles.nav}>
             <a href="#" className={styles.link}>
               Catalog
@@ -34,6 +24,15 @@ const Header = () => {
               Heating News
             </a>
           </nav>
+          <div className={styles.brand}>
+            <a href="#">
+              <img src={logo} alt="EcoHealth Logo" className={styles.logo} />
+            </a>
+
+            <h1 className={`${styles.brandName} ${styles.visuallyHidden}`}>
+              EcoHealth
+            </h1>
+          </div>
 
           <div className={styles.searchAndIcons}>
             <div className={styles.searchBox}>

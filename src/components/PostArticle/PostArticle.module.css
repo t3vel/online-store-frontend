@@ -2,7 +2,7 @@
   font-size: 50px;
   font-weight: 300;
   line-height: 100%;
-  margin-bottom: 54px;
+  margin-bottom: 48px;
 }
 
 .container {
@@ -26,7 +26,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 24px;
 }
 
 .block {
@@ -34,4 +33,10 @@
   padding-bottom: 60px;
   max-width: 1320px;
   margin: 0 auto;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

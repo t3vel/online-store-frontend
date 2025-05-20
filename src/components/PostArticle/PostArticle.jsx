@@ -37,7 +37,7 @@ function Item({ image, date, content }) {
   };
 
   return (
-    <section>
+    <section className={styles.section}>
       <img src={image} alt="article" />
       <div className={styles.flex}>
         <div>

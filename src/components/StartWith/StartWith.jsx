@@ -23,7 +23,9 @@ export default function StartWith() {
                 sit amet feugiat lectus.
               </p>
             </div>
-            <Button className={styles.checkbtn}>Check Now</Button>
+            <div className={styles.btnConteiner}>
+              <Button className={styles.checkbtn}>Check Now</Button>
+            </div>
           </div>
         </div>
         <div className={styles.right}>

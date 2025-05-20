@@ -28,13 +28,12 @@
 .inner {
   max-width: 533px;
   margin-top: 24px;
-  margin-bottom: 24px;
 }
 
 .content {
   font-size: 16px;
   font-weight: 400;
-  margin-top: 16px;
+  margin-top: 24px;
   letter-spacing: -0.02em;
 }
 
@@ -49,13 +48,10 @@
   border-radius: 32px;
   font-weight: 400;
   line-height: 100%;
-  margin-top: 56px;
+  /* margin-top: 56px; */
 }
 
 .container {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  gap: 24px;
   display: flex;
   justify-content: space-between;
   max-width: 1320px;
@@ -68,4 +64,11 @@
 
 .left {
   width: 648px;
+  height: 400px;
+}
+
+.btnConteiner {
+  display: flex;
+  align-items: end;
+  justify-items: end;
 }
