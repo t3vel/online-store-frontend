@@ -68,12 +68,12 @@
   width: 425px;
   border-radius: 12px;
   background: #f5f5f5;
-  min-height: 38px;
+  max-height: 32px;
   padding: 7px 12px 7px 20px;
 }
 
 .searchInput::placeholder {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   opacity: 0.5;
   font-size: 16px;
   letter-spacing: -0.02em;
