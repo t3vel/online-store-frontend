@@ -9,7 +9,7 @@ export default function BestProducts() {
       <div className={styles.container}>
         <div className={styles.nav}>
           <h2 className={styles.headTitle}>Our best Selling Products</h2>
-          <Button className={styles.btn}>Show more</Button>
+          <Button className={styles.btn}>Show More</Button>
         </div>
 
         <div className={styles.inner}>

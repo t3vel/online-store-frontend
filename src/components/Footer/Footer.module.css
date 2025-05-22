@@ -1,6 +1,7 @@
 .footer {
   background: #1a1a1a;
   padding-top: 24px;
+  position: relative;
 }
 
 .container {
@@ -11,13 +12,10 @@
 
 .navColumns {
   display: flex;
-  gap: 70px;
+  justify-content: center;
+  gap: 180px;
   margin-bottom: 38px;
-}
-
-.navList {
-  list-style: none;
-  min-width: 128px;
+  text-transform: uppercase;
 }
 
 .navList li {
@@ -45,7 +43,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 30px 0;
-  box-shadow: 0 -1px 0 0 #333;
+  /* box-shadow: 0 -1px 0 0 #333; */
 }
 
 .socials {
@@ -63,4 +61,12 @@
   display: flex;
   align-items: center;
   gap: 48px;
+}
+
+.fullWidthLine {
+  position: absolute;
+  bottom: 100px;
+  width: 100vw;
+  height: 2px;
+  background-color: #333;
 }

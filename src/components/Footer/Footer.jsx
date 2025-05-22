@@ -10,6 +10,7 @@ import masterCardIcon from '../../assets/social-icons/mastercard.png';
 export default function Footer() {
   return (
     <footer className={styles.footer}>
+      <div className={styles.fullWidthLine}></div>
       <div className={styles.container}>
         <nav className={styles.navColumns}>
           <div className={styles.navColumn}>
@@ -32,16 +33,48 @@ export default function Footer() {
           <div className={styles.navColumn}>
             <ul className={styles.navList}>
               <li>
-                <a href="#">Basket</a>
+                <a href="#">BASKET</a>
               </li>
               <li>
-                <a href="#">Profile</a>
+                <a href="#">PROFILE</a>
               </li>
               <li>
-                <a href="#">Blog</a>
+                <a href="#">BLOG</a>
               </li>
               <li>
-                <a href="#">News</a>
+                <a href="#">NEWS</a>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.navColumn}>
+            <ul className={styles.navList}>
+              <li>
+                <a href="#">FRUITS</a>
+              </li>
+              <li>
+                <a href="#">VEGETABLES</a>
+              </li>
+              <li>
+                <a href="#">MEAT</a>
+              </li>
+              <li>
+                <a href="#">FISH </a>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.navColumn}>
+            <ul className={styles.navList}>
+              <li>
+                <a href="#">GROCERIES </a>
+              </li>
+              <li>
+                <a href="#">DESSERTS </a>
+              </li>
+              <li>
+                <a href="#">DRINKS</a>
+              </li>
+              <li>
+                <a href="#">CRAFT CHEESE</a>
               </li>
             </ul>
           </div>
@@ -61,7 +94,7 @@ export default function Footer() {
           </div>
 
           <p className={styles.copyright}>
-            EcoHealth © 2025. All Rights Reserved
+            RightBite © 2025. All Rights Reserved
           </p>
 
           <div className={styles.payment}>
