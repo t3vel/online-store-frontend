@@ -1,0 +1,136 @@
+.wrapper {
+  flex: 1;
+  display: flex;
+  min-height: calc(100vh - 75px);
+  color: #333;
+}
+
+.left {
+  background: #6e6e6e;
+  min-width: 50%;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.inner {
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  margin-bottom: 68px;
+}
+
+.subtitle span a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #111;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 80px;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  font-weight: 400;
+  font-size: 24px;
+  border: 1px solid #333;
+  border-radius: 32px;
+  background-color: white;
+  width: 424px;
+  height: 64px;
+}
+
+.icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: grey;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  margin: 12px 0;
+  color: #888;
+}
+
+.dividerText {
+  font-size: 24px;
+  color: #666;
+}
+
+.divider hr {
+  flex: 1;
+  border: none;
+  border-top: 2px solid #ccc;
+}
+
+.emailBtn {
+  font-weight: 400;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 32px;
+  background: #111;
+  width: 424px;
+  height: 64px;
+}
+
+.terms {
+  max-width: 355px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.terms a {
+  color: #111;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerTitle {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.loginBtn {
+  display: inline-block;
+  font-size: 20px;
+  color: #111;
+  padding: 20px 152px;
+  text-align: center;
+  border: 1px solid #111;
+  border-radius: 32px;
+}

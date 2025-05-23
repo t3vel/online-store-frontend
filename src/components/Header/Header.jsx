@@ -1,9 +1,11 @@
-import styles from "./Header.module.css";
+import styles from './Header.module.css';
 
-import logo from "../../assets/images/logo.png";
-import searchIcon from "../../assets/icons/search.png";
-import userIcon from "../../assets/icons/profile.png";
-import cartIcon from "../../assets/icons/cart.png";
+import logo from '../../assets/images/logo.png';
+import searchIcon from '../../assets/icons/search.png';
+import userIcon from '../../assets/icons/profile.png';
+import cartIcon from '../../assets/icons/cart.png';
+
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -25,9 +27,9 @@ const Header = () => {
             </a>
           </nav>
           <div className={styles.brand}>
-            <a href="#">
-              <img src={logo} alt="EcoHealth Logo" className={styles.logo} />
-            </a>
+            <Link to="/">
+              <img src={logo} alt="RigthBite Logo" className={styles.logo} />
+            </Link>
 
             <h1 className={`${styles.brandName} ${styles.visuallyHidden}`}>
               EcoHealth
@@ -47,9 +49,9 @@ const Header = () => {
             </div>
 
             <div className={styles.icons}>
-              <button className={styles.iconButton}>
+              <Link to="/signup" className={styles.iconButton}>
                 <img src={userIcon} alt="User profile" />
-              </button>
+              </Link>
               <button className={styles.iconButton}>
                 <img src={cartIcon} alt="Shopping cart" />
               </button>

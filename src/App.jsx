@@ -1,26 +1,15 @@
-import AdvantagesList from './components/AdvantagesList/AdvantagesList';
-import Banner from './components/Banner/Banner';
-import Header from './components/Header/Header';
-import BestProducts from './components/BestProduct/BestProduct';
-import StartWith from './components/StartWith/StartWith';
-import FarmToHome from './components/FarmToHome/FarmToHome';
-import PostArticle from './components/PostArticle/PostArticle';
-import NewsLetter from './components/NewsLetter/NewsLetter';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Signup from './pages/Signup/Signup';
 
 function App() {
   return (
-    <>
-      <Header />
-      <Banner />
-      <AdvantagesList />
-      <BestProducts />
-      <StartWith />
-      <FarmToHome />
-      <PostArticle />
-      <NewsLetter />
-      <Footer />
-    </>
+    <Router basename="/online-store-frontend">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </Router>
   );
 }
 
