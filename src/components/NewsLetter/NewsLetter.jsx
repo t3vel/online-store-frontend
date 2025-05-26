@@ -11,12 +11,14 @@ export default function NewsLetter() {
           </p>
         </div>
         <div className={styles.rigth}>
-          <input
-            className={styles.input}
-            type="text"
-            placeholder="Your email address"
-          />
-          <button className={styles.btn}>Subscribe</button>
+          <form className={styles.form} action="#!">
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="Your email address"
+            />
+            <button className={styles.btn}>Subscribe</button>
+          </form>
         </div>
       </div>
     </div>

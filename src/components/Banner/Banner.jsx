@@ -15,6 +15,24 @@ const bannerTexts = [
     title3: 'With Eco Products',
     buttonText: 'Show More',
   },
+  {
+    title1: 'Discover Health.',
+    title2: 'Live Better.',
+    title3: 'With Eco Products',
+    buttonText: 'Show More',
+  },
+  {
+    title1: 'Discover Health.',
+    title2: 'Live Better.',
+    title3: 'With Eco Products',
+    buttonText: 'Show More',
+  },
+  {
+    title1: 'Discover Health.',
+    title2: 'Live Better.',
+    title3: 'With Eco Products',
+    buttonText: 'Show More',
+  },
 ];
 
 export default function Banner() {
@@ -54,19 +72,18 @@ export default function Banner() {
             </div>
           </div>
         ))}
-
-        <div className={styles.dots}>
-          {bannerTexts.map((_, index) => (
-            <button
-              key={index}
-              className={`${styles.dot} ${
-                currentSlide === index ? styles.active : ''
-              }`}
-              onClick={() => setCurrentSlide(index)}
-              aria-label={`Slide ${index + 1}`}
-            />
-          ))}
-        </div>
+      </div>
+      <div className={styles.dots}>
+        {bannerTexts.map((_, index) => (
+          <button
+            key={index}
+            className={`${styles.dot} ${
+              currentSlide === index ? styles.active : ''
+            }`}
+            onClick={() => setCurrentSlide(index)}
+            aria-label={`Slide ${index + 1}`}
+          />
+        ))}
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
-import Header from "../../components/Header/Header";
-import { Link } from "react-router-dom";
+import Header from '../../components/Header/Header';
+import { Link } from 'react-router-dom';
 
-import styles from "./Signup.module.css";
+import styles from './Signup.module.css';
 export default function Signup() {
   return (
     <>
@@ -16,7 +16,7 @@ export default function Signup() {
               Join us today
             </h1>
             <p className={styles.subtitle}>
-              Already have an account?{" "}
+              Already have an account?{' '}
               <span>
                 <Link to="/login">Log in</Link>
               </span>
@@ -59,16 +59,14 @@ export default function Signup() {
                 <hr /> <span className={styles.dividerText}>OR</span> <hr />
               </div>
 
-              <button type="submit" className={styles.emailBtn}>
-                <Link to="/createacc" className={styles.create}>
-                  Sign up with phone or email
-                </Link>
-              </button>
+              <Link to="/createacc" className={styles.emailBtn}>
+                Sign up with email
+              </Link>
 
               <p className={styles.terms}>
-                By signing up, you agree to the{" "}
+                By signing up, you agree to the{' '}
                 <a href="#">Terms of Service </a>
-                and <a href="#"> Privacy Policy</a>, including{" "}
+                and <a href="#"> Privacy Policy</a>, including{' '}
                 <a href="#">cookie use</a>.
               </p>
             </form>

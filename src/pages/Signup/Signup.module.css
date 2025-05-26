@@ -18,7 +18,7 @@
 }
 
 .inner {
-  margin: 0 auto;
+  margin: auto auto;
 }
 
 .title {
@@ -99,6 +99,9 @@
   background: #111;
   width: 424px;
   height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .terms {
@@ -133,8 +136,4 @@
   text-align: center;
   border: 1px solid #111;
   border-radius: 32px;
-}
-
-.create {
-  color: #ffffff;
 }
