@@ -19,6 +19,7 @@
 .title {
   font-size: 32px;
   font-weight: 500;
+  margin-bottom: 60px;
 }
 
 .titleContainer {
@@ -26,12 +27,6 @@
   flex-direction: column;
   width: 401px;
   gap: 8px;
-}
-
-.inntitle {
-  font-size: 16px;
-  font-weight: 400;
-  color: #333333;
 }
 
 .block {

@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import Header from "../../components/Header/Header";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
-import styles from "./CreateAcc.module.css";
-import staticEyeOffIcon from "./img/icon.png";
+import styles from './CreateAcc.module.css';
+import staticEyeOffIcon from './img/icon.png';
 
 export default function CreateAcc() {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -24,9 +25,9 @@ export default function CreateAcc() {
                 <p className={styles.inntitle}>
                   Already have an ccount?
                   <Link to="/login" className={styles.link}>
-                    {" "}
+                    {' '}
                     Log in
-                  </Link>{" "}
+                  </Link>{' '}
                 </p>
               </div>
               <p className={styles.start}>
@@ -48,15 +49,15 @@ export default function CreateAcc() {
                   >
                     <img
                       src={staticEyeOffIcon}
-                      alt={passwordShown ? "Hide password" : "Show password"}
+                      alt={passwordShown ? 'Hide password' : 'Show password'}
                       className={styles.togglePasswordIcon}
                     />
-                    {passwordShown ? "Hide" : "Show"}{" "}
+                    {passwordShown ? 'Hide' : 'Show'}{' '}
                   </button>
                 </div>
                 <div className={styles.passwordInputWrapper}>
                   <input
-                    type={passwordShown ? "text" : "password"}
+                    type={passwordShown ? 'text' : 'password'}
                     className={styles.input}
                   />
                 </div>
@@ -75,15 +76,15 @@ export default function CreateAcc() {
                   >
                     <img
                       src={staticEyeOffIcon}
-                      alt={passwordShown ? "Hide password" : "Show password"}
+                      alt={passwordShown ? 'Hide password' : 'Show password'}
                       className={styles.togglePasswordIcon}
                     />
-                    {passwordShown ? "Hide" : "Show"}{" "}
+                    {passwordShown ? 'Hide' : 'Show'}{' '}
                   </button>
                 </div>
                 <div className={styles.passwordInputWrapper}>
                   <input
-                    type={passwordShown ? "text" : "password"}
+                    type={passwordShown ? 'text' : 'password'}
                     className={styles.input}
                   />
                 </div>
@@ -97,6 +98,7 @@ export default function CreateAcc() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

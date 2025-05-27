@@ -1,4 +1,5 @@
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import { Link } from 'react-router-dom';
 
 import styles from './Signup.module.css';
@@ -15,12 +16,6 @@ export default function Signup() {
               <br />
               Join us today
             </h1>
-            <p className={styles.subtitle}>
-              Already have an account?{' '}
-              <span>
-                <Link to="/login">Log in</Link>
-              </span>
-            </p>
 
             <form className={styles.form}>
               <button type="button" className={styles.socialBtn}>
@@ -80,6 +75,7 @@ export default function Signup() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import Header from "../../components/Header/Header";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
-import styles from "./Login.module.css";
+import { Link } from 'react-router-dom';
 
-import staticEyeOffIcon from "./img/icon.png";
+import styles from './Login.module.css';
+
+import staticEyeOffIcon from './img/icon.png';
 
 export default function Login() {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -25,12 +27,6 @@ export default function Login() {
                 Welcome back
                 <br /> Healthy choices start here!
               </h1>
-              <p className={styles.inntitle}>
-                Don’t have an account?{" "}
-                <Link to="/signup" className={styles.link}>
-                  Sign up
-                </Link>
-              </p>
             </div>
             <form className={styles.form}>
               <div className={styles.email}>
@@ -48,15 +44,15 @@ export default function Login() {
                   >
                     <img
                       src={staticEyeOffIcon}
-                      alt={passwordShown ? "Hide password" : "Show password"}
+                      alt={passwordShown ? 'Hide password' : 'Show password'}
                       className={styles.togglePasswordIcon}
                     />
-                    {passwordShown ? "Hide" : "Show"}{" "}
+                    {passwordShown ? 'Hide' : 'Show'}{' '}
                   </button>
                 </div>
                 <div className={styles.passwordInputWrapper}>
                   <input
-                    type={passwordShown ? "text" : "password"}
+                    type={passwordShown ? 'text' : 'password'}
                     className={styles.input}
                   />
                 </div>
@@ -67,14 +63,15 @@ export default function Login() {
             </form>
             <button className={styles.button}>Log in</button>
             <p className={styles.inntitle}>
-              Don’t have an account?{" "}
-              <Link to="/signup" className={styles.link}>
+              Don’t have an account?{' '}
+              <Link to="/createacc" className={styles.link}>
                 Sign up
               </Link>
             </p>
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

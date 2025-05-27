@@ -1,8 +1,8 @@
-import styles from "./FarmToHome.module.css";
-import picture from "./img/picture1.png";
-import search from "./img/search-icon.png";
-import filter from "./img/filter-icon.png";
-import sliders from "./img/sliders-icon.png";
+import styles from './FarmToHome.module.css';
+import picture from './img/picture1.png';
+// import search from './img/search-icon.png';
+// import filter from './img/filter-icon.png';
+// import sliders from './img/sliders-icon.png';
 
 export default function FarmToHome() {
   return (
@@ -12,7 +12,7 @@ export default function FarmToHome() {
           Fresh Organic Supply Direct From Farmer to Home
         </div>
         <div className={styles.nav}>
-          <div className={styles.left}>
+          {/* <div className={styles.left}>
             <button className={styles.navBtn}>
               <img src={search} /> Searh by keywords
             </button>
@@ -22,7 +22,7 @@ export default function FarmToHome() {
             <button className={styles.navBtn}>
               <img src={sliders} /> Sort by
             </button>
-          </div>
+          </div> */}
           <div className={styles.right}>
             <button className={styles.show}>Show More</button>
           </div>
