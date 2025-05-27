@@ -12,10 +12,15 @@
 
 .navColumns {
   display: flex;
-  justify-content: center;
-  gap: 180px;
+  justify-content: start;
+  gap: 160px;
   margin-bottom: 38px;
   text-transform: uppercase;
+}
+
+.logoContainer {
+  margin-right: -60px;
+  padding-left: 40px;
 }
 
 .navList li {

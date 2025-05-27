@@ -1,5 +1,6 @@
 import styles from './Footer.module.css';
 
+import logo from '../../assets/images/logo.svg';
 import instagramIcon from '../../assets/social-icons/instagram.png';
 import facebookIcon from '../../assets/social-icons/facebook.png';
 import twitterIcon from '../../assets/social-icons/twitter.png';
@@ -13,6 +14,11 @@ export default function Footer() {
       <div className={styles.fullWidthLine}></div>
       <div className={styles.container}>
         <nav className={styles.navColumns}>
+          <div className={styles.logoContainer}>
+            <a href="#">
+              <img src={logo} alt="Logotype RightBite" />
+            </a>
+          </div>
           <div className={styles.navColumn}>
             <ul className={styles.navList}>
               <li>
