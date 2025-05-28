@@ -1,7 +1,7 @@
-import styles from "./StartWith.module.css";
-import rectangle from "./img/rectangle.png";
+import styles from './StartWith.module.css';
+import rectangle from './img/rectangle.png';
 
-import Button from "../UI/Button/Button";
+import Button from '@components/common/button/Button';
 
 export default function StartWith() {
   return (

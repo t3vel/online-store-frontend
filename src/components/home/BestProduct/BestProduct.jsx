@@ -1,7 +1,7 @@
 import styles from './BestProduct.module.css';
 import picture from './img/picture1.png';
 
-import Button from '../UI/Button/Button';
+import Button from '@components/common/button/Button';
 
 export default function BestProducts() {
   return (

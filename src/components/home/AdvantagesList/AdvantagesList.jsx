@@ -1,8 +1,8 @@
 import styles from './AdvantagesList.module.css';
 
-import security from '../../assets/icons/security.png';
-import car from '../../assets/icons/car.png';
-import headphones from '../../assets/icons/headphones.png';
+import security from '@assets/icons/security.png';
+import car from '@assets/icons/car.png';
+import headphones from '@assets/icons/headphones.png';
 
 const features = [
   {

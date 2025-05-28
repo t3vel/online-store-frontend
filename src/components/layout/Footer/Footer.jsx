@@ -1,12 +1,12 @@
 import styles from './Footer.module.css';
 
-import logo from '../../assets/images/logo.svg';
-import instagramIcon from '../../assets/social-icons/instagram.png';
-import facebookIcon from '../../assets/social-icons/facebook.png';
-import twitterIcon from '../../assets/social-icons/twitter.png';
-import applePayIcon from '../../assets/social-icons/applepay.png';
-import payPalIcon from '../../assets/social-icons/paypal.png';
-import masterCardIcon from '../../assets/social-icons/mastercard.png';
+import logo from '@assets/images/logo.svg';
+import instagramIcon from '@assets/social-icons/instagram.png';
+import facebookIcon from '@assets/social-icons/facebook.png';
+import twitterIcon from '@assets/social-icons/twitter.png';
+import applePayIcon from '@assets/social-icons/applepay.png';
+import payPalIcon from '@assets/social-icons/paypal.png';
+import masterCardIcon from '@assets/social-icons/mastercard.png';
 
 export default function Footer() {
   return (

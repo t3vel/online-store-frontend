@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
-
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './Login.module.css';
+import Header from '@/components/layout/Header/Header';
+import Footer from '@/components/layout/Footer/Footer';
 
+import styles from './Login.module.css';
 import staticEyeOffIcon from './img/icon.png';
 
 export default function Login() {

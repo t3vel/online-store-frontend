@@ -1,9 +1,9 @@
 import styles from './Header.module.css';
 
-import logo from '../../assets/images/logo.png';
-import searchIcon from '../../assets/icons/search.png';
-import userIcon from '../../assets/icons/profile.png';
-import cartIcon from '../../assets/icons/cart.png';
+import logo from '@/assets/images/logo.png';
+import searchIcon from '@/assets/icons/search.png';
+import userIcon from '@/assets/icons/profile.png';
+import cartIcon from '@/assets/icons/cart.png';
 
 import { Link } from 'react-router-dom';
 
