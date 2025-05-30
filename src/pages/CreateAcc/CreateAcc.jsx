@@ -95,7 +95,9 @@ export default function CreateAcc() {
                 </p>
               </div>
             </form>
-            <button className={styles.button}>Create account</button>
+            <Link to="/successreg" className={styles.button}>
+              Create account
+            </Link>
           </div>
         </div>
       </div>

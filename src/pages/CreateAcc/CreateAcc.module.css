@@ -88,8 +88,10 @@ p .link {
 }
 
 .button {
-  margin-top: 42px;
-  margin-bottom: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 88px;
   height: 64px;
   width: 362px;
   background-color: #bebebe;
