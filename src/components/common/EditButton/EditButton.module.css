@@ -1,0 +1,9 @@
+.editButton {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  color: #6a6a6a;
+  border: 1px solid #6a6a6a;
+  border-radius: 32px;
+  padding: 8px 32px;
+}

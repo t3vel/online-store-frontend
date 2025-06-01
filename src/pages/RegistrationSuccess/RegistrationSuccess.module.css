@@ -9,14 +9,20 @@
   background: #6e6e6e;
 }
 
-.rigth {
+.right {
+  flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin: 188px 153px 192px 136px;
-  gap: 110px;
+  align-items: center;
+}
+
+.inner {
   max-width: 443px;
+  display: flex;
+  flex-direction: column;
+  gap: 110px;
+  width: 100%;
+  margin: 190px 0;
 }
 
 .title {

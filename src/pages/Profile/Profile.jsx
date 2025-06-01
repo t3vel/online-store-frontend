@@ -28,7 +28,6 @@ export default function Profile() {
         </div>
         <div className={styles.content}>
           <Sidebar />
-
           <main className={styles.main}>
             <PersonalInfo />
 

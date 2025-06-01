@@ -10,8 +10,16 @@
   min-width: 50%;
 }
 
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .inner {
-  margin: 160px 195px 110px 136px;
+  width: 424px;
+  margin: 120px 0;
 }
 
 .title {
