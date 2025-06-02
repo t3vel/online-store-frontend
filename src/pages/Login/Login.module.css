@@ -1,6 +1,6 @@
 .container {
   background-color: #6e6e6e;
-  min-height: calc(100vh - 69px);
+  min-height: calc(100vh + 75px);
   display: flex;
 }
 

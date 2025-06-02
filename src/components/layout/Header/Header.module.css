@@ -1,11 +1,17 @@
 .container {
   max-width: 1320px;
   margin: 0 auto;
+  position: relative;
 }
 
 .header {
   background-color: #e0e0e0;
   padding: 20px 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
 }
 
 .headerContent {
