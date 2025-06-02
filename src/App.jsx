@@ -5,10 +5,11 @@ import Login from '@pages/Login/Login';
 import CreateAcc from '@pages/CreateAcc/CreateAcc';
 import RegistrationSuccess from '@pages/RegistrationSuccess/RegistrationSuccess';
 import Profile from '@pages/Profile/Profile';
-
+import ScrollToTop from '@components/utils/ScrollToTop';
 function App() {
   return (
     <Router basename="/online-store-frontend">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
