@@ -15,7 +15,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: 42px 0 42px 0;
 }
 
 .left {
@@ -32,15 +31,16 @@
 }
 
 .show {
-  padding: 12px 74px;
-  font-size: 16px;
-  background-color: #ffffff;
-  border: none;
-  width: 312px;
-  height: 48px;
+  padding: 16px 116px;
+  background-color: #7a7a7a;
+  color: #fff;
   border-radius: 32px;
   font-weight: 400;
-  line-height: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
 }
 
 .container {
@@ -51,7 +51,6 @@
 }
 
 .order {
-  margin-bottom: 42px;
   border: none;
   padding: 0;
   font-size: 24px;

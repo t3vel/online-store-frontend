@@ -11,23 +11,13 @@ export default function FarmToHome() {
         <div className={styles.title}>
           Fresh Organic Supply Direct From Farmer to Home
         </div>
+
+        <Main />
         <div className={styles.nav}>
-          {/* <div className={styles.left}>
-            <button className={styles.navBtn}>
-              <img src={search} /> Searh by keywords
-            </button>
-            <button className={styles.navBtn}>
-              <img src={filter} /> Filter by
-            </button>
-            <button className={styles.navBtn}>
-              <img src={sliders} /> Sort by
-            </button>
-          </div> */}
           <div className={styles.right}>
-            <button className={styles.show}>Show More</button>
+            <a className={styles.show}>Show More</a>
           </div>
         </div>
-        <Main />
       </div>
     </div>
   );
