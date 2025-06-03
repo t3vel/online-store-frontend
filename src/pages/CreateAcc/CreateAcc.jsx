@@ -6,13 +6,22 @@ import Footer from '@/components/layout/Footer/Footer';
 
 import styles from './CreateAcc.module.css';
 import staticEyeOffIcon from './img/icon.png';
+import staticEyeIcon from './img/open-eye-icon.png';
 
 export default function CreateAcc() {
   const [passwordShown, setPasswordShown] = useState(false);
+  const [confirmPasswordShown, setConfirmPasswordShown] = useState(false);
 
   const togglePasswordVisibility = () => {
     setPasswordShown(!passwordShown);
   };
+
+   const toggleConfirmPasswordVisibility = () => {
+    setConfirmPasswordShown(!confirmPasswordShown);
+  };
+
+
+
   return (
     <>
       <Header />
@@ -35,11 +44,17 @@ export default function CreateAcc() {
                 Start by entering your basic details
               </p>
             </div>
+
+
             <form className={styles.form}>
+
+
               <div className={styles.email}>
                 <h4 className={styles.paragraphe}>Email address</h4>
                 <input type="email" className={styles.input} />
               </div>
+
+
               <div className={styles.email}>
                 <div className={styles.flex}>
                   <h4 className={styles.paragraphe}>Password</h4>
@@ -48,14 +63,22 @@ export default function CreateAcc() {
                     onClick={togglePasswordVisibility}
                     className={styles.togglePasswordButton}
                   >
-                    <img
-                      src={staticEyeOffIcon}
-                      alt={passwordShown ? 'Hide password' : 'Show password'}
+                    {passwordShown ?<img
+                      src={staticEyeIcon}
+                      alt={passwordShown ? 'Show password' : 'Hide password'}
                       className={styles.togglePasswordIcon}
                     />
-                    {passwordShown ? 'Hide' : 'Show'}{' '}
+                    :
+                    <img
+                      src={staticEyeOffIcon}
+                      alt={passwordShown ? 'Show password' : 'Hide password'}
+                      className={styles.togglePasswordOffIcon}
+                    />}
+                    {passwordShown ? 'Show' : 'Hide'}{' '}
                   </button>
                 </div>
+
+
                 <div className={styles.passwordInputWrapper}>
                   <input
                     type={passwordShown ? 'text' : 'password'}
@@ -67,22 +90,33 @@ export default function CreateAcc() {
                   symbols
                 </p>
               </div>
+
+
               <div className={styles.email}>
                 <div className={styles.flex}>
                   <h4 className={styles.paragraphe}>Confirm Password</h4>
                   <button
                     type="button"
-                    onClick={togglePasswordVisibility}
+                    onClick={toggleConfirmPasswordVisibility}
                     className={styles.togglePasswordButton}
                   >
-                    <img
-                      src={staticEyeOffIcon}
-                      alt={passwordShown ? 'Hide password' : 'Show password'}
+                   {confirmPasswordShown ? <img
+                      src={staticEyeIcon}
+                      alt={confirmPasswordShown ? 'Show password' : 'Hide password'}
                       className={styles.togglePasswordIcon}
                     />
-                    {passwordShown ? 'Hide' : 'Show'}{' '}
+                    :
+                    <img
+                      src={staticEyeOffIcon}
+                      alt={confirmPasswordShown ? 'Show password' : 'Hide password'}
+                      className={styles.togglePasswordOffIcon}
+                    />}
+                    {confirmPasswordShown ? 'Show' : 'Hide'}{' '}
                   </button>
                 </div>
+
+
+
                 <div className={styles.passwordInputWrapper}>
                   <input
                     type={passwordShown ? 'text' : 'password'}

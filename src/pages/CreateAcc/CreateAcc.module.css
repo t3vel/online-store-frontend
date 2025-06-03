@@ -109,7 +109,13 @@ p .link {
   align-items: center;
 }
 
+.togglePasswordOffIcon {
+  margin-right: 6px;
+}
+
 .togglePasswordIcon {
+  width: 22px;
+  height: 22px;
   margin-right: 6px;
 }
 
