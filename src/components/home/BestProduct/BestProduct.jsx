@@ -9,7 +9,6 @@ export default function BestProducts() {
       <div className={styles.container}>
         <div className={styles.nav}>
           <h2 className={styles.headTitle}>Our best Selling Products</h2>
-          <Button className={styles.btn}>Show More</Button>
         </div>
 
         <div className={styles.inner}>
@@ -20,6 +19,9 @@ export default function BestProducts() {
               content="Ecologically clean, grown on our farm with love"
             />
           ))}
+        </div>
+        <div className={styles.btnContainer}>
+          <Button className={styles.btn}>Show More</Button>
         </div>
       </div>
     </section>

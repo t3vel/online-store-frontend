@@ -1,8 +1,6 @@
-import frame from "./img/frame.png";
-import ellipse from "./img/Ellipse.png";
-import done from "./img/elipseDone.png";
-import styles from "./PostArticle.module.css";
-import { useState } from "react";
+import frame from './img/frame.png';
+import more from './img/more.png';
+import styles from './PostArticle.module.css';
 
 export default function PostArticle() {
   return (
@@ -11,18 +9,18 @@ export default function PostArticle() {
       <div className={styles.container}>
         <Item
           image={frame}
-          date={"MAY 14 2025"}
-          content={"What technologies are used in vertical farming?"}
+          date={'MAY 14 2025'}
+          content={'What technologies are used in vertical farming?'}
         />
         <Item
           image={frame}
-          date={"MAY 14 2025"}
-          content={"What technologies are used in vertical farming?"}
+          date={'MAY 14 2025'}
+          content={'What technologies are used in vertical farming?'}
         />
         <Item
           image={frame}
-          date={"MAY 14 2025"}
-          content={"What technologies are used in vertical farming?"}
+          date={'MAY 14 2025'}
+          content={'What technologies are used in vertical farming?'}
         />
       </div>
     </div>
@@ -30,12 +28,6 @@ export default function PostArticle() {
 }
 
 function Item({ image, date, content }) {
-  const [icon, setIcon] = useState(ellipse);
-
-  const handleClick = () => {
-    setIcon((prev) => (prev === ellipse ? done : ellipse));
-  };
-
   return (
     <section className={styles.section}>
       <img src={image} alt="article" />
@@ -45,12 +37,12 @@ function Item({ image, date, content }) {
           <p className={styles.content}>{content}</p>
         </div>
         <div>
-          <img
-            src={icon}
-            alt="toggle"
-            onClick={handleClick}
-            style={{ cursor: "pointer", width: "42px", height: "42px" }}
-          />
+          <a href="#">
+            <img
+              src={more}
+              style={{ cursor: 'pointer', width: '42px', height: '42px' }}
+            />
+          </a>
         </div>
       </div>
     </section>
