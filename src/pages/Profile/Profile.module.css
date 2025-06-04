@@ -27,4 +27,34 @@
 .content {
   display: flex;
   gap: 24px;
+  align-items: flex-start;
+}
+
+.shippingAddress {
+  margin: 24px 0 40px 0;
+}
+
+.btnsContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 32px;
+  margin-bottom: 100px;
+}
+
+.btnChange {
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  padding: 20px 97px;
+  background: #111;
+  border-radius: 32px;
+}
+
+.btnSubscribe {
+  font-size: 20px;
+  text-align: center;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 32px;
+  padding: 20px 66px;
 }

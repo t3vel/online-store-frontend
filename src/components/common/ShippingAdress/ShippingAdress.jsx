@@ -1,0 +1,139 @@
+import { useState } from 'react';
+import styles from './ShippingAdress.module.css';
+import EditButton from '@components/common/EditButton/EditButton';
+import add from '@assets/icons/add.png';
+
+export default function ShippingAdress() {
+  const [isEditing, setIsEditing] = useState(false);
+
+  const [country, setCountry] = useState('');
+  const [city, setCity] = useState('');
+  const [street, setStreet] = useState('');
+  const [houseNumber, setHouseNumber] = useState('');
+  const [apartment, setApartment] = useState('');
+  const [postalCode, setPostalCode] = useState('');
+
+  const toggleEditing = () => {
+    setIsEditing((prev) => !prev);
+  };
+
+  const handleChange = (setter) => (e) => {
+    setter(e.target.value);
+  };
+
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.top}>
+        <h2 className={styles.title}>Shipping Address</h2>
+        <EditButton onClick={toggleEditing} isEditing={isEditing} />
+      </div>
+
+      <div className={styles.content}>
+        <form className={styles.form} autoComplete="off">
+          <fieldset className={styles.fieldGroup}>
+            <label htmlFor="country">
+              Country <span>*</span>
+            </label>
+            <input
+              id="country"
+              name="country"
+              required
+              value={country}
+              onChange={handleChange(setCountry)}
+              placeholder="Enter your country"
+              disabled={!isEditing}
+            />
+          </fieldset>
+
+          <fieldset className={styles.fieldGroup}>
+            <label htmlFor="city">
+              City <span>*</span>
+            </label>
+            <input
+              id="city"
+              name="city"
+              required
+              value={city}
+              onChange={handleChange(setCity)}
+              placeholder="Enter your city"
+              disabled={!isEditing}
+            />
+          </fieldset>
+
+          <fieldset className={styles.fieldGroup}>
+            <label htmlFor="street">
+              Street Name <span>*</span>
+            </label>
+            <input
+              id="street"
+              name="street"
+              required
+              value={street}
+              onChange={handleChange(setStreet)}
+              placeholder="Enter your street name"
+              disabled={!isEditing}
+            />
+          </fieldset>
+
+          <fieldset className={styles.fieldGroup}>
+            <label htmlFor="houseNumber">
+              House Number <span>*</span>
+            </label>
+            <input
+              id="houseNumber"
+              name="houseNumber"
+              required
+              value={houseNumber}
+              onChange={handleChange(setHouseNumber)}
+              placeholder="Enter house number"
+              disabled={!isEditing}
+            />
+          </fieldset>
+
+          <fieldset className={styles.fieldGroup}>
+            <label htmlFor="apartment">
+              Apartment/Suite{' '}
+              <span className={styles.optional}>(Optional)</span>
+            </label>
+            <input
+              id="apartment"
+              name="apartment"
+              value={apartment}
+              onChange={handleChange(setApartment)}
+              placeholder="Apartment or suite number"
+              disabled={!isEditing}
+            />
+          </fieldset>
+
+          <fieldset className={styles.fieldGroup}>
+            <label htmlFor="postalCode">
+              Postal Code <span>*</span>
+            </label>
+            <input
+              id="postalCode"
+              name="postalCode"
+              required
+              value={postalCode}
+              onChange={handleChange(setPostalCode)}
+              placeholder="Enter your postal code"
+              disabled={!isEditing}
+            />
+          </fieldset>
+        </form>
+
+        <p className={styles.requiredNote}>
+          Required fields <span className={styles.required}>*</span>
+        </p>
+
+        <button
+          className={styles.addButton}
+          type="button"
+          disabled={!isEditing}
+        >
+          <img src={add} alt="Add additional address" />
+          <span>Add additional address</span>
+        </button>
+      </div>
+    </div>
+  );
+}

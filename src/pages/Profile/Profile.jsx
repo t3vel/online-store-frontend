@@ -1,10 +1,10 @@
-// import { useState } from 'react';
 import styles from './Profile.module.css';
 import Header from '@/components/layout/Header/Header';
 import Footer from '@/components/layout/Footer/Footer';
 import Breadcrumbs from '@/components/common/Breadcrumbs/Breadcrumbs';
-import Sidebar from '../../components/common/Sidebar/Sidebar';
-import PersonalInfo from '../../components/common/PersonalInfo/PersonalInfo';
+import Sidebar from '@components/common/Sidebar/Sidebar';
+import PersonalInfo from '@components/common/PersonalInfo/PersonalInfo';
+import ShippingAdress from '@components/common/ShippingAdress/ShippingAdress';
 
 export default function Profile() {
   return (
@@ -32,8 +32,15 @@ export default function Profile() {
             <PersonalInfo />
 
             <section className={styles.shippingAddress}>
-              {/* Shipping Address Form */}
+              <ShippingAdress />
             </section>
+
+            <div className={styles.btnsContainer}>
+              <button className={styles.btnChange}>Change Password</button>
+              <button className={styles.btnSubscribe}>
+                Subscribe the Newsletter
+              </button>
+            </div>
           </main>
         </div>
       </div>
