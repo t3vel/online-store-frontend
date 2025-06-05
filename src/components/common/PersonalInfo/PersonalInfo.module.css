@@ -82,7 +82,7 @@ label {
 
 .phoneInput :global(.PhoneInputCountry) {
   position: absolute;
-  left: 10px;
+  left: 16px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
