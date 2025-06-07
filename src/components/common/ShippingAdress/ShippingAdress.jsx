@@ -13,12 +13,15 @@ export default function ShippingAdress() {
   const [apartment, setApartment] = useState('');
   const [postalCode, setPostalCode] = useState('');
 
-  const toggleEditing = () => {
-    setIsEditing((prev) => !prev);
+  const handleChange = (setter, pattern) => (e) => {
+    const value = e.target.value;
+    if (pattern.test(value) || value === '') {
+      setter(value);
+    }
   };
 
-  const handleChange = (setter) => (e) => {
-    setter(e.target.value);
+  const toggleEditing = () => {
+    setIsEditing((prev) => !prev);
   };
 
   return (
@@ -39,7 +42,10 @@ export default function ShippingAdress() {
               name="country"
               required
               value={country}
-              onChange={handleChange(setCountry)}
+              onChange={handleChange(
+                setCountry,
+                /^[a-zA-Zа-яА-ЯіїєґІЇЄҐ\s-]*$/
+              )}
               placeholder="Enter your country"
               disabled={!isEditing}
             />
@@ -54,7 +60,7 @@ export default function ShippingAdress() {
               name="city"
               required
               value={city}
-              onChange={handleChange(setCity)}
+              onChange={handleChange(setCity, /^[a-zA-Zа-яА-ЯіїєґІЇЄҐ\s-]*$/)}
               placeholder="Enter your city"
               disabled={!isEditing}
             />
@@ -69,7 +75,10 @@ export default function ShippingAdress() {
               name="street"
               required
               value={street}
-              onChange={handleChange(setStreet)}
+              onChange={handleChange(
+                setStreet,
+                /^[a-zA-Zа-яА-ЯіїєґІЇЄҐ0-9\s-/]*$/
+              )}
               placeholder="Enter your street name"
               disabled={!isEditing}
             />
@@ -84,7 +93,7 @@ export default function ShippingAdress() {
               name="houseNumber"
               required
               value={houseNumber}
-              onChange={handleChange(setHouseNumber)}
+              onChange={handleChange(setHouseNumber, /^[0-9a-zA-Z-/]*$/)}
               placeholder="Enter house number"
               disabled={!isEditing}
             />
@@ -99,7 +108,7 @@ export default function ShippingAdress() {
               id="apartment"
               name="apartment"
               value={apartment}
-              onChange={handleChange(setApartment)}
+              onChange={handleChange(setApartment, /^[0-9a-zA-Z-/]*$/)}
               placeholder="Apartment or suite number"
               disabled={!isEditing}
             />
@@ -114,7 +123,7 @@ export default function ShippingAdress() {
               name="postalCode"
               required
               value={postalCode}
-              onChange={handleChange(setPostalCode)}
+              onChange={handleChange(setPostalCode, /^[0-9a-zA-Z-/]*$/)}
               placeholder="Enter your postal code"
               disabled={!isEditing}
             />

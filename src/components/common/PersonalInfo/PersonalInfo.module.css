@@ -90,8 +90,8 @@ label {
 
 .phoneInput :global(.PhoneInputInput) {
   width: 100%;
-  padding-left: 65px;
   height: 55px;
+  padding-left: 70px;
   border-radius: 12px;
   border: 1px solid rgba(102, 102, 102, 0.35);
   font-size: 18px;
