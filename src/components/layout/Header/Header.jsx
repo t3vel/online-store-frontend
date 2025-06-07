@@ -13,9 +13,9 @@ const Header = () => {
       <div className={styles.container}>
         <div className={styles.headerContent}>
           <nav className={styles.nav}>
-            <a href="#" className={styles.link}>
+            <Link to="/catalog" className={styles.link}>
               Catalog
-            </a>
+            </Link>
             <a href="#" className={styles.link}>
               BMI Calculator
             </a>

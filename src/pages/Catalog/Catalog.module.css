@@ -1,0 +1,39 @@
+.topWrapper {
+  background: #eee;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.topRight {
+  display: flex;
+  gap: 60px;
+}
+
+.title {
+  font-family: var(--third-family);
+  font-weight: 300;
+  font-size: 50px;
+}
+
+.topLink {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: #303030;
+  border: 1px solid #d6d6d6;
+  border-radius: 12px;
+  padding: 12px 24px;
+}

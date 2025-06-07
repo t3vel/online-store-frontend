@@ -1,0 +1,36 @@
+.filtersWrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #4d4d4d;
+  font-size: 16px;
+  font-family: var(--second-family, sans-serif);
+
+  background-color: white;
+  background-image: url('../../../assets/icons/arrow-down.png');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+
+  padding: 10px 40px 10px 16px;
+  cursor: pointer;
+}
+
+.select:hover,
+.select:focus {
+  border-color: #999;
+  outline: none;
+}

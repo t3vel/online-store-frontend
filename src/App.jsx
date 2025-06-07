@@ -6,6 +6,8 @@ import CreateAcc from '@pages/CreateAcc/CreateAcc';
 import RegistrationSuccess from '@pages/RegistrationSuccess/RegistrationSuccess';
 import Profile from '@pages/Profile/Profile';
 import ScrollToTop from '@components/utils/ScrollToTop';
+import Catalog from '@pages/Catalog/Catalog';
+
 function App() {
   return (
     <Router basename="/online-store-frontend">
@@ -17,6 +19,7 @@ function App() {
         <Route path="/createacc" element={<CreateAcc />} />
         <Route path="/successreg" element={<RegistrationSuccess />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/catalog" element={<Catalog />} />
       </Routes>
     </Router>
   );
