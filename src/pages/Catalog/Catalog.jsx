@@ -1,6 +1,8 @@
 import styles from './Catalog.module.css';
 
 import Header from '@components/layout/Header/Header';
+import Footer from '@components/layout/Footer/Footer';
+import NewsLetter from '@components/home/NewsLetter/NewsLetter';
 // import Banner from '@components/home/Banner/Banner';
 
 import CatalogFilters from '@components/catalog/CatalogFilters/CatalogFilters';
@@ -43,6 +45,8 @@ export default function Catalog() {
           </div>
         </div>
       </div>
+      <NewsLetter />
+      <Footer />
     </>
   );
 }
