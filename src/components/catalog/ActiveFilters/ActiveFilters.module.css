@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 16px 60px;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1095px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 33px;
+}
+
+.label {
+  letter-spacing: -0.02em;
+  color: #808080;
+}
+
+.filterItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #444;
+}
+
+.right {
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}

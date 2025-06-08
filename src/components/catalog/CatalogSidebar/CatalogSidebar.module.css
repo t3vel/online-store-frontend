@@ -1,5 +1,6 @@
 .sidebar {
   width: 224px;
+  margin-top: 32px;
 }
 
 .categoryInput,
@@ -13,8 +14,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 104px;
-  margin-top: -63px;
+  margin-bottom: 52px;
+  margin-top: -20px;
 }
 
 .checkboxLabel {

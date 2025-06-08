@@ -5,6 +5,7 @@ import Header from '@components/layout/Header/Header';
 
 import CatalogFilters from '@components/catalog/CatalogFilters/CatalogFilters';
 import CatalogSidebar from '@components/catalog/CatalogSidebar/CatalogSidebar';
+import ActiveFilters from '@components/catalog/ActiveFilters/ActiveFilters';
 
 export default function Catalog() {
   return (
@@ -29,8 +30,18 @@ export default function Catalog() {
       </div>
 
       <div className={styles.container}>
-        <CatalogFilters />
-        <CatalogSidebar />
+        <div className={styles.catalogContent}>
+          <CatalogSidebar />
+
+          <div className={styles.mainContent}>
+            <CatalogFilters />
+            <ActiveFilters
+              filters={['Gluten free', 'Min $5 - Max 30']}
+              onRemoveFilter={(f) => console.log('remove', f)}
+              resultsCount={576}
+            />
+          </div>
+        </div>
       </div>
     </>
   );
