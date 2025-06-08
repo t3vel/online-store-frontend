@@ -4,6 +4,7 @@ import Header from '@components/layout/Header/Header';
 // import Banner from '@components/home/Banner/Banner';
 
 import CatalogFilters from '@components/catalog/CatalogFilters/CatalogFilters';
+import CatalogSidebar from '@components/catalog/CatalogSidebar/CatalogSidebar';
 
 export default function Catalog() {
   return (
@@ -29,6 +30,7 @@ export default function Catalog() {
 
       <div className={styles.container}>
         <CatalogFilters />
+        <CatalogSidebar />
       </div>
     </>
   );
