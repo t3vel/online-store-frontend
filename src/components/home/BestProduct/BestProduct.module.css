@@ -33,52 +33,8 @@
   color: #000;
 }
 
-.title {
-  font-size: 24px;
-  font-weight: 500;
-  margin: 24px 0 16px 0;
-}
-
-.textInner {
-  max-width: 295px;
-}
-
 .content {
   font-weight: 400;
   margin-bottom: 24px;
   letter-spacing: -0.02em;
-}
-
-.btnOrder {
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.picture {
-  border-radius: 4px;
-  width: 424px;
-  height: 400px;
-}
-
-.orderInner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.badge {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0 15px;
-  border: 1px solid #c7c7c7;
-  border-radius: 8px;
-  padding: 12px;
-
-  max-height: 40px;
-}
-
-.price {
-  font-weight: 500;
-  font-size: 24px;
 }
