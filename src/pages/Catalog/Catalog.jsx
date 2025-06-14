@@ -8,6 +8,14 @@ import NewsLetter from '@components/home/NewsLetter/NewsLetter';
 import CatalogFilters from '@components/catalog/CatalogFilters/CatalogFilters';
 import CatalogSidebar from '@components/catalog/CatalogSidebar/CatalogSidebar';
 import ActiveFilters from '@components/catalog/ActiveFilters/ActiveFilters';
+import CatalogCard from '@components/catalog/CatalogCard/CatalogCard';
+
+const mock = {
+  name: 'Tomato',
+  price: 6.22,
+  kcal: 110,
+  description: 'Ecologically clean, grown on our farm with love',
+};
 
 export default function Catalog() {
   return (
@@ -42,6 +50,14 @@ export default function Catalog() {
               onRemoveFilter={(f) => console.log('remove', f)}
               resultsCount={576}
             />
+            <div className={styles.innerCards}>
+              <CatalogCard {...mock} />
+              <CatalogCard {...mock} />
+              <CatalogCard {...mock} />
+              <CatalogCard {...mock} />
+              <CatalogCard {...mock} />
+              <CatalogCard {...mock} />
+            </div>
           </div>
         </div>
       </div>
