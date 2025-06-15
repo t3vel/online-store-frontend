@@ -5,6 +5,7 @@ import Breadcrumbs from '@/components/common/Breadcrumbs/Breadcrumbs';
 import Sidebar from '@components/common/Sidebar/Sidebar';
 import PersonalInfo from '@components/common/PersonalInfo/PersonalInfo';
 import ShippingAdress from '@components/common/ShippingAdress/ShippingAdress';
+import MyOrders from '@components/profile/OrdersTable/OrdersTable';
 
 export default function Profile() {
   return (
@@ -30,6 +31,7 @@ export default function Profile() {
           <Sidebar />
           <main className={styles.main}>
             <PersonalInfo />
+            {/* <MyOrders /> */}
 
             <section className={styles.shippingAddress}>
               <ShippingAdress />

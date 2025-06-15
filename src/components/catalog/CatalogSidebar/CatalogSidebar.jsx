@@ -2,18 +2,20 @@ import { useState } from 'react';
 import styles from './CatalogSidebar.module.css';
 
 const categories = [
-  'Vegetables',
-  'Fruits',
-  'Drinks',
+  'Fruits & Vegetables',
+  'High Protein',
+  'Whole grains',
+  'Milk products',
+  'Low fat products',
+  'Pre-Meats',
+  'Nuts & paste',
   'Snacks',
+  'Oils',
   'Desserts',
   'Pre-cooked meals',
   'Diets',
-  'Groceries',
   'Accessories',
 ];
-
-const additionalOptions = ['Special Offers', 'Price', 'Brands'];
 
 export default function CatalogSidebar() {
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -38,20 +40,6 @@ export default function CatalogSidebar() {
               className={styles.categoryInput}
             />
             {category}
-          </label>
-        ))}
-      </div>
-
-      <div className={styles.section}>
-        {additionalOptions.map((option) => (
-          <label key={option} className={styles.checkboxLabel}>
-            <input
-              type="checkbox"
-              checked={selectedOptions.includes(option)}
-              onChange={() => handleCheckboxChange(option)}
-              className={styles.additionalInput}
-            />
-            {option}
           </label>
         ))}
       </div>

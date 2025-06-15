@@ -3,12 +3,13 @@ import styles from './Catalog.module.css';
 import Header from '@components/layout/Header/Header';
 import Footer from '@components/layout/Footer/Footer';
 import NewsLetter from '@components/home/NewsLetter/NewsLetter';
-// import Banner from '@components/home/Banner/Banner';
+import Banner from '@components/home/Banner/Banner';
 
 import CatalogFilters from '@components/catalog/CatalogFilters/CatalogFilters';
 import CatalogSidebar from '@components/catalog/CatalogSidebar/CatalogSidebar';
 import ActiveFilters from '@components/catalog/ActiveFilters/ActiveFilters';
 import CatalogCard from '@components/catalog/CatalogCard/CatalogCard';
+import CatalogCategories from '@components/catalog/CatalogCategories/CatalogCategories';
 
 const mock = {
   name: 'Tomato',
@@ -21,7 +22,8 @@ export default function Catalog() {
   return (
     <>
       <Header />
-      {/* <Banner /> */}
+      <Banner />
+      <CatalogCategories />
 
       <div className={styles.topWrapper}>
         <div className={styles.container}>

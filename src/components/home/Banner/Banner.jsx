@@ -35,7 +35,7 @@ const bannerTexts = [
   },
 ];
 
-export default function Banner() {
+export default function Banner({ className = '' }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -50,7 +50,7 @@ export default function Banner() {
 
   return (
     <section
-      className={styles.banner}
+      className={`${styles.banner} ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
