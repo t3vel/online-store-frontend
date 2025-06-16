@@ -44,7 +44,7 @@ label span {
   color: #494949;
 }
 
-input {
+.input {
   font-family: var(--font-family);
   border: 1px solid rgba(102, 102, 102, 0.35);
   border-radius: 12px;
@@ -55,7 +55,7 @@ input {
   padding: 16px 15px;
 }
 
-input::placeholder {
+.input::placeholder {
   font-weight: 300;
   font-size: 20px;
   color: #a7a7a7;

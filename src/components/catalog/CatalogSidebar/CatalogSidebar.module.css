@@ -1,6 +1,14 @@
+.title {
+  font-family: var(--third-family);
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #4d4d4d;
+  margin-bottom: 12px;
+}
+
 .sidebar {
   width: 224px;
-  margin-top: 32px;
 }
 
 .categoryInput {
@@ -14,7 +22,7 @@
   flex-direction: column;
   gap: 20px;
   margin-bottom: 52px;
-  margin-top: -20px;
+  margin-top: 44px;
 }
 
 .checkboxLabel {

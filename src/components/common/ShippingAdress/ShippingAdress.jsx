@@ -40,6 +40,7 @@ export default function ShippingAdress() {
             <input
               id="country"
               name="country"
+              className={styles.input}
               required
               value={country}
               onChange={handleChange(
@@ -58,6 +59,7 @@ export default function ShippingAdress() {
             <input
               id="city"
               name="city"
+              className={styles.input}
               required
               value={city}
               onChange={handleChange(setCity, /^[a-zA-Zа-яА-ЯіїєґІЇЄҐ\s-]*$/)}
@@ -73,6 +75,7 @@ export default function ShippingAdress() {
             <input
               id="street"
               name="street"
+              className={styles.input}
               required
               value={street}
               onChange={handleChange(
@@ -91,6 +94,7 @@ export default function ShippingAdress() {
             <input
               id="houseNumber"
               name="houseNumber"
+              className={styles.input}
               required
               value={houseNumber}
               onChange={handleChange(setHouseNumber, /^[0-9a-zA-Z-/]*$/)}
@@ -107,6 +111,7 @@ export default function ShippingAdress() {
             <input
               id="apartment"
               name="apartment"
+              className={styles.input}
               value={apartment}
               onChange={handleChange(setApartment, /^[0-9a-zA-Z-/]*$/)}
               placeholder="Apartment or suite number"
@@ -121,6 +126,7 @@ export default function ShippingAdress() {
             <input
               id="postalCode"
               name="postalCode"
+              className={styles.input}
               required
               value={postalCode}
               onChange={handleChange(setPostalCode, /^[0-9a-zA-Z-/]*$/)}

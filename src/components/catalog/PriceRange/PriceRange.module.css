@@ -1,0 +1,35 @@
+.title {
+  font-family: var(--third-family);
+  font-weight: 400;
+  font-size: 24px;
+  text-transform: capitalize;
+  color: #4d4d4d;
+  margin-bottom: 24px;
+}
+
+.inputsInner {
+  max-width: 224px;
+}
+
+.input {
+  font-family: var(--font-family);
+
+  border: 1px solid #c9cfd2;
+  border-radius: 8px;
+  padding: 6px 0px 6px 12px;
+  width: 100px;
+  height: 36px;
+  margin-bottom: 24px;
+}
+
+.input::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 171%;
+  color: #77878f;
+}
+
+.separator {
+  margin: 0 8px;
+  color: gray;
+}

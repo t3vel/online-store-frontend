@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './CatalogSidebar.module.css';
+import PriceRange from '../PriceRange/PriceRange';
 
 const categories = [
   'Fruits & Vegetables',
@@ -30,6 +31,7 @@ export default function CatalogSidebar() {
 
   return (
     <aside className={styles.sidebar}>
+      <h3 className={styles.title}>Category</h3>
       <div className={styles.section}>
         {categories.map((category) => (
           <label key={category} className={styles.checkboxLabel}>
@@ -43,6 +45,7 @@ export default function CatalogSidebar() {
           </label>
         ))}
       </div>
+      <PriceRange />
     </aside>
   );
 }

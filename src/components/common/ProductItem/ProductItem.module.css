@@ -1,6 +1,8 @@
 .btnOrder {
   font-size: 24px;
   font-weight: 500;
+  display: flex;
+  gap: 6px;
 }
 
 .picture {

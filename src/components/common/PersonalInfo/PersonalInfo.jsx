@@ -39,6 +39,7 @@ export default function PersonalInfo() {
               type="text"
               id="firstName"
               name="firstName"
+              className={styles.personalInput}
               placeholder="Enter your first name"
               value={firstName}
               onChange={handleNameChange(setFirstName)}
@@ -56,6 +57,7 @@ export default function PersonalInfo() {
               type="text"
               id="lastName"
               name="lastName"
+              className={styles.personalInput}
               placeholder="Enter your last name"
               value={lastName}
               onChange={handleNameChange(setLastName)}
@@ -73,6 +75,7 @@ export default function PersonalInfo() {
               type="email"
               id="email"
               name="email"
+              className={styles.personalInput}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
