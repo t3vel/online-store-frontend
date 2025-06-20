@@ -1,0 +1,21 @@
+.current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background: #4d4d4d;
+  font-family: var(--second-family);
+  font-weight: 500;
+
+  color: #fff;
+  width: 36px;
+  height: 36px;
+}
+
+.pagination {
+  display: flex;
+  gap: 12px;
+  margin-top: 110px;
+  justify-content: flex-end;
+}

@@ -37,8 +37,7 @@
 .btnsContainer {
   display: flex;
   justify-content: flex-end;
-  gap: 32px;
-  margin-bottom: 100px;
+  margin: 32px 0 72px;
 }
 
 .btnChange {

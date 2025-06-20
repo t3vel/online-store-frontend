@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styles from './Profile.module.css';
 import Header from '@/components/layout/Header/Header';
 import Footer from '@/components/layout/Footer/Footer';
@@ -8,6 +9,8 @@ import ShippingAdress from '@components/common/ShippingAdress/ShippingAdress';
 import MyOrders from '@components/profile/OrdersTable/OrdersTable';
 
 export default function Profile() {
+  const [activeTab, setActiveTab] = useState('personal');
+
   return (
     <>
       <Header />
@@ -16,33 +19,30 @@ export default function Profile() {
           <Breadcrumbs />
           <div className={styles.username}>
             <p className={styles.name}>Adam Wilson</p>
-            <svg
-              width="80"
-              height="80"
-              viewBox="0 0 80 80"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
               <circle cx="40" cy="40" r="40" fill="#BABABA" />
             </svg>
           </div>
         </div>
+
         <div className={styles.content}>
-          <Sidebar />
+          <Sidebar active={activeTab} onChange={setActiveTab} />
+
           <main className={styles.main}>
-            <PersonalInfo />
-            {/* <MyOrders /> */}
+            {activeTab === 'personal' && (
+              <>
+                <PersonalInfo />
+                <div className={styles.btnsContainer}>
+                  <button className={styles.btnChange}>Change Password</button>
+                </div>
+                <section className={styles.shippingAddress}>
+                  <ShippingAdress />
+                </section>
+              </>
+            )}
 
-            <section className={styles.shippingAddress}>
-              <ShippingAdress />
-            </section>
-
-            <div className={styles.btnsContainer}>
-              <button className={styles.btnChange}>Change Password</button>
-              <button className={styles.btnSubscribe}>
-                Subscribe the Newsletter
-              </button>
-            </div>
+            {activeTab === 'orders' && <MyOrders />}
+            {activeTab === 'logout' && <div>Logging out...</div>}
           </main>
         </div>
       </div>

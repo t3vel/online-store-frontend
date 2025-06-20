@@ -1,66 +1,45 @@
+import { useState } from 'react';
+import Tabs from '../Tabs/Tabs';
+import OrdersTableContent from '../OrdersTableContent/OrdersTableContent';
+import Pagination from '../Pagination/Pagination';
 import styles from './OrdersTable.module.css';
 
 export default function OrdersTable() {
+  const [activeTab, setActiveTab] = useState('in-process');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const orders = [
+    {
+      id: 'ID - 3933',
+      date: '29 May, 2025',
+      total: '$135.00 (5 Products)',
+      status: 'Processing',
+    },
+    {
+      id: 'ID - 3934',
+      date: '30 May, 2025',
+      total: '$89.99 (3 Products)',
+      status: 'Processing',
+    },
+    {
+      id: 'ID - 3935',
+      date: '31 May, 2025',
+      total: '$59.00 (2 Products)',
+      status: 'Cancelled',
+    },
+  ];
+
   return (
     <section className={styles.orders}>
       <div className={styles.container}>
         <h3 className={styles.title}>My Orders</h3>
-
-        <nav className={styles.tabs}>
-          <button className={styles.tabsBtn}>In Process</button>
-          <button className={styles.tabsBtn}>Complited Orders</button>
-          <button className={styles.tabsBtn}>Cancelled Orders</button>
-          <button className={styles.tabsBtn}>Order History</button>
-        </nav>
-
-        <table className={styles.table}>
-          <thead>
-            <tr className={styles.tableTop}>
-              <th>Order ID</th>
-              <th>Date</th>
-              <th>Total</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ID - 3933</td>
-              <td>29 May, 2025</td>
-              <td>$135.00 (5 Products)</td>
-              <td>Processing</td>
-              <td>
-                <button>View Details</button>
-              </td>
-            </tr>
-            <tr>
-              <td>ID - 3933</td>
-              <td>29 May, 2025</td>
-              <td>$135.00 (5 Products)</td>
-              <td>Processing</td>
-              <td>
-                <button>View Details</button>
-              </td>
-            </tr>
-            <tr>
-              <td>ID - 3933</td>
-              <td>29 May, 2025</td>
-              <td>$135.00 (5 Products)</td>
-              <td>Cancelled</td>
-              <td>
-                <button>View Details</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div className={styles.pagination}>
-          <button aria-label="Previous Page" disabled>
-            {'<'}
-          </button>
-          <span className={styles.current}>1</span>
-          <button aria-label="Next Page">{'>'}</button>
-        </div>
+        <Tabs activeTab={activeTab} onTabChange={setActiveTab} />
+        <OrdersTableContent orders={orders} />
+        <Pagination
+          currentPage={currentPage}
+          onPrev={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+          onNext={() => setCurrentPage((p) => p + 1)}
+        />
       </div>
     </section>
   );

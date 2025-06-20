@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styles from './Sidebar.module.css';
 
 const links = [
@@ -7,9 +6,7 @@ const links = [
   { id: 'logout', label: 'Log out' },
 ];
 
-export default function Sidebar() {
-  const [active, setActive] = useState('personal');
-
+export default function Sidebar({ active, onChange }) {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.inner}>
@@ -17,19 +14,16 @@ export default function Sidebar() {
           <a
             key={link.id}
             href="#"
-            onClick={() => setActive(link.id)}
+            onClick={(e) => {
+              e.preventDefault();
+              onChange(link.id);
+            }}
             className={`${styles.link} ${
               active === link.id ? styles.active : ''
             }`}
           >
             <span className={styles.dot}>
-              <svg
-                width="20"
-                height="21"
-                viewBox="0 0 20 21"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="20" height="21" viewBox="0 0 20 21" fill="none">
                 <circle
                   cx="10"
                   cy="10.5"

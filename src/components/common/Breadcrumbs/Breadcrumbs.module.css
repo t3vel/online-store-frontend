@@ -1,13 +1,12 @@
 .breadcrumbs {
   margin-bottom: 20px;
-  font-weight: 400;
   font-size: 20px;
   letter-spacing: -0.02em;
   color: #545454;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
 }
 
 .spanWrapper {

@@ -1,0 +1,21 @@
+.tabs {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabsBtn {
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: 1px solid #bfbfbf;
+  width: 180px;
+  min-height: 36px;
+}
+
+.active {
+  background: #dcdcdc;
+  border: none;
+}
