@@ -32,7 +32,7 @@ const Header = () => {
             </Link>
 
             <h1 className={`${styles.brandName} ${styles.visuallyHidden}`}>
-              EcoHealth
+              RightBite
             </h1>
           </div>
 

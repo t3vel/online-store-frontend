@@ -4,8 +4,7 @@ import logo from '@assets/images/logo.svg';
 import instagramIcon from '@assets/social-icons/instagram.png';
 import facebookIcon from '@assets/social-icons/facebook.png';
 import twitterIcon from '@assets/social-icons/twitter.png';
-import applePayIcon from '@assets/social-icons/applepay.png';
-import payPalIcon from '@assets/social-icons/paypal.png';
+import visaIcon from '@assets/social-icons/visa.png';
 import masterCardIcon from '@assets/social-icons/mastercard.png';
 
 export default function Footer() {
@@ -105,13 +104,10 @@ export default function Footer() {
 
           <div className={styles.payment}>
             <a href="#">
-              <img src={payPalIcon} alt="PayPal" />
-            </a>
-            <a href="#">
               <img src={masterCardIcon} alt="MasterCard" />
             </a>
             <a href="#">
-              <img src={applePayIcon} alt="Apple Pay" />
+              <img src={visaIcon} alt="Visa" />
             </a>
           </div>
         </div>
