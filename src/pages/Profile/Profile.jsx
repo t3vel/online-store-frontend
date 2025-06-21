@@ -7,6 +7,7 @@ import Sidebar from '@components/common/Sidebar/Sidebar';
 import PersonalInfo from '@components/common/PersonalInfo/PersonalInfo';
 import ShippingAdress from '@components/common/ShippingAdress/ShippingAdress';
 import MyOrders from '@components/profile/OrdersTable/OrdersTable';
+import Logout from '@components/profile/Logout/Logout';
 
 export default function Profile() {
   const [activeTab, setActiveTab] = useState('personal');
@@ -42,7 +43,7 @@ export default function Profile() {
             )}
 
             {activeTab === 'orders' && <MyOrders />}
-            {activeTab === 'logout' && <div>Logging out...</div>}
+            {activeTab === 'logout' && <Logout />}
           </main>
         </div>
       </div>

@@ -1,0 +1,61 @@
+.wrapper {
+  position: relative;
+  background-color: #f4f4f4;
+  margin-top: 32px;
+  border-radius: 32px;
+  min-width: 760px;
+  height: 505px;
+  color: #333;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  padding: 8px;
+  background-color: #e8e8e8;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.message {
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 88px;
+}
+
+.actions {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+
+.cancelButton {
+  font-size: 20px;
+  padding: 13px 100px;
+  border-radius: 32px;
+  background: #111;
+  color: #fff;
+}
+
+.confirmButton {
+  font-size: 20px;
+  padding: 13px 96px;
+  border: 1px solid #000;
+  border-radius: 32px;
+}
