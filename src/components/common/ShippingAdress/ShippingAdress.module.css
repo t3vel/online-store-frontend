@@ -31,9 +31,9 @@
 }
 
 .label {
-  font-weight: 400;
   letter-spacing: -0.02em;
   color: #666;
+  margin-bottom: 10px;
 }
 
 label span {

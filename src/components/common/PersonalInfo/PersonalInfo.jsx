@@ -32,7 +32,7 @@ export default function PersonalInfo() {
       <form className={styles.form} autoComplete="off">
         <div className={styles.twoColumns}>
           <fieldset className={styles.fieldGroup}>
-            <label htmlFor="firstName">
+            <label htmlFor="firstName" className={styles.label}>
               First name <span className={styles.required}>*</span>
             </label>
             <input
@@ -50,7 +50,7 @@ export default function PersonalInfo() {
             />
           </fieldset>
           <fieldset className={styles.fieldGroup}>
-            <label htmlFor="lastName">
+            <label htmlFor="lastName" className={styles.label}>
               Last name <span className={styles.required}>*</span>
             </label>
             <input
@@ -68,7 +68,7 @@ export default function PersonalInfo() {
             />
           </fieldset>
           <fieldset className={styles.fieldGroup}>
-            <label htmlFor="email">
+            <label htmlFor="email" className={styles.label}>
               Email address <span className={styles.required}>*</span>
             </label>
             <input
@@ -83,7 +83,7 @@ export default function PersonalInfo() {
             />
           </fieldset>
           <fieldset className={styles.fieldGroup}>
-            <label htmlFor="phone">
+            <label htmlFor="phone" className={styles.label}>
               Phone Number <span className={styles.required}>*</span>
             </label>
             <div className={`${styles.phoneInputWrapper} ${styles.phoneInput}`}>

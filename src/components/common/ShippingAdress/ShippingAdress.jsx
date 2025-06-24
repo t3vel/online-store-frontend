@@ -34,7 +34,7 @@ export default function ShippingAdress() {
       <div className={styles.content}>
         <form className={styles.form} autoComplete="off">
           <fieldset className={styles.fieldGroup}>
-            <label htmlFor="country">
+            <label htmlFor="country" className={styles.label}>
               Country <span>*</span>
             </label>
             <input
@@ -53,7 +53,7 @@ export default function ShippingAdress() {
           </fieldset>
 
           <fieldset className={styles.fieldGroup}>
-            <label htmlFor="city">
+            <label htmlFor="city" className={styles.label}>
               City <span>*</span>
             </label>
             <input
@@ -69,7 +69,7 @@ export default function ShippingAdress() {
           </fieldset>
 
           <fieldset className={styles.fieldGroup}>
-            <label htmlFor="street">
+            <label htmlFor="street" className={styles.label}>
               Street Name <span>*</span>
             </label>
             <input
@@ -88,7 +88,7 @@ export default function ShippingAdress() {
           </fieldset>
 
           <fieldset className={styles.fieldGroup}>
-            <label htmlFor="houseNumber">
+            <label htmlFor="houseNumber" className={styles.label}>
               House Number <span>*</span>
             </label>
             <input
@@ -104,7 +104,7 @@ export default function ShippingAdress() {
           </fieldset>
 
           <fieldset className={styles.fieldGroup}>
-            <label htmlFor="apartment">
+            <label htmlFor="apartment" className={styles.label}>
               Apartment/Suite{' '}
               <span className={styles.optional}>(Optional)</span>
             </label>
@@ -120,7 +120,7 @@ export default function ShippingAdress() {
           </fieldset>
 
           <fieldset className={styles.fieldGroup}>
-            <label htmlFor="postalCode">
+            <label htmlFor="postalCode" className={styles.label}>
               Postal Code <span>*</span>
             </label>
             <input

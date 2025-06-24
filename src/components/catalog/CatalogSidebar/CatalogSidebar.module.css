@@ -12,7 +12,7 @@
 }
 
 .categoryInput {
-  width: 24px;
+  min-width: 24px;
   height: 24px;
   background: #d9d9d9;
 }
@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+
   margin-bottom: 52px;
   margin-top: 44px;
 }
@@ -28,11 +29,15 @@
 .checkboxLabel {
   display: flex;
   align-items: center;
-  gap: 20px;
-
-  font-weight: 400;
+  gap: 16px;
   font-size: 20px;
   color: #4b4b4b;
+}
+
+.categoryText {
+  color: #4b4b4b;
+  display: block;
+  max-width: 130px;
 }
 
 .sectionTitle {
@@ -41,4 +46,11 @@
   margin: 10px 0;
   color: #666;
   cursor: pointer;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 224px;
 }

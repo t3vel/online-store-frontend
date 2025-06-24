@@ -13,6 +13,7 @@
 
 .input {
   font-family: var(--font-family);
+  font-size: 14px;
 
   border: 1px solid #c9cfd2;
   border-radius: 8px;
@@ -24,7 +25,6 @@
 
 .input::placeholder {
   font-weight: 400;
-  font-size: 14px;
   line-height: 171%;
   color: #77878f;
 }
