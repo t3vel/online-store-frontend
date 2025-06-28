@@ -24,7 +24,6 @@ export default function CreateAcc() {
 
   return (
     <>
-      
       <div className={styles.container}>
         <div className={styles.left}></div>
         <div className={styles.right}>
@@ -135,7 +134,6 @@ export default function CreateAcc() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
