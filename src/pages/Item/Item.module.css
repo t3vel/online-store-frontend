@@ -152,3 +152,10 @@
     padding: 0 0.5rem;
   }
 }
+
+.otherProductCard {
+  padding: 32px 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

@@ -1,20 +1,14 @@
-import styles from './Catalog.module.css';
+import styles from "./Catalog.module.css";
 
-import NewsLetter from '@components/home/NewsLetter/NewsLetter';
-import Banner from '@components/home/Banner/Banner';
+import Banner from "@components/home/Banner/Banner";
+import NewsLetter from "@components/home/NewsLetter/NewsLetter";
 
-import CatalogFilters from '@components/catalog/CatalogFilters/CatalogFilters';
-import CatalogSidebar from '@components/catalog/CatalogSidebar/CatalogSidebar';
-import ActiveFilters from '@components/catalog/ActiveFilters/ActiveFilters';
-import CatalogCard from '@components/catalog/CatalogCard/CatalogCard';
-import CatalogCategories from '@components/catalog/CatalogCategories/CatalogCategories';
-
-const mock = {
-  name: 'Tomato',
-  price: 6.22,
-  kcal: 110,
-  description: 'Ecologically clean, grown on our farm with love',
-};
+import ActiveFilters from "@components/catalog/ActiveFilters/ActiveFilters";
+import CatalogCard from "@components/catalog/CatalogCard/CatalogCard";
+import CatalogCategories from "@components/catalog/CatalogCategories/CatalogCategories";
+import CatalogFilters from "@components/catalog/CatalogFilters/CatalogFilters";
+import CatalogSidebar from "@components/catalog/CatalogSidebar/CatalogSidebar";
+import { mockCard } from "@mocks/mockCard";
 
 export default function Catalog() {
   return (
@@ -45,17 +39,17 @@ export default function Catalog() {
           <div className={styles.mainContent}>
             <CatalogFilters />
             <ActiveFilters
-              filters={['Gluten free', 'Min $5 - Max 30']}
-              onRemoveFilter={(f) => console.log('remove', f)}
+              filters={["Gluten free", "Min $5 - Max 30"]}
+              onRemoveFilter={(f) => console.log("remove", f)}
               resultsCount={576}
             />
             <div className={styles.innerCards}>
-              <CatalogCard {...mock} />
-              <CatalogCard {...mock} />
-              <CatalogCard {...mock} />
-              <CatalogCard {...mock} />
-              <CatalogCard {...mock} />
-              <CatalogCard {...mock} />
+              <CatalogCard {...mockCard} />
+              <CatalogCard {...mockCard} />
+              <CatalogCard {...mockCard} />
+              <CatalogCard {...mockCard} />
+              <CatalogCard {...mockCard} />
+              <CatalogCard {...mockCard} />
             </div>
           </div>
         </div>

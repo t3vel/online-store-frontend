@@ -1,24 +1,26 @@
-import { useParams } from "react-router-dom";
+import CatalogCard from "@components/catalog/CatalogCard/CatalogCard";
+import { mockCard } from "@mocks/mockCard";
+import { mockItem } from "@mocks/mockItem";
+import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import styles from "./Item.module.css";
-import { Link } from 'react-router-dom';
 
 export default function Item() {
   const { id } = useParams();
 
-  const mockData = {
-    id: "1",
-    image: "string",
-    name: "Cherry Tomato",
-    weight: "250g",
-    carbs: "5g",
-    proteins: "1g",
-    fats: "0g",
-    code: "CT-250",
-    brand: "LaSelva",
-    category: "Vegetable",
-    oldPrice: "$200",
-    newPrice: "$150",
-    discount: "25%",
+  const [productCount, setProductCount] = useState(1);
+
+  const decrementProductCount = () => {
+    setProductCount((prevCount) => {
+      if (prevCount === 1) {
+        return 1;
+      }
+      return prevCount - 1;
+    });
+  };
+
+  const incrementProductCount = () => {
+    setProductCount((prevCount) => prevCount + 1);
   };
 
   return (
@@ -36,11 +38,11 @@ export default function Item() {
               <div>
                 <span>Brand: </span>
                 <span className={styles.styledProductTypeText}>
-                  {mockData.brand}
+                  {mockItem.brand}
                 </span>
                 <span>Category: </span>
                 <span className={styles.styledProductTypeText}>
-                  {mockData.category}
+                  {mockItem.category}
                 </span>
               </div>
             </div>
@@ -51,16 +53,26 @@ export default function Item() {
             <div className={styles.productNumber}>8000500023976</div>
           </div>
           <div>
-            <div className={styles.discountBadge}>{mockData.discount} Off</div>
+            <div className={styles.discountBadge}>{mockItem.discount} Off</div>
             <div className={styles.prices}>
               <span className={styles.oldPrice}>$19.00</span>
               <span className={styles.actualPrice}>$14.25</span>
             </div>
             <div className={styles.actionButtons}>
               <div className={styles.productAmount}>
-                <div className={styles.changeProductAmountIcon}>-</div>
-                <div>5</div>
-                <div className={styles.changeProductAmountIcon}>+</div>
+                <div
+                  className={styles.changeProductAmountIcon}
+                  onClick={decrementProductCount}
+                >
+                  -
+                </div>
+                <div>{productCount}</div>
+                <div
+                  className={styles.changeProductAmountIcon}
+                  onClick={incrementProductCount}
+                >
+                  +
+                </div>
               </div>
               <button className={styles.addToCartButton}>
                 <div>Add to Cart</div>
@@ -73,12 +85,20 @@ export default function Item() {
 
       <div className={styles.itemsShowcaseContainer}>
         <div>Similar Products</div>
-        <div>images</div>
+        <div className={styles.otherProductCard}>
+          {Array.from({ length: 4 }).map((_, index) => (
+            <CatalogCard key={index} {...mockCard} />
+          ))}
+        </div>
       </div>
 
       <div className={styles.itemsShowcaseContainer}>
-        <div>Popular Products</div>
-        <div>images</div>
+        <h2>Popular Products</h2>
+        <div className={styles.otherProductCard}>
+          {Array.from({ length: 4 }).map((_, index) => (
+            <CatalogCard key={index} {...mockCard} />
+          ))}
+        </div>
       </div>
     </div>
   );
