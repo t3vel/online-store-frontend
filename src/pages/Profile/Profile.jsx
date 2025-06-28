@@ -14,7 +14,6 @@ export default function Profile() {
 
   return (
     <>
-      <Header />
       <div className={styles.wrapper}>
         <div className={styles.top}>
           <Breadcrumbs />
@@ -47,7 +46,6 @@ export default function Profile() {
           </main>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

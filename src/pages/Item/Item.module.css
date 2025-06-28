@@ -1,0 +1,32 @@
+.container {
+  padding: 1rem;
+}
+
+.productInfoContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.productImage {
+  grid-area: 1 / 1 / 6 / 2;
+}
+
+.shortDescription {
+  grid-area: 1 / 2 / 5 / 3;
+}
+
+.actionContainer {
+  grid-area: 1 / 3 / 7 / 4;
+}
+
+.descriptionButton {
+  text-align: start;
+  grid-area: 7 / 1 / 8 / 4;
+}
+
+.itemsShowcaseContainer {
+  padding: 1rem 0;
+}

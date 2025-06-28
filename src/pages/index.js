@@ -1,0 +1,8 @@
+export { default as Item } from './Item/Item';
+export { default as Home } from './Home/Home';
+export { default as Signup } from './Signup/Signup';
+export { default as Login } from './Login/Login';
+export { default as CreateAcc } from './CreateAcc/CreateAcc';
+export { default as RegistrationSuccess } from './RegistrationSuccess/RegistrationSuccess';
+export { default as Profile } from './Profile/Profile';
+export { default as Catalog } from './Catalog/Catalog';

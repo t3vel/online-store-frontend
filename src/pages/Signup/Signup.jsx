@@ -6,7 +6,6 @@ import styles from './Signup.module.css';
 export default function Signup() {
   return (
     <>
-      <Header />
       <div className={styles.wrapper}>
         <div className={styles.left}></div>
         <div className={styles.right}>
@@ -75,7 +74,6 @@ export default function Signup() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

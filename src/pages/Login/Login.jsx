@@ -16,7 +16,6 @@ export default function Login() {
 
   return (
     <>
-      <Header />
       <div className={styles.container}>
         <div className={styles.left}></div>
         <div className={styles.right}>

@@ -7,7 +7,6 @@ import styles from './RegistrationSuccess.module.css';
 export default function RegistrationSuccess() {
   return (
     <div>
-      <Header />
       <div className={styles.wrapper}>
         <div className={styles.left}></div>
         <div className={styles.right}>
@@ -37,7 +36,6 @@ export default function RegistrationSuccess() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

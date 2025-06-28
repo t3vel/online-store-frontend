@@ -21,7 +21,6 @@ const mock = {
 export default function Catalog() {
   return (
     <>
-      <Header />
       <Banner />
       <CatalogCategories />
 
@@ -64,7 +63,6 @@ export default function Catalog() {
         </div>
       </div>
       <NewsLetter />
-      <Footer />
     </>
   );
 }
