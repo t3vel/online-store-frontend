@@ -4,11 +4,33 @@ import { mockItem } from "@mocks/mockItem";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import styles from "./Item.module.css";
+import DescriptionTab from "@components/item/DescriptionTab/DescriptionTab";
+import AdditionalInfoTab from "@components/item/AdditionalInfoTab/AdditionalInfoTab";
+import FeedbackTab from "@components/item/FeedbackTab/FeedbackTab";
 
 export default function Item() {
   const { id } = useParams();
 
+  const tabs = [
+    {
+      id: "descriptions",
+      label: "Descriptions",
+      content: <DescriptionTab />,
+    },
+    {
+      id: "additionalInformation",
+      label: "Profile",
+      content: <AdditionalInfoTab />,
+    },
+    {
+      id: "customerFeedback",
+      label: "Settings",
+      content: <FeedbackTab />,
+    },
+  ];
+
   const [productCount, setProductCount] = useState(1);
+  const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   const decrementProductCount = () => {
     setProductCount((prevCount) => {
@@ -83,8 +105,63 @@ export default function Item() {
         </div>
       </div>
 
+      <div>
+        <div className={styles.descriptionNavigationTabs}>
+          {tabs.map((tab) => (
+            <div
+              key={tab.id}
+              className={[
+                styles.navigationTab,
+                activeTab === tab.id ? styles.activeTab : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              {tab.label}
+            </div>
+          ))}
+        </div>
+        <div className={styles.descriptionDetailsContainer}>
+          {tabs
+            .filter((tab) => tab.id === activeTab)
+            .map((tab) => (
+              <div key={tab.id} className={styles.descriptionDetails}>
+                {tab.content}
+              </div>
+            ))}
+          <div>
+            <div className={styles.descriptionImage}></div>
+            <div className={styles.badgesContainer}>
+              <div className={styles.badge}>
+                <div className={styles.badgeImage}></div>
+                <div>
+                  <div>Discount 20%</div>
+                  <div className={styles.grayText}>
+                    Save your 20% money with us
+                  </div>
+                </div>
+              </div>
+              <div className={styles.badge}>
+                <div className={styles.badgeImage}></div>
+                <div>
+                  <div>Organic 100%</div>
+                  <div className={styles.grayText}>100% Organic Vegetables</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className={styles.itemsShowcaseContainer}>
-        <div>Similar Products</div>
+        <div className={styles.similarProductListHeader}>
+          <h3 className={styles.productListTitle}>Similar Products</h3>
+          <button className={styles.showMoreButton}>
+            Show More
+            <span className="material-symbols-outlined">east</span>
+          </button>
+        </div>
         <div className={styles.otherProductCard}>
           {Array.from({ length: 4 }).map((_, index) => (
             <CatalogCard key={index} {...mockCard} />
@@ -93,7 +170,7 @@ export default function Item() {
       </div>
 
       <div className={styles.itemsShowcaseContainer}>
-        <h2>Popular Products</h2>
+        <h3 className={styles.productListTitle}>Popular Products</h3>
         <div className={styles.otherProductCard}>
           {Array.from({ length: 4 }).map((_, index) => (
             <CatalogCard key={index} {...mockCard} />
