@@ -3,7 +3,8 @@ body {
   overflow-x: hidden;
 }
 
-a:visited {
+a:visited,
+a {
   color: inherit;
   text-decoration: none;
 }
