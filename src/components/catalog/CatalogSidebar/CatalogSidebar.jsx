@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './CatalogSidebar.module.css';
 import PriceRange from '../PriceRange/PriceRange';
+import PopularBrands from '@components/catalog/PopularBrands/PopularBrands';
 
 const categories = [
   'Fruits & Vegetables',
@@ -63,6 +64,7 @@ export default function CatalogSidebar() {
         ))}
       </div>
       <PriceRange />
+      <PopularBrands />
     </aside>
   );
 }
