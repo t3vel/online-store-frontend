@@ -1,5 +1,6 @@
 import styles from './StartWith.module.css';
 import rectangle from './img/rectangle.png';
+import { Link } from 'react-router-dom';
 
 import Button from '@components/common/button/Button';
 
@@ -24,7 +25,9 @@ export default function StartWith() {
               </p>
             </div>
             <div className={styles.btnConteiner}>
-              <Button className={styles.checkbtn}>Check Now</Button>
+              <Button className={styles.checkbtn}>
+                <Link to='/calculator'>Check Now</Link>
+              </Button>
             </div>
           </div>
         </div>
