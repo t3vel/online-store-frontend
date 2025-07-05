@@ -9,8 +9,10 @@ import {
   Profile,
   Catalog,
   Item,
+  CalculatorBMI
 } from "@pages";
 import ScrollToTop from "@components/utils/ScrollToTop";
+
 
 function App() {
   return (
@@ -24,8 +26,10 @@ function App() {
           <Route path="/createacc" element={<CreateAcc />} />
           <Route path="/successreg" element={<RegistrationSuccess />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/catalog/:id" element={<Item />} />
+          <Route path="/catalog" element={<Catalog />} >
+          <Route path=":id" element={<Item />} />
+          </Route>
+          <Route path="/calculator" element={<CalculatorBMI />} />
         </Route>
       </Routes>
     </Router>
