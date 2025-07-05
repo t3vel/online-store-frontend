@@ -16,9 +16,9 @@ const Header = () => {
             <Link to="/catalog" className={styles.link}>
               Catalog
             </Link>
-            <a href="#" className={styles.link}>
+            <Link to="/calculator" className={styles.link}>
               BMI Calculator
-            </a>
+            </Link>
             <a href="#" className={styles.link}>
               Our Mission
             </a>
