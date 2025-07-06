@@ -1,0 +1,95 @@
+.container {
+  width: 40vw;
+  border-radius: 12px;
+  background-color: #ededed;
+}
+
+.header {
+  font-size: 32px;
+  padding: 20px;
+  background-color: #d5d5d5;
+  text-align: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 3rem 4rem;
+}
+
+.genderButtonsContainer {
+  display: flex;
+  gap: 23px;
+}
+
+.maleButton {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #464646;
+  color: #ffff;
+  user-select: none;
+}
+
+.femaleButton {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #ffff;
+  user-select: none;
+}
+
+.inputsContainer {
+  margin: 1rem 0 2rem;
+
+  > div {
+    margin: 20px 0;
+  }
+
+  input {
+    background-color: transparent;
+    border: 1px #BABABA solid;
+    border-radius: 12px;
+    padding: 10px;
+    margin-right: 20px;
+  }
+}
+
+.inputLabel {
+  margin-bottom: 12px;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.resetButton {
+  width: 200px;
+  height: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #1f1f1f;
+  border: 1px #3b3b3b solid;
+  border-radius: 43px;
+}
+
+.calculateButton {
+  width: 200px;
+  height: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #ffffff;
+  background-color: #0d0c0d;
+  border-radius: 43px;
+}

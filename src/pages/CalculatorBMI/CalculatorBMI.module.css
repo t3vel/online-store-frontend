@@ -1,3 +1,40 @@
 .container {
-  color: red;
+  color: #484848;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 60px;
+}
+
+.infoContainer {
+  display: flex;
+  gap: 24px;
+}
+
+.header {
+  font-size: 36px;
+}
+
+.infoText {
+  font-size: 20px;
+}
+
+.grayBox {
+  height: 100px;
+  width: 100%;
+  background-color: #5a5a5a;
+}
+
+.calculatorContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.calculatorCardsContainer {
+  display: flex;
+  justify-content: space-around;
 }
