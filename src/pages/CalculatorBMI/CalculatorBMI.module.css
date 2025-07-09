@@ -38,3 +38,52 @@
   display: flex;
   justify-content: space-around;
 }
+
+.resultExplanations {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #d9d9d9;
+  padding: 3rem;
+  margin-bottom: 60px;
+  gap: 24px;
+}
+
+.whiteBlock {
+  min-width: 600px;
+  height: 350px;
+  background-color: #ffffff;
+}
+
+.itemsShowcaseContainer {
+  padding: 1rem 0;
+}
+
+.productListTitle {
+  font-size: 2rem;
+}
+
+.similarProductListHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.showMoreButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 3rem;
+  border: 1px solid #bdbdbd;
+  border-radius: 30px;
+}
+
+.itemsShowcaseContainer {
+  padding: 0 60px 60px;
+}
+
+.otherProductCard {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
