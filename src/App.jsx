@@ -9,8 +9,10 @@ import {
   Profile,
   Catalog,
   Item,
+  CalculatorBMI
 } from "@pages";
 import ScrollToTop from "@components/utils/ScrollToTop";
+
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/catalog/:id" element={<Item />} />
+          <Route path="/calculator" element={<CalculatorBMI />} />
         </Route>
       </Routes>
     </Router>
