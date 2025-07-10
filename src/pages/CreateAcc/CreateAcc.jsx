@@ -1,12 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Header from '@/components/layout/Header/Header';
-import Footer from '@/components/layout/Footer/Footer';
-
 import styles from './CreateAcc.module.css';
-import staticEyeOffIcon from './img/icon.png';
-import staticEyeIcon from './img/open-eye-icon.png';
+import staticEyeOffIcon from '@assets/icons/hide-eye-icon.png';
+import staticEyeIcon from '@assets/icons/open-eye-icon.png';
 
 export default function CreateAcc() {
   const [passwordShown, setPasswordShown] = useState(false);
