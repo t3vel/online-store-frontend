@@ -1,5 +1,5 @@
-import frame from './img/frame.png';
-import more from './img/more.png';
+import frame from '@assets/images/frame.png';
+import more from '@assets/icons/more.png';
 import styles from './PostArticle.module.css';
 
 export default function PostArticle() {

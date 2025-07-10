@@ -1,6 +1,6 @@
 import styles from './StartWith.module.css';
-import rectangle from './img/rectangle.png';
 import { Link } from 'react-router-dom';
+import rectangle from '@assets/images/rectangle.png';
 
 import Button from '@components/common/button/Button';
 
