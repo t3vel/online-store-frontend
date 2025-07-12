@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import {
   Home,
@@ -9,8 +9,9 @@ import {
   Profile,
   Catalog,
   Item,
-} from "@pages";
-import ScrollToTop from "@components/utils/ScrollToTop";
+  Cart,
+} from '@pages';
+import ScrollToTop from '@components/utils/ScrollToTop';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/catalog/:id" element={<Item />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
     </Router>

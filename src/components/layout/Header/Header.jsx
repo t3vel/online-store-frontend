@@ -52,9 +52,9 @@ const Header = () => {
               <Link to="/signup" className={styles.iconButton}>
                 <img src={userIcon} alt="User profile" />
               </Link>
-              <button className={styles.iconButton}>
+              <Link to="/cart" className={styles.iconButton}>
                 <img src={cartIcon} alt="Shopping cart" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>

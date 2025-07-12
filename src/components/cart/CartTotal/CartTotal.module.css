@@ -1,0 +1,86 @@
+.cartTotalWrapper {
+  padding: 0 28px;
+}
+
+.cartTotalContainer {
+  align-self: flex-start;
+  background: #f2f1f1;
+  border-radius: 8px;
+  max-width: 424px;
+}
+
+.cartTotalTitle {
+  font-weight: 500;
+  font-size: 20px;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  background: #dedede;
+  padding: 19px 40px;
+  border-radius: 8px 8px 0 0;
+}
+
+.cartTotalDetails {
+  padding: 36px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  color: #4d4d4d;
+}
+
+.totalRow {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.line {
+  background: #d9d9d9;
+  height: 1px;
+  margin: 52px 0 60px;
+}
+
+.totalAmount {
+  font-weight: 600;
+}
+
+.couponSection {
+  display: flex;
+  min-height: 42px;
+}
+
+.couponInput {
+  flex: 1;
+  padding: 10px 0 10px 24px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  color: #808080;
+}
+
+.couponButton {
+  padding: 10px 20px;
+  background: #9b9b9b;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: -10px;
+}
+
+.checkoutButton {
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  padding: 17px 102px;
+  background: #0d0c0d;
+  width: 100%;
+  border-radius: 43px;
+  margin-bottom: 45px;
+}
