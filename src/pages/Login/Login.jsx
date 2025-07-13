@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Header from '@/components/layout/Header/Header';
-import Footer from '@/components/layout/Footer/Footer';
-
 import styles from './Login.module.css';
-import staticEyeOffIcon from './img/icon.png';
+import staticEyeOffIcon from '@assets/icons/hide-eye-icon.png';
 
 export default function Login() {
   const [passwordShown, setPasswordShown] = useState(false);
