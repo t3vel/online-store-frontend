@@ -6,4 +6,5 @@ export { default as CreateAcc } from './CreateAcc/CreateAcc';
 export { default as RegistrationSuccess } from './RegistrationSuccess/RegistrationSuccess';
 export { default as Profile } from './Profile/Profile';
 export { default as Catalog } from './Catalog/Catalog';
+export { default as Cart } from './Cart/Cart';
 export { default as CalculatorBMI } from './CalculatorBMI/CalculatorBMI';

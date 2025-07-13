@@ -14,7 +14,7 @@ const BRANDS = [
   'Bjorg',
   'Probios',
   'Dennree',
-  'TerraSanа',
+  'TerraSana',
 ];
 
 const PopularBrands = () => {
