@@ -22,9 +22,9 @@ const Header = () => {
             <a href="#" className={styles.link}>
               Our Mission
             </a>
-            <a href="#" className={styles.link}>
+            <Link to="/news" className={styles.link}>
               Heating News
-            </a>
+            </Link>
           </nav>
           <div className={styles.brand}>
             <Link to="/">
