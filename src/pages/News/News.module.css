@@ -1,0 +1,19 @@
+.wrapper {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--third-family);
+  font-weight: 300;
+  font-size: 50px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}

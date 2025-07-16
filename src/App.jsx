@@ -10,7 +10,8 @@ import {
   Catalog,
   Item,
   Cart,
-  CalculatorBMI
+  CalculatorBMI,
+  News,
 } from '@pages';
 import ScrollToTop from '@components/utils/ScrollToTop';
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/catalog/:id" element={<Item />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/calculator" element={<CalculatorBMI />} />
+          <Route path="/news" element={<News />} />
         </Route>
       </Routes>
     </Router>
