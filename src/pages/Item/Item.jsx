@@ -1,13 +1,46 @@
 import CatalogCard from "@components/catalog/CatalogCard/CatalogCard";
-import { mockCard } from "@mocks/mockCard";
 import { mockItem } from "@mocks/mockItem";
 import tomatoes_5 from "@assets/images/tomatoes_5.png";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Item.module.css";
+import cabbage from "@assets/images/cabbage.png";
+import carrot from "@assets/images/carrot.png";
+import cauliflower from "@assets/images/cauliflower.png";
+import pepper from "@assets/images/pepper.png";
+import tomatoes from "@assets/images/tomatoes.png";
+import tomatoes2 from "@assets/images/tomatoes_2.png";
+import tomatoes3 from "@assets/images/tomatoes_3.png";
+import tomatoes4 from "@assets/images/tomatoes_4.png";
+import tomatoes5 from "@assets/images/tomatoes_5.png";
+
+// Helper to generate a distinct mock object for each card
+const generateMockCard = (index) => {
+  const images = [
+    cabbage,
+    carrot,
+    cauliflower,
+    pepper,
+    tomatoes,
+    tomatoes2,
+    tomatoes3,
+    tomatoes4,
+    tomatoes5,
+  ];
+  const names = [
+    "Tomato", "Carrot", "Cauliflower", "Pepper", "Cabbage", "Tomatoes", "Veggie Mix", "Fresh Veg", "Salad Star"
+  ];
+  return {
+    name: names[index % names.length],
+    price: (6.22 + index).toFixed(2),
+    kcal: 110 + index * 10,
+    description: `Ecologically clean, grown on our farm with love. Card #${index + 1}`,
+    imageUrl: images[index % images.length],
+  };
+}
 
 export default function Item() {
-  const { id } = useParams();
+  // const { id } = useParams();
 
   const [productCount, setProductCount] = useState(1);
 
@@ -133,7 +166,7 @@ export default function Item() {
           </div>
           <div className={styles.otherProductCard}>
             {Array.from({ length: 4 }).map((_, index) => (
-              <CatalogCard key={index} {...mockCard} />
+              <CatalogCard key={index} {...generateMockCard(index)} />
             ))}
           </div>
         </div>
@@ -142,7 +175,7 @@ export default function Item() {
           <h3 className={styles.productListTitle}>You might also like</h3>
           <div className={styles.otherProductCard}>
             {Array.from({ length: 4 }).map((_, index) => (
-              <CatalogCard key={index} {...mockCard} />
+              <CatalogCard key={index} {...generateMockCard(index + 4)} />
             ))}
           </div>
         </div>
