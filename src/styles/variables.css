@@ -1,5 +1,11 @@
 :root {
-  --font-primary: 'Quicksand', sans-serif;
-  --second-family: 'Poppins', sans-serif;
-  --third-family: 'Urbanist', sans-serif;
+  /* Typography */
+  --font-primary: "Quicksand", sans-serif;
+  --second-family: "Poppins", sans-serif;
+  --third-family: "Urbanist", sans-serif;
+
+  /* Colors */
+  --primary-color: #234d2e;
+  --primary-color-dark: #1c3e24;
+  --secondary-color: #d2e7d3;
 }
