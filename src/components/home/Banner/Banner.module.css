@@ -1,13 +1,14 @@
 .banner {
-  background-image: url('/path-to-your-image.jpg'); /* сюди фон */
+  background-image: url('src/assets/images/banner_background.jpg'); /* сюди фон */
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
   background-repeat: no-repeat;
   min-height: 510px;
   display: flex;
   align-items: center;
   position: relative;
   color: white;
+  filter: brightness(1.2);
 }
 
 .banner::after {
@@ -76,6 +77,11 @@
   top: 0;
   left: 0;
   right: 0;
+
+  button {
+    color: #ffff;
+    background-color: #7CB184;
+  }
 }
 
 .slideActive {

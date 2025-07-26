@@ -1,5 +1,5 @@
 .block {
-  background-color: #a8a8a8;
+  background-color: #7CB184;
   padding: 60px 0;
 }
 
@@ -40,13 +40,17 @@
   margin-top: 90px;
   padding: 12px 74px;
   font-size: 16px;
-  background-color: #ffffff;
+  background-color: var(--primary-color);
   border: none;
   width: 312px;
   height: 48px;
   border-radius: 32px;
   font-weight: 400;
   /* margin-top: 56px; */
+
+  a {
+    color: #ffff;
+  }
 }
 
 .container {
@@ -63,6 +67,18 @@
 .left {
   width: 648px;
   height: 400px;
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  img {
+    height: 100%;
+    width: 100%;
+    background-position: cover;
+  }
 }
 
 .btnConteiner {

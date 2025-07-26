@@ -5,7 +5,7 @@
 }
 
 .header {
-  background-color: #e0e0e0;
+  background-color: var(--primary-color);
   padding: 20px 0;
   position: sticky;
   top: 0;
@@ -46,7 +46,7 @@
 .link {
   text-decoration: none;
   font-weight: 400;
-  color: #000;
+  color: #ffff;
   font-size: 16px;
   letter-spacing: -0.02em;
   text-transform: uppercase;
