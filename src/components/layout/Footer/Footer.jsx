@@ -1,11 +1,10 @@
-import styles from './Footer.module.css';
-
 import logo from '@assets/images/logo.svg';
-import instagramIcon from '@assets/social-icons/instagram.png';
 import facebookIcon from '@assets/social-icons/facebook.png';
+import instagramIcon from '@assets/social-icons/instagram.png';
+import masterCardIcon from '@assets/social-icons/mastercard.png';
 import twitterIcon from '@assets/social-icons/twitter.png';
 import visaIcon from '@assets/social-icons/visa.png';
-import masterCardIcon from '@assets/social-icons/mastercard.png';
+import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
@@ -14,23 +13,23 @@ export default function Footer() {
       <div className={styles.container}>
         <nav className={styles.navColumns}>
           <div className={styles.logoContainer}>
-            <a href="#">
+            <button type="button">
               <img src={logo} alt="Logotype RightBite" />
-            </a>
+            </button>
           </div>
           <div className={styles.navColumn}>
             <ul className={styles.navList}>
               <li>
-                <a href="#">Catalog</a>
+                <button type="button">Catalog</button>
               </li>
               <li>
-                <a href="#">BMI Calculator</a>
+                <button type="button">BMI Calculator</button>
               </li>
               <li>
-                <a href="#">Our Mission</a>
+                <button type="button">Our Mission</button>
               </li>
               <li>
-                <a href="#">Healthy News</a>
+                <button type="button">Healthy News</button>
               </li>
             </ul>
           </div>
@@ -38,48 +37,48 @@ export default function Footer() {
           <div className={styles.navColumn}>
             <ul className={styles.navList}>
               <li>
-                <a href="#">BASKET</a>
+                <button type="button">BASKET</button>
               </li>
               <li>
-                <a href="#">PROFILE</a>
+                <button type="button">PROFILE</button>
               </li>
               <li>
-                <a href="#">BLOG</a>
+                <button type="button">BLOG</button>
               </li>
               <li>
-                <a href="#">NEWS</a>
-              </li>
-            </ul>
-          </div>
-          <div className={styles.navColumn}>
-            <ul className={styles.navList}>
-              <li>
-                <a href="#">FRUITS</a>
-              </li>
-              <li>
-                <a href="#">VEGETABLES</a>
-              </li>
-              <li>
-                <a href="#">MEAT</a>
-              </li>
-              <li>
-                <a href="#">FISH </a>
+                <button type="button">NEWS</button>
               </li>
             </ul>
           </div>
           <div className={styles.navColumn}>
             <ul className={styles.navList}>
               <li>
-                <a href="#">GROCERIES </a>
+                <button type="button">FRUITS</button>
               </li>
               <li>
-                <a href="#">DESSERTS </a>
+                <button type="button">VEGETABLES</button>
               </li>
               <li>
-                <a href="#">DRINKS</a>
+                <button type="button">MEAT</button>
               </li>
               <li>
-                <a href="#">CRAFT CHEESE</a>
+                <button type="button">FISH </button>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.navColumn}>
+            <ul className={styles.navList}>
+              <li>
+                <button type="button">GROCERIES </button>
+              </li>
+              <li>
+                <button type="button">DESSERTS </button>
+              </li>
+              <li>
+                <button type="button">DRINKS</button>
+              </li>
+              <li>
+                <button type="button">CRAFT CHEESE</button>
               </li>
             </ul>
           </div>
@@ -87,15 +86,15 @@ export default function Footer() {
 
         <div className={styles.bottomSection}>
           <div className={styles.socials}>
-            <a href="#">
+            <button type="button">
               <img src={instagramIcon} alt="Instagram" />
-            </a>
-            <a href="#">
+            </button>
+            <button type="button">
               <img src={facebookIcon} alt="Facebook" />
-            </a>
-            <a href="#">
+            </button>
+            <button type="button">
               <img src={twitterIcon} alt="Twitter" />
-            </a>
+            </button>
           </div>
 
           <p className={styles.copyright}>

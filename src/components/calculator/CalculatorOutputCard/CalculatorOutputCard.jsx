@@ -1,5 +1,5 @@
-import styles from './CalculatorOutputCard.module.css';
 import scale from '@assets/images/scaleBMI.svg';
+import styles from './CalculatorOutputCard.module.css';
 
 export default function CalculatorOutputCard() {
   const resultNumber = 26.5;
@@ -31,5 +31,5 @@ export default function CalculatorOutputCard() {
       </main>
       <footer className={styles.footer}>Persons may consider seeking advice from their health care providers about their BMI. This calculator is not a substitute for professional medical advice.</footer>
     </div>
-  )
+  );
 }

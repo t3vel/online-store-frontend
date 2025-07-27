@@ -7,7 +7,7 @@ export default function News() {
       id: 1,
       title: 'Which oil is best for cooking, frying or salads?',
       description:
-        "Don't know which oil or fat to use in the kitchen? No wonder, the choice is really varied, and each type has its own characteristics. In this article we will advise you on how to use them and when to reach for canola oil, olive oil or coconut oil.",
+        'Don\'t know which oil or fat to use in the kitchen? No wonder, the choice is really varied, and each type has its own characteristics. In this article we will advise you on how to use them and when to reach for canola oil, olive oil or coconut oil.',
       date: 'Wednesday, 02.07.2025',
       readTime: '14 min',
       image: 'https://picsum.photos/448/288',

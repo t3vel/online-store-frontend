@@ -24,9 +24,9 @@ export default function Breadcrumbs() {
         <path
           d="M15.375 5.75L8.625 12.5L15.375 19.25"
           stroke="black"
-          stroke-width="1.5"
-          stroke-miterlimit="10"
-          stroke-linecap="square"
+          strokeWidth="1.5"
+          strokeMiterlimit="10"
+          strokeLinecap="square"
         />
       </svg>
 

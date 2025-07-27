@@ -1,9 +1,9 @@
+import staticEyeOffIcon from '@assets/icons/hide-eye-icon.png';
+import { useAuth } from '@context/AuthContext';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '@context/AuthContext';
 
 import styles from './Login.module.css';
-import staticEyeOffIcon from '@assets/icons/hide-eye-icon.png';
 
 export default function Login() {
   const { login } = useAuth();
@@ -31,7 +31,7 @@ export default function Login() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ email, password }),
-        }
+        },
       );
 
       if (res.ok) {
@@ -99,9 +99,9 @@ export default function Login() {
                   required
                 />
               </div>
-              <a href="#" className={styles.link}>
+              <button href="#" className={styles.link}>
                 Forget your password
-              </a>
+              </button>
             </div>
 
             {error && <p style={{ color: 'red' }}>{error}</p>}

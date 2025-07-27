@@ -1,11 +1,11 @@
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
-import logo from '@/assets/images/logo.png';
-import searchIcon from '@/assets/icons/search.png';
-import userIcon from '@/assets/icons/profile.png';
 import cartIcon from '@/assets/icons/cart.png';
+import userIcon from '@/assets/icons/profile.png';
+import searchIcon from '@/assets/icons/search.png';
+import logo from '@/assets/images/logo.png';
 
-import { Link } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
 
 const Header = () => {
@@ -22,9 +22,9 @@ const Header = () => {
             <Link to="/calculator" className={styles.link}>
               BMI Calculator
             </Link>
-            <a href="#" className={styles.link}>
+            <button type="button" className={styles.link}>
               Our Mission
-            </a>
+            </button>
             <Link to="/news" className={styles.link}>
               Heating News
             </Link>

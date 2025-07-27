@@ -1,5 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/layout/Layout';
+import ScrollToTop from '@components/utils/ScrollToTop';
 import {
   Home,
   Signup,
@@ -13,7 +12,8 @@ import {
   CalculatorBMI,
   News,
 } from '@pages';
-import ScrollToTop from '@components/utils/ScrollToTop';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/layout/Layout';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './context/ProtectedRoute';
 

@@ -1,18 +1,18 @@
-import CatalogCard from "@components/catalog/CatalogCard/CatalogCard";
-import { mockItem } from "@mocks/mockItem";
-import tomatoes_5 from "@assets/images/tomatoes_5.png";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import styles from "./Item.module.css";
-import cabbage from "@assets/images/cabbage.png";
-import carrot from "@assets/images/carrot.png";
-import cauliflower from "@assets/images/cauliflower.png";
-import pepper from "@assets/images/pepper.png";
-import tomatoes from "@assets/images/tomatoes.png";
-import tomatoes2 from "@assets/images/tomatoes_2.png";
-import tomatoes3 from "@assets/images/tomatoes_3.png";
-import tomatoes4 from "@assets/images/tomatoes_4.png";
-import tomatoes5 from "@assets/images/tomatoes_5.png";
+import cabbage from '@assets/images/cabbage.png';
+import carrot from '@assets/images/carrot.png';
+import cauliflower from '@assets/images/cauliflower.png';
+import pepper from '@assets/images/pepper.png';
+import tomatoes from '@assets/images/tomatoes.png';
+import tomatoes2 from '@assets/images/tomatoes_2.png';
+import tomatoes3 from '@assets/images/tomatoes_3.png';
+import tomatoes4 from '@assets/images/tomatoes_4.png';
+import tomatoes_5 from '@assets/images/tomatoes_5.png';
+import tomatoes5 from '@assets/images/tomatoes_5.png';
+import CatalogCard from '@components/catalog/CatalogCard/CatalogCard';
+import { mockItem } from '@mocks/mockItem';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import styles from './Item.module.css';
 
 // Helper to generate a distinct mock object for each card
 const generateMockCard = (index) => {
@@ -28,7 +28,7 @@ const generateMockCard = (index) => {
     tomatoes5,
   ];
   const names = [
-    "Tomato", "Carrot", "Cauliflower", "Pepper", "Cabbage", "Tomatoes", "Veggie Mix", "Fresh Veg", "Salad Star"
+    'Tomato', 'Carrot', 'Cauliflower', 'Pepper', 'Cabbage', 'Tomatoes', 'Veggie Mix', 'Fresh Veg', 'Salad Star',
   ];
   return {
     name: names[index % names.length],
@@ -37,7 +37,7 @@ const generateMockCard = (index) => {
     description: `Ecologically clean, grown on our farm with love. Card #${index + 1}`,
     imageUrl: images[index % images.length],
   };
-}
+};
 
 export default function Item() {
   // const { id } = useParams();
@@ -66,7 +66,7 @@ export default function Item() {
 
       <div className={styles.shortInfoContainer}>
         <div className={styles.productImage}>
-          <img src={tomatoes_5} alt={"tomatoes"} />
+          <img src={tomatoes_5} alt={'tomatoes'} />
         </div>
         <div className={styles.detailsBlock}>
           <div className={styles.briefPanel}>
@@ -129,27 +129,27 @@ export default function Item() {
               <h3>Nutrition Value</h3>
               <div className={styles.nutritionRow}>
                 <div className={styles.nutritionClauseIcon}>
-                  <span class="material-symbols-outlined">check</span>
+                  <span className="material-symbols-outlined">check</span>
                 </div>
-                <span>{`Protein : 3.6 g`}</span>
+                <span>{'Protein : 3.6 g'}</span>
               </div>
               <div className={styles.nutritionRow}>
                 <div className={styles.nutritionClauseIcon}>
-                  <span class="material-symbols-outlined">check</span>
+                  <span className="material-symbols-outlined">check</span>
                 </div>
-                <span>{`Fat : 0.2 g`}</span>
+                <span>{'Fat : 0.2 g'}</span>
               </div>
               <div className={styles.nutritionRow}>
                 <div className={styles.nutritionClauseIcon}>
-                  <span class="material-symbols-outlined">check</span>
+                  <span className="material-symbols-outlined">check</span>
                 </div>
-                <span>{`Carbohydrates : 0.9 g`}</span>
+                <span>{'Carbohydrates : 0.9 g'}</span>
               </div>
               <div className={styles.nutritionRow}>
                 <div className={styles.nutritionClauseIcon}>
-                  <span class="material-symbols-outlined">check</span>
+                  <span className="material-symbols-outlined">check</span>
                 </div>
-                <span>{`Vitamins (per 100g) : Vitamin C, Vitamin A`}</span>
+                <span>{'Vitamins (per 100g) : Vitamin C, Vitamin A'}</span>
               </div>
             </div>
           </div>

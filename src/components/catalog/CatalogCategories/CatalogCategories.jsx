@@ -1,9 +1,9 @@
-import Slider from 'react-slick';
-import styles from './CatalogCategories.module.css';
 import {
   NextArrow,
   PrevArrow,
 } from '@components/utils/SliderArrow/SliderArrow';
+import Slider from 'react-slick';
+import styles from './CatalogCategories.module.css';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';

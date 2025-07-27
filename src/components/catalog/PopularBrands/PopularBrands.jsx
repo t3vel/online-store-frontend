@@ -32,7 +32,7 @@ const PopularBrands = () => {
     setSelectedBrands((prevSelected) =>
       prevSelected.includes(brand)
         ? prevSelected.filter((b) => b !== brand)
-        : [...prevSelected, brand]
+        : [...prevSelected, brand],
     );
   };
 

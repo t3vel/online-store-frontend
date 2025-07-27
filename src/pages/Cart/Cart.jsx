@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import styles from './Cart.module.css';
 import { Link } from 'react-router-dom';
+import styles from './Cart.module.css';
 
 import CartItem from '@/components/cart/CartItem/CartItem';
 import CartTotal from '@/components/cart/CartTotal/CartTotal';
@@ -54,8 +54,8 @@ export default function Cart() {
   const handleChangeQuantity = (id, newQty) => {
     setItems((prev) =>
       prev.map((item) =>
-        item.id === id ? { ...item, quantity: newQty } : item
-      )
+        item.id === id ? { ...item, quantity: newQty } : item,
+      ),
     );
   };
 
@@ -72,9 +72,9 @@ export default function Cart() {
           <path
             d="M15.375 5.25L8.625 12L15.375 18.75"
             stroke="black"
-            stroke-width="1.5"
-            stroke-miterlimit="10"
-            stroke-linecap="square"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            strokeLinecap="square"
           />
         </svg>
         <Link className={styles.link} to="/catalog">

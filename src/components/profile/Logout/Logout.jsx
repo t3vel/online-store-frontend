@@ -1,6 +1,6 @@
-import { useAuth } from '@/context/AuthContext';
-import styles from './Logout.module.css';
 import { useState } from 'react';
+import styles from './Logout.module.css';
+import { useAuth } from '@/context/AuthContext';
 
 export default function Logout() {
   const { accessToken, logout } = useAuth();

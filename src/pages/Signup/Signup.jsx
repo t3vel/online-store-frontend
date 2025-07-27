@@ -57,9 +57,9 @@ export default function Signup() {
 
               <p className={styles.terms}>
                 By signing up, you agree to the{' '}
-                <a href="#">Terms of Service </a>
-                and <a href="#"> Privacy Policy</a>, including{' '}
-                <a href="#">cookie use</a>.
+                <button href="#">Terms of Service </button>
+                and <button href="#"> Privacy Policy</button>, including{' '}
+                <button href="#">cookie use</button>.
               </p>
             </form>
 

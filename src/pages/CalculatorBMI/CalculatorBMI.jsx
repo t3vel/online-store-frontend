@@ -1,10 +1,10 @@
-import styles from "./CalculatorBMI.module.css";
-import NewsLetter from "@components/home/NewsLetter/NewsLetter";
-import rectangle from "@assets/images/rectangle.png";
-import CalculatorInputCard from "../../components/calculator/CalculatorInputCard/CalculatorInputCard";
-import CalculatorOutputCard from "../../components/calculator/CalculatorOutputCard/CalculatorOutputCard";
-import CatalogCard from "@components/catalog/CatalogCard/CatalogCard";
-import { mockCard } from "@mocks/mockCard";
+import rectangle from '@assets/images/rectangle.png';
+import CatalogCard from '@components/catalog/CatalogCard/CatalogCard';
+import NewsLetter from '@components/home/NewsLetter/NewsLetter';
+import { mockCard } from '@mocks/mockCard';
+import styles from './CalculatorBMI.module.css';
+import CalculatorInputCard from '../../components/calculator/CalculatorInputCard/CalculatorInputCard';
+import CalculatorOutputCard from '../../components/calculator/CalculatorOutputCard/CalculatorOutputCard';
 
 export default function CalculatorBMI() {
   return (
@@ -15,7 +15,7 @@ export default function CalculatorBMI() {
           <div>
             <h2 className={styles.header}>BMI Calculator</h2>
             <div className={styles.infoText}>
-              <span style={{ marginTop: "24px", display: "inline-block" }}>
+              <span style={{ marginTop: '24px', display: 'inline-block' }}>
                 <b>Body mass index (BMI)</b> is a measure of body fat based on
                 height and weight that applies to adult men and women. Your BMI
                 is just one piece of the puzzle. It’s based on height and weight
@@ -23,7 +23,7 @@ export default function CalculatorBMI() {
                 body composition. Your healthcare provider will consider whether
                 your BMI is too high or too low for you.
               </span>
-              <span style={{ marginTop: "1lh", display: "inline-block" }}>
+              <span style={{ marginTop: '1lh', display: 'inline-block' }}>
                 At our organic store we use your BMA to help recommend products
                 that best support your body's current needs. Whether you're
                 aiming to lose weight build straingth or maintain balance we
@@ -55,13 +55,13 @@ export default function CalculatorBMI() {
         <div>
           <h2 className={styles.header}>What your BMI results means</h2>
           <div className={styles.infoText}>
-            <span style={{ marginTop: "24px", display: "inline-block" }}>
+            <span style={{ marginTop: '24px', display: 'inline-block' }}>
               A BMI score of between 25 and 29.9 is classed as 'overweight'.
               This category of BMI is associated with a higher risk of health
               conditions, such as, heart disease and certain types of cancer.
               Healthy weight loss
             </span>
-            <span style={{ marginTop: "1lh", display: "inline-block" }}>
+            <span style={{ marginTop: '1lh', display: 'inline-block' }}>
               If you want to lose weight, a good approach is to reduce your
               calorie intake by around 600 calories per day. This can be
               achieved by reducing high calorie foods such as sugary drinks, and

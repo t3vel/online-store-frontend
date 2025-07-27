@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
-import styles from './PersonalInfo.module.css';
 import PhoneInput from 'react-phone-number-input';
+import styles from './PersonalInfo.module.css';
 import 'react-phone-number-input/style.css';
 import EditButton from '../EditButton/EditButton';
 
