@@ -1,36 +1,48 @@
 import CatalogCard from "@components/catalog/CatalogCard/CatalogCard";
-import { mockCard } from "@mocks/mockCard";
 import { mockItem } from "@mocks/mockItem";
+import tomatoes_5 from "@assets/images/tomatoes_5.png";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Item.module.css";
-import DescriptionTab from "@components/item/DescriptionTab/DescriptionTab";
-import AdditionalInfoTab from "@components/item/AdditionalInfoTab/AdditionalInfoTab";
-import FeedbackTab from "@components/item/FeedbackTab/FeedbackTab";
+import cabbage from "@assets/images/cabbage.png";
+import carrot from "@assets/images/carrot.png";
+import cauliflower from "@assets/images/cauliflower.png";
+import pepper from "@assets/images/pepper.png";
+import tomatoes from "@assets/images/tomatoes.png";
+import tomatoes2 from "@assets/images/tomatoes_2.png";
+import tomatoes3 from "@assets/images/tomatoes_3.png";
+import tomatoes4 from "@assets/images/tomatoes_4.png";
+import tomatoes5 from "@assets/images/tomatoes_5.png";
+
+// Helper to generate a distinct mock object for each card
+const generateMockCard = (index) => {
+  const images = [
+    cabbage,
+    carrot,
+    cauliflower,
+    pepper,
+    tomatoes,
+    tomatoes2,
+    tomatoes3,
+    tomatoes4,
+    tomatoes5,
+  ];
+  const names = [
+    "Tomato", "Carrot", "Cauliflower", "Pepper", "Cabbage", "Tomatoes", "Veggie Mix", "Fresh Veg", "Salad Star"
+  ];
+  return {
+    name: names[index % names.length],
+    price: (6.22 + index).toFixed(2),
+    kcal: 110 + index * 10,
+    description: `Ecologically clean, grown on our farm with love. Card #${index + 1}`,
+    imageUrl: images[index % images.length],
+  };
+}
 
 export default function Item() {
-  const { id } = useParams();
-
-  const tabs = [
-    {
-      id: "descriptions",
-      label: "Descriptions",
-      content: <DescriptionTab />,
-    },
-    {
-      id: "additionalInformation",
-      label: "Profile",
-      content: <AdditionalInfoTab />,
-    },
-    {
-      id: "customerFeedback",
-      label: "Settings",
-      content: <FeedbackTab />,
-    },
-  ];
+  // const { id } = useParams();
 
   const [productCount, setProductCount] = useState(1);
-  const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   const decrementProductCount = () => {
     setProductCount((prevCount) => {
@@ -53,128 +65,119 @@ export default function Item() {
       </Link>
 
       <div className={styles.shortInfoContainer}>
-        <div className={styles.productImage}></div>
-        <div className={styles.shortInfo}>
-          <div>
-            <div className={styles.productType}>
-              <div>
-                <span>Brand: </span>
-                <span className={styles.styledProductTypeText}>
-                  {mockItem.brand}
-                </span>
-                <span>Category: </span>
-                <span className={styles.styledProductTypeText}>
-                  {mockItem.category}
-                </span>
-              </div>
-            </div>
-            <h3 className={styles.productName}>Cherry tomatoes 110g</h3>
-            <div className={styles.nutritionInfo}>
-              Carbs: 0.9g Proteins: 3.6g Fats: 0.2g
-            </div>
+        <div className={styles.productImage}>
+          <img src={tomatoes_5} alt={"tomatoes"} />
+        </div>
+        <div className={styles.detailsBlock}>
+          <div className={styles.briefPanel}>
+            <h3 className={styles.productName}>Cherry tomatoes</h3>
             <div className={styles.productNumber}>8000500023976</div>
-          </div>
-          <div>
-            <div className={styles.discountBadge}>{mockItem.discount} Off</div>
+            <span className={styles.actualPrice}>€ 14.25</span>
             <div className={styles.prices}>
-              <span className={styles.oldPrice}>$19.00</span>
-              <span className={styles.actualPrice}>$14.25</span>
-            </div>
-            <div className={styles.actionButtons}>
-              <div className={styles.productAmount}>
-                <div
-                  className={styles.changeProductAmountIcon}
-                  onClick={decrementProductCount}
-                >
-                  -
-                </div>
-                <div>{productCount}</div>
-                <div
-                  className={styles.changeProductAmountIcon}
-                  onClick={incrementProductCount}
-                >
-                  +
+              <div className={styles.oldPriceContainer}>
+                <div className={styles.oldPrice}>€ 19.00</div>
+                <div className={styles.discountBadge}>
+                  {mockItem.discount} Off
                 </div>
               </div>
-              <button className={styles.addToCartButton}>
-                <div>Add to Cart</div>
-                <div className="material-symbols-outlined">shopping_bag</div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div className={styles.descriptionNavigationTabs}>
-          {tabs.map((tab) => (
-            <div
-              key={tab.id}
-              className={[
-                styles.navigationTab,
-                activeTab === tab.id ? styles.activeTab : "",
-              ]
-                .filter(Boolean)
-                .join(" ")}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              {tab.label}
-            </div>
-          ))}
-        </div>
-        <div className={styles.descriptionDetailsContainer}>
-          {tabs
-            .filter((tab) => tab.id === activeTab)
-            .map((tab) => (
-              <div key={tab.id} className={styles.descriptionDetails}>
-                {tab.content}
-              </div>
-            ))}
-          <div>
-            <div className={styles.descriptionImage}></div>
-            <div className={styles.badgesContainer}>
-              <div className={styles.badge}>
-                <div className={styles.badgeImage}></div>
-                <div>
-                  <div>Discount 20%</div>
-                  <div className={styles.grayText}>
-                    Save your 20% money with us
+              <div className={styles.actionButtons}>
+                <div className={styles.productAmount}>
+                  <div
+                    className={styles.changeProductAmountIcon}
+                    onClick={decrementProductCount}
+                  >
+                    -
+                  </div>
+                  <div>{productCount}</div>
+                  <div
+                    className={styles.changeProductAmountIcon}
+                    onClick={incrementProductCount}
+                  >
+                    +
                   </div>
                 </div>
+                <button className={styles.addToCartButton}>
+                  <div className="material-symbols-outlined">shopping_bag</div>
+                </button>
               </div>
-              <div className={styles.badge}>
-                <div className={styles.badgeImage}></div>
-                <div>
-                  <div>Organic 100%</div>
-                  <div className={styles.grayText}>100% Organic Vegetables</div>
+            </div>
+          </div>
+          <div className={styles.detailedInfo}>
+            <div className={styles.infoBlock}>
+              <h3>Description</h3>
+              <p>
+                Sweet and juicy, cherry tomatoes are ideal for snacking or
+                adding a burst of flavor to any dish.
+              </p>
+            </div>
+            <div className={styles.infoBlock}>
+              <h3>General Information</h3>
+              <div>
+                <span>Product name: </span>
+                <span>Cherry Tomatoes</span>
+              </div>
+              <div>
+                <span>Brand: </span>
+                <span className={styles.textUnderlined}>LaSelva</span>
+              </div>
+              <div>
+                <span>Category: </span>
+                <span className={styles.textUnderlined}>Vegetable</span>
+              </div>
+            </div>
+            <div className={styles.infoBlock}>
+              <h3>Nutrition Value</h3>
+              <div className={styles.nutritionRow}>
+                <div className={styles.nutritionClauseIcon}>
+                  <span class="material-symbols-outlined">check</span>
                 </div>
+                <span>{`Protein : 3.6 g`}</span>
+              </div>
+              <div className={styles.nutritionRow}>
+                <div className={styles.nutritionClauseIcon}>
+                  <span class="material-symbols-outlined">check</span>
+                </div>
+                <span>{`Fat : 0.2 g`}</span>
+              </div>
+              <div className={styles.nutritionRow}>
+                <div className={styles.nutritionClauseIcon}>
+                  <span class="material-symbols-outlined">check</span>
+                </div>
+                <span>{`Carbohydrates : 0.9 g`}</span>
+              </div>
+              <div className={styles.nutritionRow}>
+                <div className={styles.nutritionClauseIcon}>
+                  <span class="material-symbols-outlined">check</span>
+                </div>
+                <span>{`Vitamins (per 100g) : Vitamin C, Vitamin A`}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className={styles.itemsShowcaseContainer}>
-        <div className={styles.similarProductListHeader}>
-          <h3 className={styles.productListTitle}>Similar Products</h3>
-          <button className={styles.showMoreButton}>
-            Show More
-            <span className="material-symbols-outlined">east</span>
-          </button>
+      <div className={styles.otherItemsContainer}>
+        <div className={styles.itemsShowcaseContainer}>
+          <div className={styles.similarProductListHeader}>
+            <h3 className={styles.productListTitle}>Similar Products</h3>
+            <button className={styles.showMoreButton}>
+              Show More
+              <span className="material-symbols-outlined">east</span>
+            </button>
+          </div>
+          <div className={styles.otherProductCard}>
+            {Array.from({ length: 4 }).map((_, index) => (
+              <CatalogCard key={index} {...generateMockCard(index)} />
+            ))}
+          </div>
         </div>
-        <div className={styles.otherProductCard}>
-          {Array.from({ length: 4 }).map((_, index) => (
-            <CatalogCard key={index} {...mockCard} />
-          ))}
-        </div>
-      </div>
 
-      <div className={styles.itemsShowcaseContainer}>
-        <h3 className={styles.productListTitle}>Popular Products</h3>
-        <div className={styles.otherProductCard}>
-          {Array.from({ length: 4 }).map((_, index) => (
-            <CatalogCard key={index} {...mockCard} />
-          ))}
+        <div className={styles.itemsShowcaseContainer}>
+          <h3 className={styles.productListTitle}>You might also like</h3>
+          <div className={styles.otherProductCard}>
+            {Array.from({ length: 4 }).map((_, index) => (
+              <CatalogCard key={index} {...generateMockCard(index + 4)} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
