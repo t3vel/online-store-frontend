@@ -1,14 +1,15 @@
 import { useState } from 'react';
+import { useAuth } from '@/context/AuthContext';
 import styles from './PersonalInfo.module.css';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import EditButton from '../EditButton/EditButton';
 
 export default function PersonalInfo() {
+  const { userEmail } = useAuth();
   const [phone, setPhone] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('adamwilson@gmail.com');
 
   const [isEditing, setIsEditing] = useState(false);
 
@@ -76,8 +77,7 @@ export default function PersonalInfo() {
               id="email"
               name="email"
               className={styles.personalInput}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={userEmail}
               required
               disabled={!isEditing}
             />

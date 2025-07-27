@@ -1,23 +1,83 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '@/context/AuthContext';
 
 import styles from './CreateAcc.module.css';
 import staticEyeOffIcon from '@assets/icons/hide-eye-icon.png';
 import staticEyeIcon from '@assets/icons/open-eye-icon.png';
 
 export default function CreateAcc() {
+  const { login } = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmationPassword, setConfirmationPassword] = useState('');
   const [passwordShown, setPasswordShown] = useState(false);
   const [confirmPasswordShown, setConfirmPasswordShown] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setPasswordShown(!passwordShown);
   };
 
-   const toggleConfirmPasswordVisibility = () => {
+  const toggleConfirmPasswordVisibility = () => {
     setConfirmPasswordShown(!confirmPasswordShown);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
 
+    if (password !== confirmationPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const res = await fetch(
+        'https://right-bite-store.onrender.com/api/v1/auth/sing-up',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password, confirmationPassword }),
+        }
+      );
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        setError(errorData.message || 'Registration failed');
+        return;
+      }
+
+      // після успішної реєстрації - логін (тимчасово)
+      const loginRes = await fetch(
+        'https://right-bite-store.onrender.com/api/v1/auth/sing-in',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        }
+      );
+
+      const loginData = await loginRes.json();
+
+      if (loginRes.ok && loginData.accessToken && loginData.refreshToken) {
+        login(loginData.accessToken, loginData.refreshToken);
+        navigate('/successreg');
+      } else {
+        setError('Account created, but login failed');
+      }
+    } catch (err) {
+      console.error('Error occurred:', err);
+      setError('Server error');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -41,15 +101,17 @@ export default function CreateAcc() {
               </p>
             </div>
 
-
-            <form className={styles.form}>
-
-
+            <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.email}>
                 <h4 className={styles.paragraphe}>Email address</h4>
-                <input type="email" className={styles.input} />
+                <input
+                  type="email"
+                  className={styles.input}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
               </div>
-
 
               <div className={styles.email}>
                 <div className={styles.flex}>
@@ -59,26 +121,30 @@ export default function CreateAcc() {
                     onClick={togglePasswordVisibility}
                     className={styles.togglePasswordButton}
                   >
-                    {passwordShown ?<img
-                      src={staticEyeIcon}
-                      alt={passwordShown ? 'Show password' : 'Hide password'}
-                      className={styles.togglePasswordIcon}
-                    />
-                    :
-                    <img
-                      src={staticEyeOffIcon}
-                      alt={passwordShown ? 'Show password' : 'Hide password'}
-                      className={styles.togglePasswordOffIcon}
-                    />}
-                    {passwordShown ? 'Show' : 'Hide'}{' '}
+                    {passwordShown ? (
+                      <img
+                        src={staticEyeIcon}
+                        alt="Show password"
+                        className={styles.togglePasswordIcon}
+                      />
+                    ) : (
+                      <img
+                        src={staticEyeOffIcon}
+                        alt="Hide password"
+                        className={styles.togglePasswordOffIcon}
+                      />
+                    )}
+                    {passwordShown ? 'Show' : 'Hide'}
                   </button>
                 </div>
-
 
                 <div className={styles.passwordInputWrapper}>
                   <input
                     type={passwordShown ? 'text' : 'password'}
                     className={styles.input}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                 </div>
                 <p className={styles.condition}>
@@ -86,7 +152,6 @@ export default function CreateAcc() {
                   symbols
                 </p>
               </div>
-
 
               <div className={styles.email}>
                 <div className={styles.flex}>
@@ -96,27 +161,30 @@ export default function CreateAcc() {
                     onClick={toggleConfirmPasswordVisibility}
                     className={styles.togglePasswordButton}
                   >
-                   {confirmPasswordShown ? <img
-                      src={staticEyeIcon}
-                      alt={confirmPasswordShown ? 'Show password' : 'Hide password'}
-                      className={styles.togglePasswordIcon}
-                    />
-                    :
-                    <img
-                      src={staticEyeOffIcon}
-                      alt={confirmPasswordShown ? 'Show password' : 'Hide password'}
-                      className={styles.togglePasswordOffIcon}
-                    />}
-                    {confirmPasswordShown ? 'Show' : 'Hide'}{' '}
+                    {confirmPasswordShown ? (
+                      <img
+                        src={staticEyeIcon}
+                        alt="Show password"
+                        className={styles.togglePasswordIcon}
+                      />
+                    ) : (
+                      <img
+                        src={staticEyeOffIcon}
+                        alt="Hide password"
+                        className={styles.togglePasswordOffIcon}
+                      />
+                    )}
+                    {confirmPasswordShown ? 'Show' : 'Hide'}
                   </button>
                 </div>
 
-
-
                 <div className={styles.passwordInputWrapper}>
                   <input
-                    type={passwordShown ? 'text' : 'password'}
+                    type={confirmPasswordShown ? 'text' : 'password'}
                     className={styles.input}
+                    value={confirmationPassword}
+                    onChange={(e) => setConfirmationPassword(e.target.value)}
+                    required
                   />
                 </div>
                 <p className={styles.condition}>
@@ -124,10 +192,17 @@ export default function CreateAcc() {
                   symbols
                 </p>
               </div>
+
+              {error && <p className={styles.error}>{error}</p>}
+
+              <button
+                type="submit"
+                className={styles.button}
+                disabled={loading}
+              >
+                {loading ? 'Creating...' : 'Create account'}
+              </button>
             </form>
-            <Link to="/successreg" className={styles.button}>
-              Create account
-            </Link>
           </div>
         </div>
       </div>

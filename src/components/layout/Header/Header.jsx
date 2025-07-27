@@ -6,8 +6,11 @@ import userIcon from '@/assets/icons/profile.png';
 import cartIcon from '@/assets/icons/cart.png';
 
 import { Link } from 'react-router-dom';
+import { useAuth } from '@/context/AuthContext';
 
 const Header = () => {
+  const { isAuthenticated } = useAuth();
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -26,6 +29,7 @@ const Header = () => {
               Heating News
             </Link>
           </nav>
+
           <div className={styles.brand}>
             <Link to="/">
               <img src={logo} alt="RigthBite Logo" className={styles.logo} />
@@ -49,9 +53,13 @@ const Header = () => {
             </div>
 
             <div className={styles.icons}>
-              <Link to="/signup" className={styles.iconButton}>
+              <Link
+                to={isAuthenticated ? '/profile' : '/signup'}
+                className={styles.iconButton}
+              >
                 <img src={userIcon} alt="User profile" />
               </Link>
+
               <Link to="/cart" className={styles.iconButton}>
                 <img src={cartIcon} alt="Shopping cart" />
               </Link>
