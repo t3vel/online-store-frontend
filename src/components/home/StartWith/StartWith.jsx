@@ -1,6 +1,6 @@
 import styles from './StartWith.module.css';
 import { Link } from 'react-router-dom';
-import rectangle from '@assets/images/rectangle.png';
+import exampleImage from '@assets/images/start_with_background.jpg'
 
 import Button from '@components/common/button/Button';
 
@@ -31,8 +31,8 @@ export default function StartWith() {
             </div>
           </div>
         </div>
-        <div className={styles.right}>
-          <img src={rectangle} alt="BMI illustration" />
+        <div className={styles.imageContainer}>
+          <img src={exampleImage} alt="Vegetables and weights" />
         </div>
       </div>
     </div>
