@@ -1,8 +1,10 @@
 :root {
+  /* Typography */
   --font-primary: 'Quicksand', sans-serif;
   --second-family: 'Poppins', sans-serif;
   --third-family: 'Urbanist', sans-serif;
-
+  
+  /* Colors */
   --white: #fefefe;
   --background: #f9f1eb;
   --main-text: #202020;
