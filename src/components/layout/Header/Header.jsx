@@ -1,6 +1,6 @@
 import styles from './Header.module.css';
 
-import logo from '@/assets/images/logo.png';
+import logo from '@/assets/images/logo.svg';
 import searchIcon from '@/assets/icons/search.png';
 import userIcon from '@/assets/icons/profile.png';
 import cartIcon from '@/assets/icons/cart.png';
@@ -22,9 +22,9 @@ const Header = () => {
             <Link to="/calculator" className={styles.link}>
               BMI Calculator
             </Link>
-            <a href="#" className={styles.link}>
+            <Link to="/our-mission" className={styles.link}>
               Our Mission
-            </a>
+            </Link>
             <Link to="/news" className={styles.link}>
               Heating News
             </Link>
