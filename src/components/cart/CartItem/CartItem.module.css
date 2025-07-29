@@ -80,5 +80,5 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #f2f2f2;
+  background: var(--accent-color-super-light);
 }

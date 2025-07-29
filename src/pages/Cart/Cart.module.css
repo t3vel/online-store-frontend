@@ -43,7 +43,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
   padding: 24px 0px 23px 70px;
-  background: #dedede;
+  background: #d2e7d3;
   border-radius: 8px 8px 0 0;
 }
 

@@ -14,7 +14,7 @@
   font-size: 20px;
   color: #1a1a1a;
   margin-bottom: 20px;
-  background: #dedede;
+  background: #d2e7d3;
   padding: 19px 40px;
   border-radius: 8px 8px 0 0;
 }
@@ -38,7 +38,7 @@
 }
 
 .line {
-  background: #d9d9d9;
+  background: var(--accent-color-super-light);
   height: 1px;
   margin: 52px 0 60px;
 }
@@ -57,19 +57,22 @@
   padding: 10px 0 10px 24px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-
+  border: 1px solid #e6e6e6;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
   letter-spacing: -0.02em;
   color: #808080;
+  background: inherit;
+  border-right: none;
 }
 
 .couponButton {
   padding: 10px 20px;
-  background: #9b9b9b;
-  color: white;
+  background: inherit;
+  color: var(--accent-color);
   border-radius: 50px;
+  border: 1px solid var(--accent-color);
   cursor: pointer;
   margin-left: -10px;
 }
@@ -79,7 +82,7 @@
   font-size: 16px;
   color: #fff;
   padding: 17px 102px;
-  background: #0d0c0d;
+  background: var(--accent-color);
   width: 100%;
   border-radius: 43px;
   margin-bottom: 45px;

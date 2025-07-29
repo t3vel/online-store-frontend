@@ -12,6 +12,7 @@ import {
   Cart,
   CalculatorBMI,
   News,
+  OurMission,
 } from '@pages';
 import ScrollToTop from '@components/utils/ScrollToTop';
 import { AuthProvider } from './context/AuthContext';
@@ -42,6 +43,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/calculator" element={<CalculatorBMI />} />
             <Route path="/news" element={<News />} />
+            <Route path="/our-mission" element={<OurMission />} />
           </Route>
         </Routes>
       </AuthProvider>
