@@ -15,7 +15,10 @@ export default function Signup() {
             </h1>
 
             <form className={styles.form}>
-              <button type="button" className={styles.socialBtn}>
+              <a
+                className={styles.socialBtn}
+                href="https://right-bite-store.onrender.com/api/v1/auth/google"
+              >
                 <svg
                   width="29"
                   height="29"
@@ -29,7 +32,7 @@ export default function Signup() {
                   />
                 </svg>
                 Sign up with Google
-              </button>
+              </a>
 
               <div className={styles.divider}>
                 <hr /> <span className={styles.dividerText}>OR</span> <hr />
