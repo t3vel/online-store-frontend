@@ -102,12 +102,12 @@ export default function Footer() {
           </p>
 
           <div className={styles.payment}>
-            <a href="#">
+            <button type="button">
               <img src={masterCardIcon} alt="MasterCard" />
-            </a>
-            <a href="#">
+            </button>
+            <button type="button">
               <img src={visaIcon} alt="Visa" />
-            </a>
+            </button>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginImport from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
@@ -17,6 +18,7 @@ export default [
   {
     ignores: ['dist'],
   },
+  eslintConfigPrettier,
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
@@ -70,6 +72,8 @@ export default [
         },
       ],
       'react/react-in-jsx-scope': 'off',
+      'react/no-unescaped-entities': 'off',
+      'react/prop-types': 'off',
     },
   },
 ];

@@ -34,7 +34,7 @@ export default function CalculatorBMI() {
             </div>
           </div>
           <div>
-            <img src={rectangle} alt="mock gray block image" />
+            <img src={rectangle} alt="mock gray block" />
           </div>
         </div>
 

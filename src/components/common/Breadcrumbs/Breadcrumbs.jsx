@@ -30,7 +30,7 @@ export default function Breadcrumbs() {
         />
       </svg>
 
-      <a className={styles.link}>{name}</a>
+      <button className={styles.link}>{name}</button>
     </nav>
   );
 }

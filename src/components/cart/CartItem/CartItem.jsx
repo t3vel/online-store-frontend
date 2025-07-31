@@ -1,7 +1,7 @@
 import styles from './CartItem.module.css';
 
 export default function CartItem({ item, onQuantityChange }) {
-  const { id, name, size, price, quantity, description } = item;
+  const { price, quantity } = item;
   const subtotal = (price * quantity).toFixed(2);
 
   const handleDecrement = () => {

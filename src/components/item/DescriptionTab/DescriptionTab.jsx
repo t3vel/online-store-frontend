@@ -1,6 +1,6 @@
 import styles from './DescriptionTab.module.css';
 
-export default function DescriptionTab({}) {
+export default function DescriptionTab() {
   return (
     <div className={styles.descriptionText}>
       <div>

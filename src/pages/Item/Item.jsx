@@ -82,19 +82,21 @@ export default function Item() {
               </div>
               <div className={styles.actionButtons}>
                 <div className={styles.productAmount}>
-                  <div
+                  <button
+                    type="button"
                     className={styles.changeProductAmountIcon}
                     onClick={decrementProductCount}
                   >
                     -
-                  </div>
+                  </button>
                   <div>{productCount}</div>
-                  <div
+                  <button
+                    type="button"
                     className={styles.changeProductAmountIcon}
                     onClick={incrementProductCount}
                   >
                     +
-                  </div>
+                  </button>
                 </div>
                 <button className={styles.addToCartButton}>
                   <div className="material-symbols-outlined">shopping_bag</div>

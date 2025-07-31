@@ -35,8 +35,8 @@ export default function CatalogSidebar() {
       <h3 className={styles.title}>Category</h3>
       <div className={styles.section}>
         {categories.map((category) => (
-          <div className={styles.category}>
-            <label key={category} className={styles.checkboxLabel}>
+          <div key={category} className={styles.category}>
+            <label className={styles.checkboxLabel}>
               <input
                 type="checkbox"
                 checked={selectedOptions.includes(category)}

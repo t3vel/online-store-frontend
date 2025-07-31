@@ -45,7 +45,7 @@ export default function Login() {
       } else {
         setError('Сталася помилка. Спробуйте ще раз.');
       }
-    } catch (err) {
+    } catch {
       setError('Сервер недоступний. Спробуйте пізніше.');
     }
   };
