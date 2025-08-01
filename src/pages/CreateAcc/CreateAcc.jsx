@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '@/context/AuthContext';
-
-import styles from './CreateAcc.module.css';
 import staticEyeOffIcon from '@assets/icons/hide-eye-icon.png';
 import staticEyeIcon from '@assets/icons/open-eye-icon.png';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import styles from './CreateAcc.module.css';
+import { useAuth } from '@/context/AuthContext';
+
 
 export default function CreateAcc() {
   const { login } = useAuth();
@@ -44,7 +44,7 @@ export default function CreateAcc() {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password, confirmationPassword }),
-        }
+        },
       );
 
       if (!res.ok) {
@@ -60,7 +60,7 @@ export default function CreateAcc() {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password }),
-        }
+        },
       );
 
       const loginData = await loginRes.json();

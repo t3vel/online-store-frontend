@@ -1,7 +1,7 @@
-import ProductItem from '@components/common/ProductItem/ProductItem';
-import styles from './FarmToHome.module.css';
 import picture from '@assets/images/gray-mock-block.png'; // Adjust the path as necessary
 import Button from '@components/common/button/Button';
+import ProductItem from '@components/common/ProductItem/ProductItem';
+import styles from './FarmToHome.module.css';
 
 export default function FarmToHome() {
   return (

@@ -1,4 +1,4 @@
-import styles from "./CalculatorInputCard.module.css";
+import styles from './CalculatorInputCard.module.css';
 
 export default function CalculatorInputCard() {
   return (

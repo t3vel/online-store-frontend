@@ -2,7 +2,16 @@ import styles from './SliderArrow.module.css';
 
 export function NextArrow({ onClick }) {
   return (
-    <div className={`${styles.arrow} ${styles.next}`} onClick={onClick}>
+    <button 
+      type="button"
+      className={`${styles.arrow} ${styles.next}`} 
+      onClick={onClick}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          onClick();
+        }
+      }}
+    >
       <svg
         width="24"
         height="24"
@@ -15,13 +24,22 @@ export function NextArrow({ onClick }) {
           fill="#C7C7C7"
         />
       </svg>
-    </div>
+    </button>
   );
 }
 
 export function PrevArrow({ onClick }) {
   return (
-    <div className={`${styles.arrow} ${styles.prev}`} onClick={onClick}>
+    <button 
+      type="button"
+      className={`${styles.arrow} ${styles.prev}`} 
+      onClick={onClick}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          onClick();
+        }
+      }}
+    >
       <svg
         style={{ transform: 'rotate(180deg)' }}
         width="24"
@@ -35,6 +53,6 @@ export function PrevArrow({ onClick }) {
           fill="#C7C7C7"
         />
       </svg>
-    </div>
+    </button>
   );
 }

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Tabs from '../Tabs/Tabs';
+import styles from './OrdersTable.module.css';
 import OrdersTableContent from '../OrdersTableContent/OrdersTableContent';
 import Pagination from '../Pagination/Pagination';
-import styles from './OrdersTable.module.css';
+import Tabs from '../Tabs/Tabs';
 
 export default function OrdersTable() {
   const [activeTab, setActiveTab] = useState('in-process');

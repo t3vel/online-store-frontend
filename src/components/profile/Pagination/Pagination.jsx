@@ -14,9 +14,9 @@ export default function Pagination() {
           <path
             d="M12.918 4.16634L7.08464 9.99967L12.918 15.833"
             stroke="#B3B3B3"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </button>
@@ -32,9 +32,9 @@ export default function Pagination() {
           <path
             d="M7.08203 4.16634L12.9154 9.99967L7.08203 15.833"
             stroke="#B3B3B3"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </button>

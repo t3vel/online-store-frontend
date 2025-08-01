@@ -1,7 +1,7 @@
+import PopularBrands from '@components/catalog/PopularBrands/PopularBrands';
 import { useState } from 'react';
 import styles from './CatalogSidebar.module.css';
 import PriceRange from '../PriceRange/PriceRange';
-import PopularBrands from '@components/catalog/PopularBrands/PopularBrands';
 
 const categories = [
   'Fruits & Vegetables',
@@ -26,7 +26,7 @@ export default function CatalogSidebar() {
     setSelectedOptions((prevSelected) =>
       prevSelected.includes(option)
         ? prevSelected.filter((item) => item !== option)
-        : [...prevSelected, option]
+        : [...prevSelected, option],
     );
   };
 
@@ -35,8 +35,8 @@ export default function CatalogSidebar() {
       <h3 className={styles.title}>Category</h3>
       <div className={styles.section}>
         {categories.map((category) => (
-          <div className={styles.category}>
-            <label key={category} className={styles.checkboxLabel}>
+          <div key={category} className={styles.category}>
+            <label className={styles.checkboxLabel}>
               <input
                 type="checkbox"
                 checked={selectedOptions.includes(category)}
@@ -55,9 +55,9 @@ export default function CatalogSidebar() {
               <path
                 d="M2.91536 4.95898L6.9987 9.04232L11.082 4.95898"
                 stroke="#4D4D4D"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>

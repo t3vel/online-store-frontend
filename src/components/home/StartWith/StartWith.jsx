@@ -1,8 +1,8 @@
-import styles from './StartWith.module.css';
-import { Link } from 'react-router-dom';
-import exampleImage from '@assets/images/start_with_background.jpg'
+import exampleImage from '@assets/images/start_with_background.jpg';
 
 import Button from '@components/common/button/Button';
+import { Link } from 'react-router-dom';
+import styles from './StartWith.module.css';
 
 export default function StartWith() {
   return (

@@ -1,14 +1,12 @@
-import styles from './Catalog.module.css';
-
-import Banner from '@components/home/Banner/Banner';
-import NewsLetter from '@components/home/NewsLetter/NewsLetter';
-
 import ActiveFilters from '@components/catalog/ActiveFilters/ActiveFilters';
 import CatalogCard from '@components/catalog/CatalogCard/CatalogCard';
 import CatalogCategories from '@components/catalog/CatalogCategories/CatalogCategories';
 import CatalogFilters from '@components/catalog/CatalogFilters/CatalogFilters';
 import CatalogSidebar from '@components/catalog/CatalogSidebar/CatalogSidebar';
+import Banner from '@components/home/Banner/Banner';
+import NewsLetter from '@components/home/NewsLetter/NewsLetter';
 import { mockCard } from '@mocks/mockCard';
+import styles from './Catalog.module.css';
 
 export default function Catalog() {
   return (
@@ -21,12 +19,12 @@ export default function Catalog() {
           <div className={styles.top}>
             <h2 className={styles.title}>Catalog</h2>
             <div className={styles.topRight}>
-              <a className={styles.topLink} href="#">
+              <button className={styles.topLink} type="button">
                 Delivery Information
-              </a>
-              <a className={styles.topLink} href="#">
+              </button>
+              <button className={styles.topLink} type="button">
                 Payment Methods
-              </a>
+              </button>
             </div>
           </div>
         </div>

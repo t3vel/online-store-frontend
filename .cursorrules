@@ -1,0 +1,29 @@
+# Cursor Rules for Online Store Frontend
+
+## Code Formatting
+- Use ESLint as the primary formatter for all JavaScript/JSX files
+- Disable Prettier formatting for JavaScript/JSX files
+- Follow the ESLint rules defined in eslint.config.js
+
+## File Types
+- JavaScript (.js): Use ESLint formatter
+- JSX (.jsx): Use ESLint formatter
+- TypeScript (.ts): Use ESLint formatter
+- TSX (.tsx): Use ESLint formatter
+- CSS (.css): Use default formatter
+- JSON (.json): Use default formatter
+
+## Formatting Rules
+- Single quotes for strings
+- Semicolons always
+- 2 spaces indentation
+- Trailing commas in multiline objects/arrays
+- Spaces inside object braces
+- No spaces inside array brackets
+- End files with newline
+
+## Cursor Specific Settings
+- When formatting code with Cmd+Shift+L, use ESLint formatter
+- Disable Prettier auto-formatting
+- Use ESLint for code fixes and formatting
+- Follow the project's ESLint configuration in eslint.config.js 

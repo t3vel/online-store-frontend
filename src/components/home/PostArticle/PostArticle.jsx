@@ -1,5 +1,5 @@
-import frame from '@assets/images/frame.png';
 import more from '@assets/icons/more.png';
+import frame from '@assets/images/frame.png';
 import styles from './PostArticle.module.css';
 
 export default function PostArticle() {
@@ -37,12 +37,13 @@ function Item({ image, date, content }) {
           <p className={styles.content}>{content}</p>
         </div>
         <div>
-          <a href="#">
+          <button>
             <img
               src={more}
+              alt="more options"
               style={{ cursor: 'pointer', width: '42px', height: '42px' }}
             />
-          </a>
+          </button>
         </div>
       </div>
     </section>

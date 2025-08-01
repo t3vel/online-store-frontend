@@ -1,7 +1,7 @@
+import add from '@assets/icons/add.png';
+import EditButton from '@components/common/EditButton/EditButton';
 import { useState } from 'react';
 import styles from './ShippingAdress.module.css';
-import EditButton from '@components/common/EditButton/EditButton';
-import add from '@assets/icons/add.png';
 
 export default function ShippingAdress() {
   const [isEditing, setIsEditing] = useState(false);
@@ -45,7 +45,7 @@ export default function ShippingAdress() {
               value={country}
               onChange={handleChange(
                 setCountry,
-                /^[a-zA-Zа-яА-ЯіїєґІЇЄҐ\s-]*$/
+                /^[a-zA-Zа-яА-ЯіїєґІЇЄҐ\s-]*$/,
               )}
               placeholder="Enter your country"
               disabled={!isEditing}
@@ -80,7 +80,7 @@ export default function ShippingAdress() {
               value={street}
               onChange={handleChange(
                 setStreet,
-                /^[a-zA-Zа-яА-ЯіїєґІЇЄҐ0-9\s-/]*$/
+                /^[a-zA-Zа-яА-ЯіїєґІЇЄҐ0-9\s-/]*$/,
               )}
               placeholder="Enter your street name"
               disabled={!isEditing}

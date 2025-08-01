@@ -1,10 +1,10 @@
-import styles from './CatalogCard.module.css';
 import { Link } from 'react-router-dom';
+import styles from './CatalogCard.module.css';
 
 const CatalogCard = ({ name, price, kcal, description, imageUrl }) => {
   return (
     <div className={styles.card}>
-      <img className={styles.image} src={imageUrl} />
+      <img className={styles.image} src={imageUrl} alt={name} />
 
       <div className={styles.content}>
         <div className={styles.header}>
@@ -29,7 +29,7 @@ const CatalogCard = ({ name, price, kcal, description, imageUrl }) => {
         <p className={styles.kcal}>{kcal} Kkal</p>
         <p className={styles.description}>{description}</p>
 
-        <Link to={`/catalog/1`} className={styles.orderBtn}>
+        <Link to={'/catalog/1'} className={styles.orderBtn}>
           Order now{' '}
           <span className={styles.arrow}>
             <svg

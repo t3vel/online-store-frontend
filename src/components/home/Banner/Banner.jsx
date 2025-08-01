@@ -1,6 +1,6 @@
+import Button from '@components/common/button/Button';
 import { useEffect, useState } from 'react';
 import styles from './Banner.module.css';
-import Button from '@components/common/button/Button';
 
 const bannerTexts = [
   {

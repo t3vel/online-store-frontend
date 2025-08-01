@@ -11,13 +11,10 @@ export default function Sidebar({ active, onChange }) {
     <aside className={styles.sidebar}>
       <div className={styles.inner}>
         {links.map((link) => (
-          <a
+          <button
             key={link.id}
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              onChange(link.id);
-            }}
+            type="button"
+            onClick={() => onChange(link.id)}
             className={`${styles.link} ${
               active === link.id ? styles.active : ''
             }`}
@@ -33,7 +30,7 @@ export default function Sidebar({ active, onChange }) {
               </svg>
             </span>
             <span className={styles.label}>{link.label}</span>
-          </a>
+          </button>
         ))}
       </div>
     </aside>
