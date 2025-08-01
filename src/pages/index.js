@@ -9,3 +9,4 @@ export { default as Catalog } from './Catalog/Catalog';
 export { default as Cart } from './Cart/Cart';
 export { default as CalculatorBMI } from './CalculatorBMI/CalculatorBMI';
 export { default as News } from './News/News';
+export { default as OurMission } from './OurMission/OurMission';

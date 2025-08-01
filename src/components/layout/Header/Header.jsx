@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
+import logo from '@/assets/images/logo.svg';
+import searchIcon from '@/assets/icons/search.png';
+import userIcon from '@/assets/icons/profile.png';
+
 import cartIcon from '@/assets/icons/cart.png';
 import userIcon from '@/assets/icons/profile.png';
 import searchIcon from '@/assets/icons/search.png';
@@ -22,9 +26,13 @@ const Header = () => {
             <Link to="/calculator" className={styles.link}>
               BMI Calculator
             </Link>
-            <button type="button" className={styles.link}>
+//TODO: check this part
+//             <button type="button" className={styles.link}>
+//               Our Mission
+//             </button>
+            <Link to="/our-mission" className={styles.link}>
               Our Mission
-            </button>
+            </Link>
             <Link to="/news" className={styles.link}>
               Heating News
             </Link>

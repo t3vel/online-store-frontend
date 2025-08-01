@@ -5,8 +5,8 @@
 }
 
 .header {
-  background-color: var(--primary-color);
-  padding: 20px 0;
+  background-color: var(--accent-color);
+  padding: 8px 0;
   position: sticky;
   top: 0;
   left: 0;
@@ -32,11 +32,6 @@
   margin: 0;
 }
 
-.logo {
-  width: 127px;
-  height: 23px;
-}
-
 .nav {
   display: flex;
   gap: 32px;
@@ -46,11 +41,10 @@
 .link {
   text-decoration: none;
   font-weight: 400;
-  color: #ffff;
+  color: var(--background);
   font-size: 16px;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-
   transition: all 0.4s ease;
 }
 

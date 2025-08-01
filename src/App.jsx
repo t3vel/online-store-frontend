@@ -11,6 +11,7 @@ import {
   Cart,
   CalculatorBMI,
   News,
+  OurMission,
 } from '@pages';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
@@ -42,6 +43,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/calculator" element={<CalculatorBMI />} />
             <Route path="/news" element={<News />} />
+            <Route path="/our-mission" element={<OurMission />} />
           </Route>
         </Routes>
       </AuthProvider>

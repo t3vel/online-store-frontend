@@ -1,11 +1,26 @@
 :root {
   /* Typography */
-  --font-primary: "Quicksand", sans-serif;
-  --second-family: "Poppins", sans-serif;
-  --third-family: "Urbanist", sans-serif;
-
+  --font-primary: 'Quicksand', sans-serif;
+  --second-family: 'Poppins', sans-serif;
+  --third-family: 'Urbanist', sans-serif;
+  
   /* Colors */
-  --primary-color: #234d2e;
-  --primary-color-dark: #1c3e24;
-  --secondary-color: #d2e7d3;
+  --white: #fefefe;
+  --background: #f9f1eb;
+  --main-text: #202020;
+  --main-text: #202020;
+  --addition-text: #525252;
+  --accent-color: #234d2e;
+  --accent-color-super-light: #def2d6;
+  --accent-colot-light: #7cb184;
+  --accent-colot-dark: #1c3e24;
+  --accent-colot-hover: #2d6b41;
+  --red: #d00;
+  --placeholder: #818181;
+  --icon: #404040;
+  --table: #d2e7d3;
+  --stroke-table: #ece2da;
+  --success: #299c4e;
+  --warning: #ee9229;
+  --stroke---input: rgba(102, 102, 102, 0.35);
 }

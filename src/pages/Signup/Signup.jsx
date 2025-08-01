@@ -15,7 +15,10 @@ export default function Signup() {
             </h1>
 
             <form className={styles.form}>
-              <button type="button" className={styles.socialBtn}>
+              <a
+                className={styles.socialBtn}
+                href="https://right-bite-store.onrender.com/api/v1/auth/google"
+              >
                 <svg
                   width="29"
                   height="29"
@@ -29,23 +32,7 @@ export default function Signup() {
                   />
                 </svg>
                 Sign up with Google
-              </button>
-
-              <button type="button" className={styles.socialBtn}>
-                <svg
-                  width="29"
-                  height="29"
-                  viewBox="0 0 29 29"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M28.5 14.5C28.5 22.228 22.235 28.5 14.5 28.5C6.765 28.5 0.5 22.228 0.5 14.5C0.5 6.765 6.765 0.5 14.5 0.5C22.235 0.5 28.5 6.765 28.5 14.5Z"
-                    fill="#C6C6C6"
-                  />
-                </svg>
-                Sign up with Apple
-              </button>
+              </a>
 
               <div className={styles.divider}>
                 <hr /> <span className={styles.dividerText}>OR</span> <hr />
