@@ -87,3 +87,15 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.image {
+  width: 536px;
+  height: 317px;
+  object-fit: cover;
+}
+
+.banner {
+  height: 233px;
+  width: 100%;
+  object-fit: cover;
+}

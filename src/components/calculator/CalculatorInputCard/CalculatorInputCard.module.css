@@ -35,6 +35,8 @@
   background-color: #464646;
   color: #ffff;
   user-select: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .femaleButton {
@@ -46,6 +48,19 @@
   border-radius: 10px;
   background-color: #ffff;
   user-select: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.maleButton.active {
+  background-color: #2a2a2a;
+  transform: scale(1.02);
+}
+
+.femaleButton.active {
+  background-color: #f0f0f0;
+  border: 2px solid #464646;
+  transform: scale(1.02);
 }
 
 .inputsContainer {
@@ -57,7 +72,7 @@
 
   input {
     background-color: transparent;
-    border: 1px #BABABA solid;
+    border: 1px #bababa solid;
     border-radius: 12px;
     padding: 10px;
     margin-right: 20px;

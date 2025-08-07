@@ -1,15 +1,23 @@
+import { useState } from "react";
 import styles from "./CalculatorBMI.module.css";
 import NewsLetter from "@components/home/NewsLetter/NewsLetter";
-import rectangle from "@assets/images/rectangle.png";
+import rectangle from "@assets/images/bb37277abecb9af9c52234bf2a0fa4a9a41901b8.png";
+import banner from "@assets/images/71a4ca034f23b11dc0eb83092b7a620b05768418.jpg";
 import CalculatorInputCard from "../../components/calculator/CalculatorInputCard/CalculatorInputCard";
 import CalculatorOutputCard from "../../components/calculator/CalculatorOutputCard/CalculatorOutputCard";
 import CatalogCard from "@components/catalog/CatalogCard/CatalogCard";
 import { mockCard } from "@mocks/mockCard";
 
 export default function CalculatorBMI() {
+  const [bmiResult, setBmiResult] = useState(null);
+
+  const handleCalculate = (result) => {
+    setBmiResult(result);
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.grayBox}></div>
+      <img src={banner} className={styles.banner}/>
       <div className={styles.mainContainer}>
         <div className={styles.infoContainer}>
           <div>
@@ -34,7 +42,7 @@ export default function CalculatorBMI() {
             </div>
           </div>
           <div>
-            <img src={rectangle} alt="mock gray block image" />
+            <img src={rectangle} alt="mock gray block image"  className={styles.image}/>
           </div>
         </div>
 
@@ -45,8 +53,8 @@ export default function CalculatorBMI() {
             </h2>
           </div>
           <div className={styles.calculatorCardsContainer}>
-            <CalculatorInputCard />
-            <CalculatorOutputCard />
+            <CalculatorInputCard onCalculate={handleCalculate} />
+            <CalculatorOutputCard bmiResult={bmiResult} />
           </div>
         </div>
       </div>

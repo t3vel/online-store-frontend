@@ -1,8 +1,8 @@
 import styles from './CalculatorOutputCard.module.css';
 import scale from '@assets/images/scaleBMI.svg';
 
-export default function CalculatorOutputCard() {
-  const resultNumber = 26.5;
+export default function CalculatorOutputCard({ bmiResult }) {
+  const resultNumber = bmiResult?.bmi || 0;
 
   return (
     <div className={styles.container}>
@@ -12,7 +12,7 @@ export default function CalculatorOutputCard() {
       <main className={styles.mainContainer}>
         <div className={styles.resultsContainer}>
           <div className={styles.resultLabel}>Your BMI:</div>
-          <div className={styles.resultNumber}>{resultNumber}</div>
+          <div className={styles.resultNumber}>{resultNumber.toFixed(2)}</div>
           <div className={styles.scaleIndexContainer}>
             <img src={scale} alt="scale of BMI index" />
             <div className={styles.scaleIndexLabels}>
