@@ -1,18 +1,31 @@
 .banner {
-  background-image: url('@assets/images/banner_background.jpg'); /* сюди фон */
-  background-size: cover;
-  background-position: center 30%;
-  background-repeat: no-repeat;
+  position: relative;
   min-height: 510px;
   display: flex;
   align-items: center;
-  position: relative;
   color: white;
   filter: brightness(1.2);
+  overflow: hidden;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
 }
 
 .banner::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -80,7 +93,7 @@
 
   button {
     color: #ffff;
-    background-color: #7CB184;
+    background-color: #7cb184;
   }
 }
 

@@ -18,6 +18,24 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './src/pages'),
       '@mocks': path.resolve(__dirname, './src/mocks'),
       '@context': path.resolve(__dirname, './src/context'),
+      '@utils': path.resolve(__dirname, './src/utils'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          carousel: ['react-slick', 'slick-carousel']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000,
+    assetsInlineLimit: 4096 // Inline small assets
+  },
+  assetsInclude: ['**/*.webp', '**/*.avif'],
+  optimizeDeps: {
+    include: ['react', 'react-dom']
+  }
 });
