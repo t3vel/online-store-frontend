@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CatalogCard = ({ name, price, kcal, description, imageUrl }) => {
   return (
     <div className={styles.card}>
-      <img className={styles.image} src={imageUrl} />
+      <img className={styles.image} src={imageUrl} alt={name} />
 
       <div className={styles.content}>
         <div className={styles.header}>

@@ -8,6 +8,7 @@ export default function CalculatorInputCard({ onCalculate }) {
     heightCm: ""
   });
   const [gender, setGender] = useState("MALE");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
@@ -21,6 +22,9 @@ export default function CalculatorInputCard({ onCalculate }) {
   };
 
   const handleCalculate = async () => {
+    if (isLoading) return; // Prevent multiple requests
+    
+    setIsLoading(true);
     try {
       const requestData = {
         age: parseInt(formData.age),
@@ -38,7 +42,6 @@ export default function CalculatorInputCard({ onCalculate }) {
       });
 
       const result = await response.json();
-      console.log('BMI Calculation Response:', result);
       
       // Pass the result to parent component
       if (onCalculate) {
@@ -47,6 +50,8 @@ export default function CalculatorInputCard({ onCalculate }) {
       
     } catch (error) {
       console.error('Error calculating BMI:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -67,6 +72,7 @@ export default function CalculatorInputCard({ onCalculate }) {
           <button 
             className={`${styles.maleButton} ${gender === "MALE" ? styles.active : ""}`}
             onClick={() => handleGenderChange("MALE")}
+            disabled={isLoading}
           >
             <span className="material-symbols-outlined">male</span>
             Male
@@ -74,6 +80,7 @@ export default function CalculatorInputCard({ onCalculate }) {
           <button 
             className={`${styles.femaleButton} ${gender === "FEMALE" ? styles.active : ""}`}
             onClick={() => handleGenderChange("FEMALE")}
+            disabled={isLoading}
           >
             <span className="material-symbols-outlined">female</span>
             Female
@@ -87,6 +94,7 @@ export default function CalculatorInputCard({ onCalculate }) {
                 type="number" 
                 value={formData.age}
                 onChange={(e) => handleInputChange("age", e.target.value)}
+                disabled={isLoading}
               /> years ( yrs )
             </div>
           </div>
@@ -97,6 +105,7 @@ export default function CalculatorInputCard({ onCalculate }) {
                 type="number" 
                 value={formData.heightCm}
                 onChange={(e) => handleInputChange("heightCm", e.target.value)}
+                disabled={isLoading}
               /> centimeters ( cm )
             </div>
           </div>
@@ -107,13 +116,33 @@ export default function CalculatorInputCard({ onCalculate }) {
                 type="number" 
                 value={formData.weightKg}
                 onChange={(e) => handleInputChange("weightKg", e.target.value)}
+                disabled={isLoading}
               /> kilograms ( kg )
             </div>
           </div>
         </div>
         <div className={styles.actionButtons}>
-          <button className={styles.resetButton} onClick={handleReset}>Reset</button>
-          <button className={styles.calculateButton} onClick={handleCalculate}>Calculate</button>
+          <button 
+            className={styles.resetButton} 
+            onClick={handleReset}
+            disabled={isLoading}
+          >
+            Reset
+          </button>
+          <button 
+            className={`${styles.calculateButton} ${isLoading ? styles.loading : ""}`} 
+            onClick={handleCalculate}
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <>
+                <div className={styles.spinner}></div>
+                Calculating...
+              </>
+            ) : (
+              "Calculate"
+            )}
+          </button>
         </div>
       </main>
     </div>

@@ -39,6 +39,11 @@
   transition: all 0.3s ease;
 }
 
+.maleButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .femaleButton {
   width: 175px;
   height: 50px;
@@ -50,6 +55,11 @@
   user-select: none;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.femaleButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .maleButton.active {
@@ -76,6 +86,13 @@
     border-radius: 12px;
     padding: 10px;
     margin-right: 20px;
+    transition: all 0.3s ease;
+  }
+
+  input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f5f5f5;
   }
 }
 
@@ -97,6 +114,12 @@
   color: #1f1f1f;
   border: 1px #3b3b3b solid;
   border-radius: 43px;
+  transition: all 0.3s ease;
+}
+
+.resetButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .calculateButton {
@@ -107,4 +130,36 @@
   color: #ffffff;
   background-color: #0d0c0d;
   border-radius: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.calculateButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.calculateButton.loading {
+  background-color: #666666;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

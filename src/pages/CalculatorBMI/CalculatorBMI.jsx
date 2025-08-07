@@ -7,6 +7,7 @@ import CalculatorInputCard from "../../components/calculator/CalculatorInputCard
 import CalculatorOutputCard from "../../components/calculator/CalculatorOutputCard/CalculatorOutputCard";
 import CatalogCard from "@components/catalog/CatalogCard/CatalogCard";
 import { mockCard } from "@mocks/mockCard";
+import picture from "@assets/images/d4ca643f8d5d6cff2455a63f5c5d898ea1516b3b.png";
 
 export default function CalculatorBMI() {
   const [bmiResult, setBmiResult] = useState(null);
@@ -81,7 +82,7 @@ export default function CalculatorBMI() {
             </span>
           </div>
         </div>
-        <div className={styles.whiteBlock}></div>
+        <img src={picture} className={styles.whatYourBMIResultsMeansImage}></img>
       </div>
       <div>
         <div className={styles.itemsShowcaseContainer}>
@@ -95,9 +96,14 @@ export default function CalculatorBMI() {
             </button>
           </div>
           <div className={styles.otherProductCard}>
-            {Array.from({ length: 4 }).map((_, index) => (
-              <CatalogCard key={index} {...mockCard} />
-            ))}
+            {bmiResult?.items ? 
+              bmiResult.items.map((item, index) => (
+                <CatalogCard key={index} {...item} />
+              )) : 
+              Array.from({ length: 4 }).map((_, index) => (
+                <CatalogCard key={index} {...mockCard} />
+              ))
+            }
           </div>
         </div>
       </div>
@@ -113,9 +119,14 @@ export default function CalculatorBMI() {
             </button>
           </div>
           <div className={styles.otherProductCard}>
-            {Array.from({ length: 4 }).map((_, index) => (
-              <CatalogCard key={index} {...mockCard} />
-            ))}
+            {bmiResult?.items ? 
+              bmiResult.items.map((item, index) => (
+                <CatalogCard key={index} {...item} />
+              )) : 
+              Array.from({ length: 4 }).map((_, index) => (
+                <CatalogCard key={index} {...mockCard} />
+              ))
+            }
           </div>
         </div>
       </div>
