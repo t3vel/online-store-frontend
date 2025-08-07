@@ -1,4 +1,6 @@
-import frame from '@assets/images/frame.png';
+import olive_oil from '@assets/images/olive_oil.jpg';
+import frame2 from '@assets/images/ceasar_salad.jpg';
+import frame3 from '@assets/images/vegetables_mix.png';
 import more from '@assets/icons/more.png';
 import styles from './PostArticle.module.css';
 
@@ -8,17 +10,17 @@ export default function PostArticle() {
       <h2 className={styles.title}>Latest Posts & Articles</h2>
       <div className={styles.container}>
         <Item
-          image={frame}
+          image={olive_oil}
           date={'MAY 14 2025'}
           content={'What technologies are used in vertical farming?'}
         />
         <Item
-          image={frame}
+          image={frame2}
           date={'MAY 14 2025'}
           content={'What technologies are used in vertical farming?'}
         />
         <Item
-          image={frame}
+          image={frame3}
           date={'MAY 14 2025'}
           content={'What technologies are used in vertical farming?'}
         />
@@ -30,7 +32,7 @@ export default function PostArticle() {
 function Item({ image, date, content }) {
   return (
     <section className={styles.section}>
-      <img src={image} alt="article" />
+      <img src={image} alt="article" className={styles.image} />
       <div className={styles.flex}>
         <div>
           <p className={styles.data}>{date}</p>

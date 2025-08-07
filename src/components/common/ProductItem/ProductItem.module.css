@@ -5,7 +5,8 @@
   gap: 6px;
 }
 
-.picture {
+.picture,
+.image {
   border-radius: 4px;
   width: 424px;
   height: 400px;
