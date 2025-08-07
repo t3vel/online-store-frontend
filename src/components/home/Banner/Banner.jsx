@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import styles from './Banner.module.css';
 import Button from '@components/common/button/Button';
 import ResponsiveImage from '@components/common/ResponsiveImage';
-import { getResponsiveImagePaths } from '@utils/imagePaths';
+import bannerBackground from '@assets/images/banner_background.jpg';
+import bannerBackgroundWebp from '@assets/images/optimized/banner_background.webp';
 
 const bannerTexts = [
   {
@@ -50,8 +51,6 @@ export default function Banner({ className = '' }) {
     return () => clearInterval(interval);
   }, [isHovered]);
 
-  const imagePaths = getResponsiveImagePaths('/src/assets/images/banner_background.jpg');
-
   return (
     <section
       className={`${styles.banner} ${className}`}
@@ -61,8 +60,8 @@ export default function Banner({ className = '' }) {
       {/* Optimized background image */}
       <div className={styles.backgroundImage}>
         <ResponsiveImage
-          src="/src/assets/images/banner_background.jpg"
-          webpSrc={imagePaths.webp}
+          src={bannerBackground}
+          webpSrc={bannerBackgroundWebp}
           alt="Banner background"
           className={styles.bgImage}
           sizes="100vw"

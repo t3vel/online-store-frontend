@@ -46,3 +46,14 @@ export const getResponsiveImagePaths = (originalPath) => {
     original: originalPath
   };
 };
+
+// Helper function to get image import path
+export const getImageImportPath = (imageName) => {
+  return `@assets/images/${imageName}`;
+};
+
+// Helper function to get optimized image import path
+export const getOptimizedImageImportPath = (imageName) => {
+  const baseName = imageName.replace(/\.[^/.]+$/, '');
+  return `@assets/images/optimized/${baseName}.webp`;
+};

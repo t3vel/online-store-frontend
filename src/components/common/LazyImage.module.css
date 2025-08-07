@@ -26,6 +26,23 @@
   justify-content: center;
 }
 
+.errorPlaceholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #856404;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+}
+
 .spinner {
   width: 20px;
   height: 20px;

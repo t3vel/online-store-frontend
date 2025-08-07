@@ -12,19 +12,15 @@ const ResponsiveImage = ({
   const generateSources = () => {
     if (!webpSrc) return null;
 
-    const baseName = webpSrc.replace('.webp', '');
     return (
       <>
         <source
-          srcSet={`${baseName}-320.webp 320w,
-                   ${baseName}-768.webp 768w,
-                   ${baseName}-1200.webp 1200w,
-                   ${webpSrc} 1920w`}
+          srcSet={webpSrc}
           sizes={sizes}
           type="image/webp"
         />
         <source
-          srcSet={`${src} 1920w`}
+          srcSet={src}
           sizes={sizes}
           type="image/jpeg"
         />
