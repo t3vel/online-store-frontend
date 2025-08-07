@@ -1,5 +1,5 @@
 .banner {
-  background-image: url('src/assets/images/banner_background.jpg'); /* сюди фон */
+  background-image: url('@assets/images/banner_background.jpg'); /* сюди фон */
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
