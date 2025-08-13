@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import svgr from 'vite-plugin-svgr';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -9,7 +10,7 @@ const __dirname = path.dirname(__filename);
 // https://vite.dev/config/
 export default defineConfig({
   base: '/online-store-frontend/',
-  plugins: [react()],
+  plugins: [react(), svgr()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -27,15 +28,15 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
-          carousel: ['react-slick', 'slick-carousel']
-        }
-      }
+          carousel: ['react-slick', 'slick-carousel'],
+        },
+      },
     },
     chunkSizeWarningLimit: 1000,
-    assetsInlineLimit: 4096 // Inline small assets
+    assetsInlineLimit: 4096, // Inline small assets
   },
   assetsInclude: ['**/*.webp', '**/*.avif'],
   optimizeDeps: {
-    include: ['react', 'react-dom']
-  }
+    include: ['react', 'react-dom'],
+  },
 });

@@ -10,12 +10,12 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   border-radius: 8px;
-  border: 1px solid #bfbfbf;
+  border: 1px solid #c7e0cb;
   width: 180px;
   min-height: 36px;
 }
 
 .active {
-  background: #dcdcdc;
+  background: var(--table);
   border: none;
 }

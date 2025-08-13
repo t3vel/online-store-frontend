@@ -16,6 +16,7 @@ import {
 } from '@pages';
 import ScrollToTop from '@components/utils/ScrollToTop';
 import { AuthProvider } from './context/AuthContext';
+import GoogleCallback from './context/GoogleCallback';
 import ProtectedRoute from './context/ProtectedRoute';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/auth/google/callback" element={<GoogleCallback />} />
             <Route path="/login" element={<Login />} />
             <Route path="/createacc" element={<CreateAcc />} />
             <Route path="/successreg" element={<RegistrationSuccess />} />

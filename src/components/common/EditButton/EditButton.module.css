@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   gap: 8px;
-  color: #6a6a6a;
-  border: 1px solid #6a6a6a;
-  border-radius: 32px;
+  color: var(--accent-color);
   padding: 8px 32px;
+  border: 1px solid var(--accent-color);
+  border-radius: 32px;
 }

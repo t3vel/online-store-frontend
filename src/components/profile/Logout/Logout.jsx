@@ -31,24 +31,24 @@ export default function Logout() {
       <div className={styles.modal}>
         <button className={styles.closeButton}>
           <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
+            width="42"
+            height="42"
+            viewBox="0 0 42 42"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z"
-              stroke="black"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
+              d="M20.7033 40.9066C31.5855 40.9066 40.4066 32.0855 40.4066 21.2033C40.4066 10.3212 31.5855 1.5 20.7033 1.5C9.82118 1.5 1 10.3212 1 21.2033C1 32.0855 9.82118 40.9066 20.7033 40.9066Z"
+              stroke="#2D6B41"
+              stroke-width="1.5"
+              stroke-linejoin="round"
             />
             <path
-              d="M14.8289 9.17188L9.17188 14.8289M9.17188 9.17188L14.8289 14.8289"
-              stroke="black"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              d="M26.2751 15.6309L15.1289 26.777M15.1289 15.6309L26.2751 26.777"
+              stroke="#2D6B41"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
           </svg>
         </button>

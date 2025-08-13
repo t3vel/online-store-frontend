@@ -1,3 +1,7 @@
+.container {
+  background: var(--background);
+}
+
 .wrapper {
   max-width: 1320px;
   margin: 0 auto;
@@ -5,9 +9,9 @@
 }
 
 .top {
-  margin-top: 32px;
+  padding-top: 32px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -41,11 +45,12 @@
 }
 
 .btnChange {
+  font-weight: 600;
   font-size: 20px;
   text-align: center;
   color: #fff;
   padding: 20px 97px;
-  background: #111;
+  background: var(--accent-color);
   border-radius: 32px;
 }
 
