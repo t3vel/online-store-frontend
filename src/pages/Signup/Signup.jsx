@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Signup.module.css';
+import GoogleIcon from '@assets/icons/google-colored.svg?react';
 
 export default function Signup() {
   const API_URL =
@@ -21,18 +22,7 @@ export default function Signup() {
               className={styles.socialBtn}
               href={`${API_URL}/api/v1/auth/google`}
             >
-              <svg
-                width="29"
-                height="29"
-                viewBox="0 0 29 29"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M28.5 14.5C28.5 22.228 22.235 28.5 14.5 28.5C6.765 28.5 0.5 22.228 0.5 14.5C0.5 6.765 6.765 0.5 14.5 0.5C22.235 0.5 28.5 6.765 28.5 14.5Z"
-                  fill="#C6C6C6"
-                />
-              </svg>
+               <GoogleIcon className={styles.socialIcon} />
               Sign up with Google
             </a>
 
