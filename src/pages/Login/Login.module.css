@@ -87,11 +87,14 @@ p .link {
   margin-bottom: 42px;
   height: 64px;
   width: 362px;
-  background-color: #bebebe;
+  background-color: #234D2E;
   border-radius: 32px;
   font-size: 20px;
   font-weight: 400;
-  color: #ffffff;
+  color: #F9F1EB;
+    &:hover {
+        background-color: #2D6B41;
+    }
 }
 
 .flex {

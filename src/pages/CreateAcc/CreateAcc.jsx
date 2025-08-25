@@ -78,7 +78,7 @@ export default function CreateAcc() {
       setLoading(false);
     }
   };
-
+    const isFormFilled = email && password && confirmationPassword;
   return (
     <>
       <div className={styles.container}>
@@ -197,7 +197,7 @@ export default function CreateAcc() {
 
               <button
                 type="submit"
-                className={styles.button}
+                className={`${styles.button} ${!isFormFilled? styles.buttonDisabled: ''}`}
                 disabled={loading}
               >
                 {loading ? 'Creating...' : 'Create account'}
