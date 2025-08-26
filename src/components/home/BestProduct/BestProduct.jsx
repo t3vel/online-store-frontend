@@ -3,7 +3,7 @@ import ProductItem from '@components/common/ProductItem/ProductItem';
 import styles from './BestProduct.module.css';
 import picture from '@assets/images/pepper.png';
 
-import Button from '@/components/common/button/Button';
+import Button from '@/components/common/Button/Button';
 
 export default function BestProducts() {
   return (
