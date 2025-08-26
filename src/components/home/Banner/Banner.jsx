@@ -1,40 +1,72 @@
 import { useEffect, useState } from 'react';
 import styles from './Banner.module.css';
-import Button from '@components/common/button/Button';
+import Button from '@components/common/Button/Button';
 import ResponsiveImage from '@components/common/ResponsiveImage';
-import bannerBackground from '@assets/images/banner_background.jpg';
-import bannerBackgroundWebp from '@assets/images/optimized/banner_background.webp';
+
+// Import all banner background images
+import bannerBackground1 from '@assets/images/banner_background_1.png';
+import bannerBackground2 from '@assets/images/banner_background_2.png';
+import bannerBackground3 from '@assets/images/banner_background_3.png';
+import bannerBackground4 from '@assets/images/banner_background_4.png';
+import bannerBackground5 from '@assets/images/banner_background_5.png';
+import bannerBackground6 from '@assets/images/banner_background_6.png';
+
+// Import optimized WebP versions
+import bannerBackground1Webp from '@assets/images/optimized/banner_background_1.webp';
+import bannerBackground2Webp from '@assets/images/optimized/banner_background_2.webp';
+import bannerBackground3Webp from '@assets/images/optimized/banner_background_3.webp';
+import bannerBackground4Webp from '@assets/images/optimized/banner_background_4.webp';
+import bannerBackground5Webp from '@assets/images/optimized/banner_background_5.webp';
+import bannerBackground6Webp from '@assets/images/optimized/banner_background_6.webp';
 
 const bannerTexts = [
   {
+    title1: 'Feel the Difference.',
+    title2: 'Eat Clean.',
+    title3: 'Discover organic essentials that support your healthy lifestyle.',
+    buttonText: 'Show More',
+    background: bannerBackground1,
+    backgroundWebp: bannerBackground1Webp,
+  },
+  {
     title1: 'Taste Nature.',
     title2: 'Choose Organic.',
-    title3: 'Feel the Difference',
+    title3: 'Browse our healthy food catalog sorted by goals and categories.',
     buttonText: 'Show More',
+    background: bannerBackground2,
+    backgroundWebp: bannerBackground2Webp,
   },
   {
-    title1: 'Discover Health.',
-    title2: 'Live Better.',
-    title3: 'With Eco Products',
+    title1: 'Stay Informed.',
+    title2: 'Stay Inspired.',
+    title3: 'Read the latest healthy living news and nutrition advice.',
     buttonText: 'Show More',
+    background: bannerBackground3,
+    backgroundWebp: bannerBackground3Webp,
   },
   {
-    title1: 'Discover Health.',
-    title2: 'Live Better.',
-    title3: 'With Eco Products',
+    title1: 'Live Balanced.',
+    title2: 'Track Your Health.',
+    title3: 'Instantly calculate your BMI and explore foods that match your needs.',
     buttonText: 'Show More',
+    background: bannerBackground4,
+    backgroundWebp: bannerBackground4Webp,
   },
   {
-    title1: 'Discover Health.',
-    title2: 'Live Better.',
-    title3: 'With Eco Products',
+    title1: 'Nature\'s Best,',
+    title2: 'Delivered to You.',
+    title3: 'From fresh produce to mindful snacks — explore our organic selection.',
     buttonText: 'Show More',
+    background: bannerBackground5,
+    backgroundWebp: bannerBackground5Webp,
   },
   {
-    title1: 'Discover Health.',
-    title2: 'Live Better.',
-    title3: 'With Eco Products',
+    title1: 'Smart Eating',
+    title2: 'Starts Here.',
+    title3: 'Try our BMI calculator and get food tips that really work.',
     buttonText: 'Show More',
+    background: bannerBackground6,
+    backgroundWebp: bannerBackground6Webp,
   },
 ];
 
@@ -43,12 +75,18 @@ export default function Banner({ className = '' }) {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isHovered) {
-        setCurrentSlide((prev) => (prev + 1) % bannerTexts.length);
-      }
-    }, 4000);
-    return () => clearInterval(interval);
+    // Small delay to ensure component is fully rendered
+    const initialDelay = setTimeout(() => {
+      const interval = setInterval(() => {
+        if (!isHovered) {
+          setCurrentSlide((prev) => (prev + 1) % bannerTexts.length);
+        }
+      }, 3000);
+      
+      return () => clearInterval(interval);
+    }, 100); // 100ms delay
+    
+    return () => clearTimeout(initialDelay);
   }, [isHovered]);
 
   return (
@@ -57,14 +95,13 @@ export default function Banner({ className = '' }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Optimized background image */}
+      {/* Dynamic background image based on current slide */}
       <div className={styles.backgroundImage}>
-        <ResponsiveImage
-          src={bannerBackground}
-          webpSrc={bannerBackgroundWebp}
-          alt="Banner background"
+        <img
+          key={currentSlide}
+          src={bannerTexts[currentSlide].background}
+          alt={`Banner background ${currentSlide + 1}`}
           className={styles.bgImage}
-          sizes="100vw"
         />
       </div>
       
@@ -73,8 +110,9 @@ export default function Banner({ className = '' }) {
           <div
             key={index}
             className={`${styles.slide} ${
-              currentSlide === index ? styles.slideActive : ''
+              currentSlide === index? styles.slideActive: ''
             }`}
+            data-slide-index={index}
           >
             <div className={styles.content}>
               <p className={styles.title}>
@@ -92,7 +130,7 @@ export default function Banner({ className = '' }) {
           <button
             key={index}
             className={`${styles.dot} ${
-              currentSlide === index ? styles.active : ''
+              currentSlide === index? styles.active: ''
             }`}
             onClick={() => setCurrentSlide(index)}
             aria-label={`Slide ${index + 1}`}

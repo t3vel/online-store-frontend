@@ -1,7 +1,7 @@
 // Utility for managing optimized image paths
 
 const OPTIMIZED_IMAGES = {
-  'banner_background.jpg': 'optimized/banner_background.webp',
+  'banner_background_1.png': 'optimized/banner_background_1.webp',
   'start_with_background.jpg': 'optimized/start_with_background.webp',
   '71a4ca034f23b11dc0eb83092b7a620b05768418.jpg': 'optimized/71a4ca034f23b11dc0eb83092b7a620b05768418.webp',
   'olive_oil.jpg': 'optimized/olive_oil.webp',

@@ -15,6 +15,7 @@
   right: 0;
   bottom: 0;
   z-index: 0;
+  transition: opacity 0.8s ease-in-out;
 }
 
 .bgImage {
@@ -22,6 +23,18 @@
   height: 100%;
   object-fit: cover;
   object-position: center center;
+  transition: opacity 0.8s ease-in-out;
+  opacity: 1;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .banner::after {
@@ -58,6 +71,29 @@
   display: block;
 }
 
+.title span:nth-child(1) {
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 120%;
+  color: #202020;
+}
+
+.title span:nth-child(2) {
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 120%;
+  color: #202020;
+}
+
+.title span:nth-child(3) {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #202020;
+}
+
+
+
 .dots {
   display: flex;
   justify-content: center;
@@ -85,11 +121,13 @@
 
 .slide {
   opacity: 0;
-  transition: opacity 0.8s ease-in-out;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  transform: translateX(20px);
+  transition: all 0.2s ease-out;
+  z-index: 1;
 
   button {
     color: #ffff;
@@ -100,4 +138,13 @@
 .slideActive {
   opacity: 1;
   position: relative;
+  transform: translateX(0);
+  z-index: 2;
 }
+
+/* Make text white for banner 5 (slide index 4) */
+.slide[data-slide-index="4"].slideActive .title span {
+  color: #ffffff !important;
+}
+
+

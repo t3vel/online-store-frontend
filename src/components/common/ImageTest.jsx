@@ -1,8 +1,8 @@
 import React from 'react';
 import LazyImage from './LazyImage';
 import ResponsiveImage from './ResponsiveImage';
-import bannerBackground from '@assets/images/banner_background.jpg';
-import bannerBackgroundWebp from '@assets/images/optimized/banner_background.webp';
+import bannerBackground from '@assets/images/banner_background_1.jpg';
+import bannerBackgroundWebp from '@assets/images/optimized/banner_background_1.webp';
 
 const ImageTest = () => {
   return (
