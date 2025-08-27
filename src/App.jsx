@@ -21,7 +21,7 @@ import ProtectedRoute from './context/ProtectedRoute';
 
 function App() {
   return (
-    <Router basename="/online-store-frontend">
+    <Router basename="/online-store-frontend/">
       <AuthProvider>
         <ScrollToTop />
         <Routes>

@@ -18,7 +18,7 @@ const largeImages = [
   'start_with_background.jpg',
   '71a4ca034f23b11dc0eb83092b7a620b05768418.jpg',
   'olive_oil.jpg',
-  'banner_background.jpg',
+  'banner_background_1.png',
   'ceasar_salad.jpg',
   'cabbage.png',
   'carrot.png',

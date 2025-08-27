@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './Banner.module.css';
 import Button from '@components/common/Button/Button';
-import ResponsiveImage from '@components/common/ResponsiveImage';
 
 // Import all banner background images
 import bannerBackground1 from '@assets/images/banner_background_1.png';
@@ -75,18 +74,13 @@ export default function Banner({ className = '' }) {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    // Small delay to ensure component is fully rendered
-    const initialDelay = setTimeout(() => {
-      const interval = setInterval(() => {
-        if (!isHovered) {
-          setCurrentSlide((prev) => (prev + 1) % bannerTexts.length);
-        }
-      }, 3000);
-      
-      return () => clearInterval(interval);
-    }, 100); // 100ms delay
+    const interval = setInterval(() => {
+      if (!isHovered) {
+        setCurrentSlide((prev) => (prev + 1) % bannerTexts.length);
+      }
+    }, 5000); // Restored to 5 seconds for better user experience
     
-    return () => clearTimeout(initialDelay);
+    return () => clearInterval(interval);
   }, [isHovered]);
 
   return (
@@ -110,7 +104,7 @@ export default function Banner({ className = '' }) {
           <div
             key={index}
             className={`${styles.slide} ${
-              currentSlide === index? styles.slideActive: ''
+              currentSlide === index ? styles.slideActive : ''
             }`}
             data-slide-index={index}
           >
@@ -125,12 +119,13 @@ export default function Banner({ className = '' }) {
           </div>
         ))}
       </div>
+      
       <div className={styles.dots}>
         {bannerTexts.map((_, index) => (
           <button
             key={index}
             className={`${styles.dot} ${
-              currentSlide === index? styles.active: ''
+              currentSlide === index ? styles.active : ''
             }`}
             onClick={() => setCurrentSlide(index)}
             aria-label={`Slide ${index + 1}`}

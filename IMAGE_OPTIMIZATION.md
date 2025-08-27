@@ -29,7 +29,7 @@ This project now includes comprehensive image optimization to improve performanc
 ### Before Optimization:
 - `start_with_background.jpg`: 11.2MB
 - `olive_oil.jpg`: 9.8MB
-- `banner_background.jpg`: 6.7MB
+- `banner_background_1.png`: 851KB
 - **Total**: ~50MB of images
 
 ### After Optimization:
