@@ -1,46 +1,62 @@
-import CatalogCard from "@components/catalog/CatalogCard/CatalogCard";
-import { mockItem } from "@mocks/mockItem";
 import tomatoes_5 from "@assets/images/tomatoes_5.png";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import styles from "./Item.module.css";
-import cabbage from "@assets/images/cabbage.png";
-import carrot from "@assets/images/carrot.png";
-import cauliflower from "@assets/images/cauliflower.png";
-import pepper from "@assets/images/pepper.png";
-import tomatoes from "@assets/images/tomatoes.png";
-import tomatoes2 from "@assets/images/tomatoes_2.png";
-import tomatoes3 from "@assets/images/tomatoes_3.png";
-import tomatoes4 from "@assets/images/tomatoes_4.png";
-import tomatoes5 from "@assets/images/tomatoes_5.png";
-
-// Helper to generate a distinct mock object for each card
-const generateMockCard = (index) => {
-  const images = [
-    cabbage,
-    carrot,
-    cauliflower,
-    pepper,
-    tomatoes,
-    tomatoes2,
-    tomatoes3,
-    tomatoes4,
-    tomatoes5,
-  ];
-  const names = [
-    "Tomato", "Carrot", "Cauliflower", "Pepper", "Cabbage", "Tomatoes", "Veggie Mix", "Fresh Veg", "Salad Star"
-  ];
-  return {
-    name: names[index % names.length],
-    price: (6.22 + index).toFixed(2),
-    kcal: 110 + index * 10,
-    description: `Ecologically clean, grown on our farm with love. Card #${index + 1}`,
-    imageUrl: images[index % images.length],
-  };
-}
 
 export default function Item() {
-  // const { id } = useParams();
+  const { id } = useParams();
+  const API_URL = import.meta.env.VITE_API_URL;
+
+  const [product, setProduct] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    if (!id) return;
+    const controller = new AbortController();
+    const loadProduct = async () => {
+      setIsLoading(true);
+      setErrorMessage("");
+      try {
+        const response = await fetch(`${API_URL}/api/v1/catalog/${id}`, {
+          method: 'GET',
+          headers: { accept: 'application/json' },
+          signal: controller.signal,
+        });
+
+        const contentType = response.headers.get('content-type') || '';
+        let payload = null;
+        try {
+          if (contentType.includes('application/json')) {
+            payload = await response.json();
+          } else {
+            const text = await response.text();
+            payload = text ? { message: text } : null;
+          }
+        } catch (_) {
+          payload = null;
+        }
+
+        if (!response.ok) {
+          const message = (payload && (payload.message || payload.error)) || `Request failed with status ${response.status}`;
+          setErrorMessage(message);
+          setProduct(null);
+          return;
+        }
+
+        setProduct(payload);
+      } catch (err) {
+        if (err?.name !== 'AbortError') {
+          setErrorMessage('Network error. Please try again later.');
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadProduct();
+    return () => controller.abort();
+  }, [API_URL, id]);
 
   const [productCount, setProductCount] = useState(1);
 
@@ -57,6 +73,21 @@ export default function Item() {
     setProductCount((prevCount) => prevCount + 1);
   };
 
+  const name = product?.productName || "Product";
+  const productNumber = product?.id ?? "";
+  const price = product?.price != null ? product.price : null;
+  const description = product?.description || "";
+  const brandName = product?.brand?.brandName || "";
+  const categoryName = Array.isArray(product?.categories) && product.categories[0]?.categoryName ? product.categories[0].categoryName : "";
+  const protein = product?.protein ?? null;
+  const fat = product?.fat ?? null;
+  const carbs = product?.carbs ?? null;
+  let imageUrl = Array.isArray(product?.images) && product.images[0]?.url ? product.images[0].url : "";
+  if (imageUrl && imageUrl.startsWith('/')) {
+    const base = (API_URL || '').replace(/\/+$/, '');
+    imageUrl = `${base}${imageUrl}`;
+  }
+
   return (
     <div className={styles.container}>
       <Link to="/catalog" className={styles.navigation}>
@@ -64,22 +95,27 @@ export default function Item() {
         <span>Catalog</span>
       </Link>
 
+      {isLoading && (
+        <div style={{ padding: '2rem' }}>Loading...</div>
+      )}
+
+      {!isLoading && errorMessage && (
+        <div style={{ padding: '2rem', color: '#c62828' }}>{errorMessage}</div>
+      )}
+
+      {!isLoading && !errorMessage && (
       <div className={styles.shortInfoContainer}>
         <div className={styles.productImage}>
-          <img src={tomatoes_5} alt={"tomatoes"} />
+          <img src={imageUrl || tomatoes_5} alt={name} />
         </div>
         <div className={styles.detailsBlock}>
           <div className={styles.briefPanel}>
-            <h3 className={styles.productName}>Cherry tomatoes</h3>
-            <div className={styles.productNumber}>8000500023976</div>
-            <span className={styles.actualPrice}>€ 14.25</span>
+            <h3 className={styles.productName}>{name}</h3>
+            <div className={styles.productNumber}>{productNumber}</div>
+            {price != null && (
+              <span className={styles.actualPrice}>{`€ ${price}`}</span>
+            )}
             <div className={styles.prices}>
-              <div className={styles.oldPriceContainer}>
-                <div className={styles.oldPrice}>€ 19.00</div>
-                <div className={styles.discountBadge}>
-                  {mockItem.discount} Off
-                </div>
-              </div>
               <div className={styles.actionButtons}>
                 <div className={styles.productAmount}>
                   <div
@@ -105,49 +141,46 @@ export default function Item() {
           <div className={styles.detailedInfo}>
             <div className={styles.infoBlock}>
               <h3>Description</h3>
-              <p>
-                Sweet and juicy, cherry tomatoes are ideal for snacking or
-                adding a burst of flavor to any dish.
-              </p>
+              <p>{description}</p>
             </div>
             <div className={styles.infoBlock}>
               <h3>General Information</h3>
               <div>
                 <span>Product name: </span>
-                <span>Cherry Tomatoes</span>
+                <span>{name}</span>
               </div>
               <div>
                 <span>Brand: </span>
-                <span className={styles.textUnderlined}>LaSelva</span>
+                <span className={styles.textUnderlined}>{brandName}</span>
               </div>
               <div>
                 <span>Category: </span>
-                <span className={styles.textUnderlined}>Vegetable</span>
+                <span className={styles.textUnderlined}>{categoryName}</span>
               </div>
             </div>
             <div className={styles.infoBlock}>
               <h3>Nutrition Value</h3>
               <div className={styles.nutritionRow}>
                 <div className={styles.nutritionClauseIcon}>
-                  <span class="material-symbols-outlined">check</span>
+                  <span className="material-symbols-outlined">check</span>
                 </div>
-                <span>{`Protein : 3.6 g`}</span>
+                <span>{`Protein : ${protein ?? '-'} g`}</span>
               </div>
               <div className={styles.nutritionRow}>
                 <div className={styles.nutritionClauseIcon}>
-                  <span class="material-symbols-outlined">check</span>
+                  <span className="material-symbols-outlined">check</span>
                 </div>
-                <span>{`Fat : 0.2 g`}</span>
+                <span>{`Fat : ${fat ?? '-'} g`}</span>
               </div>
               <div className={styles.nutritionRow}>
                 <div className={styles.nutritionClauseIcon}>
-                  <span class="material-symbols-outlined">check</span>
+                  <span className="material-symbols-outlined">check</span>
                 </div>
-                <span>{`Carbohydrates : 0.9 g`}</span>
+                <span>{`Carbohydrates : ${carbs ?? '-'} g`}</span>
               </div>
               <div className={styles.nutritionRow}>
                 <div className={styles.nutritionClauseIcon}>
-                  <span class="material-symbols-outlined">check</span>
+                  <span className="material-symbols-outlined">check</span>
                 </div>
                 <span>{`Vitamins (per 100g) : Vitamin C, Vitamin A`}</span>
               </div>
@@ -155,31 +188,8 @@ export default function Item() {
           </div>
         </div>
       </div>
-      <div className={styles.otherItemsContainer}>
-        <div className={styles.itemsShowcaseContainer}>
-          <div className={styles.similarProductListHeader}>
-            <h3 className={styles.productListTitle}>Similar Products</h3>
-            <button className={styles.showMoreButton}>
-              Show More
-              <span className="material-symbols-outlined">east</span>
-            </button>
-          </div>
-          <div className={styles.otherProductCard}>
-            {Array.from({ length: 4 }).map((_, index) => (
-              <CatalogCard key={index} {...generateMockCard(index)} />
-            ))}
-          </div>
-        </div>
-
-        <div className={styles.itemsShowcaseContainer}>
-          <h3 className={styles.productListTitle}>You might also like</h3>
-          <div className={styles.otherProductCard}>
-            {Array.from({ length: 4 }).map((_, index) => (
-              <CatalogCard key={index} {...generateMockCard(index + 4)} />
-            ))}
-          </div>
-        </div>
-      </div>
+      )}
+      {/* Recommendation sections removed until wired to real data */}
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import styles from './CatalogFilters.module.css';
 
-export default function CatalogFilters() {
+export default function CatalogFilters({ sortBy, onSortByChange, aZ, onAZChange, size, onSizeChange }) {
   return (
     <div className={styles.filtersWrapper}>
+
       <select className={styles.select}>
         <option>Select Price</option>
         <option value="0-10">€0 - €10</option>
@@ -23,23 +24,25 @@ export default function CatalogFilters() {
         <option value="low">Low to High</option>
       </select>
 
-      <select className={styles.select}>
-        <option>Sort by A - Z</option>
-        <option value="asc">A - Z</option>
-        <option value="desc">Z - A</option>
+      <select className={styles.select} value={sortBy} onChange={(e) => onSortByChange && onSortByChange(e.target.value)}>
+        <option value="">Sort by</option>
+        <option value="priceAsc">Price: Low to High</option>
+        <option value="priceDesc">Price: High to Low</option>
+        <option value="rating">Rating</option>
+        <option value="popular">Popular</option>
       </select>
 
-      <select className={styles.select}>
-        <option>Sort by: Latest</option>
-        <option value="latest">Latest</option>
-        <option value="oldest">Oldest</option>
+      <select className={styles.select} value={aZ} onChange={(e) => onAZChange && onAZChange(e.target.value)}>
+        <option value="">A - Z</option>
+        <option value="a">A-Z</option>
+        <option value="z">Z-A</option>
       </select>
 
-      <select className={styles.select}>
-        <option>Show : 24 Items</option>
-        <option value="12">12</option>
-        <option value="24">24</option>
-        <option value="48">48</option>
+      <select className={styles.select} value={size} onChange={(e) => onSizeChange && onSizeChange(Number(e.target.value))}>
+        <option value={10}>Show: 10</option>
+        <option value={12}>12</option>
+        <option value={24}>24</option>
+        <option value={48}>48</option>
       </select>
     </div>
   );

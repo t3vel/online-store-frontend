@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from './Banner.module.css';
 import Button from '@components/common/Button/Button';
 
-// Import all banner background images
 import bannerBackground1 from '@assets/images/banner_background_1.png';
 import bannerBackground2 from '@assets/images/banner_background_2.png';
 import bannerBackground3 from '@assets/images/banner_background_3.png';
@@ -10,7 +9,6 @@ import bannerBackground4 from '@assets/images/banner_background_4.png';
 import bannerBackground5 from '@assets/images/banner_background_5.png';
 import bannerBackground6 from '@assets/images/banner_background_6.png';
 
-// Import optimized WebP versions
 import bannerBackground1Webp from '@assets/images/optimized/banner_background_1.webp';
 import bannerBackground2Webp from '@assets/images/optimized/banner_background_2.webp';
 import bannerBackground3Webp from '@assets/images/optimized/banner_background_3.webp';
@@ -72,16 +70,43 @@ const bannerTexts = [
 export default function Banner({ className = '' }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const intervalRef = useRef(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isHovered) {
-        setCurrentSlide((prev) => (prev + 1) % bannerTexts.length);
-      }
-    }, 5000); // Restored to 5 seconds for better user experience
+  const startInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
     
-    return () => clearInterval(interval);
+    intervalRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % bannerTexts.length);
+    }, 5000);
+  };
+
+  const stopInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  //Handle slide progression
+  useEffect(() => {
+    if (!isHovered) {
+      startInterval();
+    } else {
+      stopInterval();
+    }
+
+    return () => stopInterval();
   }, [isHovered]);
+
+  // Handle manual slide changes
+  const handleDotClick = (index) => {
+    setCurrentSlide(index);
+    if (!isHovered) {
+      startInterval();
+    }
+  };
 
   return (
     <section
@@ -89,7 +114,7 @@ export default function Banner({ className = '' }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Dynamic background image based on current slide */}
+
       <div className={styles.backgroundImage}>
         <img
           key={currentSlide}
@@ -127,7 +152,7 @@ export default function Banner({ className = '' }) {
             className={`${styles.dot} ${
               currentSlide === index ? styles.active : ''
             }`}
-            onClick={() => setCurrentSlide(index)}
+            onClick={() => handleDotClick(index)}
             aria-label={`Slide ${index + 1}`}
           />
         ))}

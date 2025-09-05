@@ -19,7 +19,15 @@ const categories = [
   'Accessories',
 ];
 
-export default function CatalogSidebar() {
+export default function CatalogSidebar({
+  selectedBrands = [],
+  onBrandsChange,
+  selectedCategory,
+  onCategoryChange,
+  priceFrom,
+  priceTo,
+  onPriceChange,
+}) {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleCheckboxChange = (option) => {
@@ -35,12 +43,13 @@ export default function CatalogSidebar() {
       <h3 className={styles.title}>Category</h3>
       <div className={styles.section}>
         {categories.map((category) => (
-          <div className={styles.category}>
-            <label key={category} className={styles.checkboxLabel}>
+          <div key={category} className={styles.category}>
+            <label className={styles.checkboxLabel}>
               <input
-                type="checkbox"
-                checked={selectedOptions.includes(category)}
-                onChange={() => handleCheckboxChange(category)}
+                type="radio"
+                name="catalog-category"
+                checked={selectedCategory === category}
+                onChange={() => onCategoryChange && onCategoryChange(category)}
                 className={styles.categoryInput}
               />
               <span className={styles.categoryText}>{category}</span>
@@ -55,16 +64,16 @@ export default function CatalogSidebar() {
               <path
                 d="M2.91536 4.95898L6.9987 9.04232L11.082 4.95898"
                 stroke="#4D4D4D"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>
         ))}
       </div>
-      <PriceRange />
-      <PopularBrands />
+      <PriceRange min={priceFrom} max={priceTo} onChange={onPriceChange} />
+      <PopularBrands selectedBrands={selectedBrands} onChange={onBrandsChange} />
     </aside>
   );
 }

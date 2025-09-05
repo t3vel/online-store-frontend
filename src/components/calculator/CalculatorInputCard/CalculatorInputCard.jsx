@@ -1,14 +1,17 @@
 import { useState } from "react";
 import styles from "./CalculatorInputCard.module.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function CalculatorInputCard({ onCalculate }) {
   const [formData, setFormData] = useState({
     age: "",
+    gender: "",
     weightKg: "",
     heightCm: ""
   });
   const [gender, setGender] = useState("MALE");
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
@@ -22,8 +25,9 @@ export default function CalculatorInputCard({ onCalculate }) {
   };
 
   const handleCalculate = async () => {
-    if (isLoading) return; // Prevent multiple requests
+    if (isLoading) return;
     
+    setErrorMessage("");
     setIsLoading(true);
     try {
       const requestData = {
@@ -33,23 +37,41 @@ export default function CalculatorInputCard({ onCalculate }) {
         heightCm: parseFloat(formData.heightCm)
       };
 
-      const response = await fetch('https://right-bite-store.onrender.com/api/v1/bmi/calculate', {
+      const response = await fetch(`${API_URL}/api/v1/bmi/calculate`, {
         method: 'POST',
         headers: {
+          accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(requestData)
+        body: JSON.stringify(requestData),
       });
 
-      const result = await response.json();
-      
-      // Pass the result to parent component
+      const contentType = response.headers.get('content-type') || '';
+      let payload = null;
+      try {
+        if (contentType.includes('application/json')) {
+          payload = await response.json();
+        } else {
+          const text = await response.text();
+          payload = text ? { message: text } : null;
+        }
+      } catch (_) {
+        payload = null;
+      }
+
+      if (!response.ok) {
+        const message = (payload && (payload.message || payload.error)) || `Request failed with status ${response.status}`;
+        setErrorMessage(message);
+        return;
+      }
+
       if (onCalculate) {
-        onCalculate(result);
+        onCalculate(payload);
       }
       
     } catch (error) {
       console.error('Error calculating BMI:', error);
+      setErrorMessage('Network or server error. Please try again later.');
     } finally {
       setIsLoading(false);
     }
@@ -144,6 +166,11 @@ export default function CalculatorInputCard({ onCalculate }) {
             )}
           </button>
         </div>
+        {errorMessage && (
+          <div style={{ color: '#c62828', marginTop: '8px', textAlign: 'center' }}>
+            {errorMessage}
+          </div>
+        )}
       </main>
     </div>
   );
