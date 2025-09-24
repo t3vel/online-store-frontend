@@ -61,7 +61,7 @@ const Header = () => {
               </Link>
 
               <Link to="/cart" className={styles.iconButton}>
-                <img src={cartIcon} alt="Shopping cart" />
+                <img src={cartIcon} alt="Way to shopping cart" />
               </Link>
             </div>
           </div>

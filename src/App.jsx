@@ -32,6 +32,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/createacc" element={<CreateAcc />} />
             <Route path="/successreg" element={<RegistrationSuccess />} />
+            <Route path="/auth/google/login" element={<Catalog />} />
             <Route
               path="/profile"
               element={
